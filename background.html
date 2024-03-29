@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="en" class="rust" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Background - Lute manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="background.html" class="active">Background</a></li><li class="chapter-item affix "><li class="part-title">Installation</li><li class="chapter-item "><a href="install/install.html">Installation</a></li><li class="chapter-item "><a href="install/windows/index.html">Installing on Windows</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="install/windows/windows-10-32-bit-using-python.html">Windows 10 (32 bit) using Python and pip</a></li><li class="chapter-item "><a href="install/windows/windows-using-docker.html">Windows using Docker</a></li></ol></li><li class="chapter-item "><a href="install/mecab.html">MeCab for Japanese</a></li><li class="chapter-item "><a href="install/troubleshooting.html">Troubleshooting</a></li><li class="chapter-item "><a href="install/beta-releases.html">Beta releases</a></li><li class="chapter-item affix "><li class="part-title">Usage</li><li class="chapter-item "><a href="usage/starting-and-stopping.html">Starting and stopping</a></li><li class="chapter-item "><div>Languages</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/languages/defining-languages.html">Defining a language</a></li><li class="chapter-item "><a href="usage/languages/dictionaries.html">Dictionaries</a></li><li class="chapter-item "><a href="usage/languages/word-characters.html">Word characters</a></li></ol></li><li class="chapter-item "><div>Books</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/books/creating-books.html">Creating books</a></li><li class="chapter-item "><a href="usage/books/stats.html">The stats calculation</a></li></ol></li><li class="chapter-item "><div>Reading</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/reading/reading.html">Reading</a></li><li class="chapter-item "><a href="usage/keyboard-bindings.html">Key bindings</a></li><li class="chapter-item "><a href="usage/reading/overlapping-terms.html">Overlapping terms</a></li><li class="chapter-item "><a href="usage/reading/tutorial.html">The demo tutorial</a></li></ol></li><li class="chapter-item "><div>Terms</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/terms/terms.html">Terms</a></li><li class="chapter-item "><a href="usage/terms/parent-terms.html">Parent terms</a></li><li class="chapter-item "><a href="usage/terms/link-parent-child-statuses.html">Linking parent-child statuses</a></li><li class="chapter-item "><a href="usage/terms/bulk-term-import.html">Bulk term import</a></li></ol></li><li class="chapter-item "><div>Themes</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/themes/themes.html">Themes</a></li><li class="chapter-item "><a href="usage/themes/toggling-highlights.html">Toggling highlights</a></li><li class="chapter-item "><a href="usage/themes/custom-styles.html">Custom styles</a></li></ol></li><li class="chapter-item "><a href="usage/audio.html">Adding audio</a></li><li class="chapter-item "><a href="backup/backup.html">Backup</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="backup/restore.html">Restoring backups</a></li></ol></li><li class="chapter-item "><a href="usage/command-line-jobs.html">Command line jobs</a></li><li class="chapter-item "><a href="usage/updating.html">Updating Lute</a></li><li class="chapter-item affix "><li class="part-title">FAQs</li><li class="chapter-item "><a href="faq/help.html">Where can I get help?</a></li><li class="chapter-item "><div>Setup</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="faq/setup/web-server.html">Can I run Lute on a private web server?</a></li><li class="chapter-item "><a href="faq/setup/usb.html">Can I store Lute data on a USB key?</a></li><li class="chapter-item "><a href="faq/adding-basic-auth.html">Can I make Lute secure?</a></li><li class="chapter-item "><a href="faq/online-lute.html">Is there an online version of Lute?</a></li><li class="chapter-item "><a href="faq/v2-to-v3.html">How can I migrate from Lute v2 to v3?</a></li></ol></li><li class="chapter-item "><div>Languages</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="faq/language/add-a-language.html">Can you add language X?</a></li></ol></li><li class="chapter-item "><div>Books</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="faq/books/finding-stuff.html">Where can I find books to import?</a></li><li class="chapter-item "><a href="faq/books/epub-import.html">Why won't my epub import correctly?</a></li><li class="chapter-item "><a href="faq/books/pdf-import.html">Why won't my pdf import correctly?</a></li><li class="chapter-item "><a href="faq/books/utf-8.html">My text file import is giving a "utf-8 encoding" error message</a></li></ol></li><li class="chapter-item "><div>Terms</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="faq/terms/terms-cannot-be-changed-once-created.html">Why can't I change a Term?</a></li><li class="chapter-item "><a href="faq/terms/sentences-only-shown-when-page-is-read.html">Where are my new Term's sentences?</a></li><li class="chapter-item "><a href="faq/terms/term-statuses.html">How should I use statuses?</a></li></ol></li><li class="chapter-item "><a href="faq/import-from-other-systems.html">Can I import data from other systems?</a></li><li class="chapter-item "><a href="faq/why-no-flashcards.html">Why doesn't Lute have flashcards, or an SRS?</a></li><li class="chapter-item "><a href="faq/prioritizing-dev-work.html">How is development work prioritized?</a></li><li class="chapter-item "><a href="faq/free.html">Why is this free?</a></li><li class="chapter-item affix "><li class="part-title">Misc</li><li class="chapter-item "><a href="misc/changelog.html">Changelog</a></li><li class="chapter-item "><a href="misc/backlog.html">Backlog</a></li><li class="chapter-item "><a href="misc/doc-feedback.html">Documentation feedback</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Lute manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/jzohrab/lute-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="background"><a class="header" href="#background">Background</a></h1>
+<p>Lute -- Learning Using Texts -- is software for learning foreign languages by reading.</p>
+<p>In summary, you import foreign language texts into Lute, and read through them, creating saved definitions and associations for words as you read.  As you read more, you continue to build your personal dictionary.</p>
+<p>I am currently using Lute to read texts in Spanish, and it works great.  It should work very well for other left-to-right languages like French, German, English, Italian, Classical Chinese, etc.  Lute can also handle right-to-left languages like Persion, and with some extra tools installed, Japanese.</p>
+<p>Lute has a few features which I feel are critical:</p>
+<ul>
+<li><strong>Parent terms.</strong>  For example, in Spanish, "hablo" is a conjugation of "hablar".  With Lute, you can specify these links, and see how different forms are used in the texts you read.</li>
+<li><strong>Images.</strong>  Lute lets you add an image to words.  It's much more fun and intuitive to attach a picture of a cat to a Spanish term "gato".</li>
+</ul>
+<p>In addition, the spirit of Lute is full open-source software:</p>
+<ul>
+<li><strong>Installed locally.</strong>  I am leery of sending an data to a company that may change their direction or disappear, or change their pricing.</li>
+<li><strong>Data control.</strong>  Lute runs on your machine.  You own the data, you can do what you want with it.  Ultimately, I hope for Lute to interoperate seamlessly with other tools, rather than become yet another closed garden.</li>
+<li><strong>Free, no limits.</strong>  I've benefitted hugely from free tools such as Anki -- my hope is that Lute, or a successor, makes an impact.</li>
+</ul>
+<h2 id="lute-alternatives"><a class="header" href="#lute-alternatives">Lute alternatives</a></h2>
+<p>There are other projects out that Lute took inspiration from:</p>
+<ul>
+<li><a href="https://www.lingq.com/">LingQ</a> - a commercial product</li>
+<li><a href="https://github.com/HugoFara/lwt">LWT</a></li>
+<li><a href="https://readlang.com/">Readlang</a></li>
+</ul>
+<blockquote>
+<p>Lute v1 and v2 started in late 2022 as a rewrite of <a href="https://github.com/HugoFara/lwt">LWT (Learning With Texts)</a>, overhauling the architecture, data structure, and algorithms, and adding critical features.  Lute v3 (this project) is a full Python rewrite to address installation and maintenance/sustainability issues.  Lute would never exist without LWT and Hugo's LWT fork, so <strong>a big thanks to those projects.</strong></p>
+</blockquote>
+<h2 id="should-i-use-lute-lwt-hugos-fork-or-something-else"><a class="header" href="#should-i-use-lute-lwt-hugos-fork-or-something-else">Should I use Lute, LWT, Hugo's fork, or something else?</a></h2>
+<p>Sensible question, so here's my take:</p>
+<p>If you <em>just want to use something</em>, I'd recommend <a href="https://www.lingq.com/en/">Lingq</a>!  It's a paid solution, they deal with the software and the headaches, you just pay for it and use it.  They have pre-selected texts and a wide customer base.  With any other software, you're going to pay in <em>time</em>.  I've tried to simplify and streamline Lute to reduce that time investment, but it will always be there.</p>
+<p>If you want to run your own thing on your machine, the options I can see are:</p>
+<ul>
+<li>The <a href="https://sourceforge.net/projects/learning-with-texts/">original LWT project</a> is, as far as I can tell, still <em>massively popular.</em>  Even if the code is old, and it might have bugs or be slow, it has the advantage of being tried-and-tested, and you might find people who can help you with issues.</li>
+<li><a href="https://sourceforge.net/projects/foreign-language-text-reader/">FLTR</a>, a Java project by the same author of LWT.</li>
+<li><a href="https://github.com/HugoFara/lwt">Hugo Fara's LWT fork</a> has taken the original project and refined the code, but has kept the same features and overall design/architecture.</li>
+</ul>
+<h2 id="so-why-even-consider-lute"><a class="header" href="#so-why-even-consider-lute">So why even consider Lute?</a></h2>
+<p>At present (late 2023), the main features differentiating Lute v3 are parent terms and images.  The installation has been drastically simplified -- with the right tools (Python or Docker), you can be up and running in a few minutes.</p>
+<p>Secondary reasons: Lute feels faster and lighter than LWT, and it has just enough features to be useful.  The UI's a bit leaner, if that matters to you.</p>
+<p>More geeky reasons, yet still important (to me): Lute is a full redesign of the original LWT idea using modern code and architecture.  It accomplishes almost the same feature set as LWT at a fraction of the code size and complexity.  It also has a full set of automated tests for project stability.  This might not mean much to regular peeps who just want to learn languages, but from the perspective of project maintainability and growth, it's paramount.</p>
+<p>(Also, if you are into software, like the idea of LWT, and want to contribute to an open-source project, I believe that Lute is a compelling place to start.  It uses Python and Flask, which are good things to know, and has good test coverage so you can hack at things without fear.)</p>
+<h2 id="why-might-you-not-use-lute"><a class="header" href="#why-might-you-not-use-lute">Why might you NOT use Lute?</a></h2>
+<p>As good as Lute is, it might not be for you.  Below are some things that may lead you to decide to postpone using Lute for now:</p>
+<div class="table-wrapper"><table><thead><tr><th>Item</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Single-word audio</td><td>Lute has an audio player for books, but you can't click a single word to hear its audio.</td></tr>
+<tr><td>Support "non-consecutive multiword terms"</td><td>Some languages, like German and Dutch, have terms that that split apart.  For example, in German, the verb "einladen" can be split into "laden ... ein": "Ich lade dich zu meiner Party ein."  I don't think any tool currently solves this well.  See the notes at on <a href="https://github.com/jzohrab/lute/issues/58">this GitHub issue</a>.</td></tr>
+<tr><td>Flashcards/testing</td><td>Lute is designed for reading only, there is no testing.</td></tr>
+<tr><td>Automated or bulk translation</td><td>Lute isn't designed to automatically create bidirectional readers, or to auto-create translations.  You can use Lute's <a href="https://github.com/jzohrab/lute/wiki/Bulk-Term-Import">Term import</a> feature, along with something like Google Sheets, to imitate that.</td></tr>
+</tbody></table>
+</div>
+<p>There are other smaller features that Lute doesn't have yet, but the above are the biggest ones that may be dealbreakers for you at the moment.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="install/install.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="install/install.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,1879 @@
+<!DOCTYPE HTML>
+<html lang="en" class="rust" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lute manual</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">Introduction</a></li><li class="chapter-item "><a href="background.html">Background</a></li><li class="chapter-item affix "><li class="part-title">Installation</li><li class="chapter-item "><a href="install/install.html">Installation</a></li><li class="chapter-item "><a href="install/windows/index.html">Installing on Windows</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="install/windows/windows-10-32-bit-using-python.html">Windows 10 (32 bit) using Python and pip</a></li><li class="chapter-item "><a href="install/windows/windows-using-docker.html">Windows using Docker</a></li></ol></li><li class="chapter-item "><a href="install/mecab.html">MeCab for Japanese</a></li><li class="chapter-item "><a href="install/troubleshooting.html">Troubleshooting</a></li><li class="chapter-item "><a href="install/beta-releases.html">Beta releases</a></li><li class="chapter-item affix "><li class="part-title">Usage</li><li class="chapter-item "><a href="usage/starting-and-stopping.html">Starting and stopping</a></li><li class="chapter-item "><div>Languages</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/languages/defining-languages.html">Defining a language</a></li><li class="chapter-item "><a href="usage/languages/dictionaries.html">Dictionaries</a></li><li class="chapter-item "><a href="usage/languages/word-characters.html">Word characters</a></li></ol></li><li class="chapter-item "><div>Books</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/books/creating-books.html">Creating books</a></li><li class="chapter-item "><a href="usage/books/stats.html">The stats calculation</a></li></ol></li><li class="chapter-item "><div>Reading</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/reading/reading.html">Reading</a></li><li class="chapter-item "><a href="usage/keyboard-bindings.html">Key bindings</a></li><li class="chapter-item "><a href="usage/reading/overlapping-terms.html">Overlapping terms</a></li><li class="chapter-item "><a href="usage/reading/tutorial.html">The demo tutorial</a></li></ol></li><li class="chapter-item "><div>Terms</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/terms/terms.html">Terms</a></li><li class="chapter-item "><a href="usage/terms/parent-terms.html">Parent terms</a></li><li class="chapter-item "><a href="usage/terms/link-parent-child-statuses.html">Linking parent-child statuses</a></li><li class="chapter-item "><a href="usage/terms/bulk-term-import.html">Bulk term import</a></li></ol></li><li class="chapter-item "><div>Themes</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="usage/themes/themes.html">Themes</a></li><li class="chapter-item "><a href="usage/themes/toggling-highlights.html">Toggling highlights</a></li><li class="chapter-item "><a href="usage/themes/custom-styles.html">Custom styles</a></li></ol></li><li class="chapter-item "><a href="usage/audio.html">Adding audio</a></li><li class="chapter-item "><a href="backup/backup.html">Backup</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="backup/restore.html">Restoring backups</a></li></ol></li><li class="chapter-item "><a href="usage/command-line-jobs.html">Command line jobs</a></li><li class="chapter-item "><a href="usage/updating.html">Updating Lute</a></li><li class="chapter-item affix "><li class="part-title">FAQs</li><li class="chapter-item "><a href="faq/help.html">Where can I get help?</a></li><li class="chapter-item "><div>Setup</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="faq/setup/web-server.html">Can I run Lute on a private web server?</a></li><li class="chapter-item "><a href="faq/setup/usb.html">Can I store Lute data on a USB key?</a></li><li class="chapter-item "><a href="faq/adding-basic-auth.html">Can I make Lute secure?</a></li><li class="chapter-item "><a href="faq/online-lute.html">Is there an online version of Lute?</a></li><li class="chapter-item "><a href="faq/v2-to-v3.html">How can I migrate from Lute v2 to v3?</a></li></ol></li><li class="chapter-item "><div>Languages</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="faq/language/add-a-language.html">Can you add language X?</a></li></ol></li><li class="chapter-item "><div>Books</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="faq/books/finding-stuff.html">Where can I find books to import?</a></li><li class="chapter-item "><a href="faq/books/epub-import.html">Why won't my epub import correctly?</a></li><li class="chapter-item "><a href="faq/books/pdf-import.html">Why won't my pdf import correctly?</a></li><li class="chapter-item "><a href="faq/books/utf-8.html">My text file import is giving a "utf-8 encoding" error message</a></li></ol></li><li class="chapter-item "><div>Terms</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="faq/terms/terms-cannot-be-changed-once-created.html">Why can't I change a Term?</a></li><li class="chapter-item "><a href="faq/terms/sentences-only-shown-when-page-is-read.html">Where are my new Term's sentences?</a></li><li class="chapter-item "><a href="faq/terms/term-statuses.html">How should I use statuses?</a></li></ol></li><li class="chapter-item "><a href="faq/import-from-other-systems.html">Can I import data from other systems?</a></li><li class="chapter-item "><a href="faq/why-no-flashcards.html">Why doesn't Lute have flashcards, or an SRS?</a></li><li class="chapter-item "><a href="faq/prioritizing-dev-work.html">How is development work prioritized?</a></li><li class="chapter-item "><a href="faq/free.html">Why is this free?</a></li><li class="chapter-item affix "><li class="part-title">Misc</li><li class="chapter-item "><a href="misc/changelog.html">Changelog</a></li><li class="chapter-item "><a href="misc/backlog.html">Backlog</a></li><li class="chapter-item "><a href="misc/doc-feedback.html">Documentation feedback</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Lute manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/jzohrab/lute-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>LUTE (Learning Using Texts) is a standalone web application that you install on your computer and read texts with.</p>
+<p>Lute contains the core features you need for learning through reading:</p>
+<ul>
+<li>defining languages and dictionaries</li>
+<li>creating and editing texts</li>
+<li>creating terms and multi-word terms</li>
+</ul>
+<p>In addition, Lute has features missing from other tools, which I consider absolutely essential:</p>
+<ul>
+<li>Defining "parent terms".  For example, for Spanish, <em>hablar</em> (to speak) is the root form of <em>habló</em> (he spoke).  In Lute, you can set a root form as the Parent Term, and the definition for that root form is available for all child terms.  Also, when you ask Lute for sample sentences using a term, it includes sentences for all related terms as well.</li>
+<li>Adding word images.  This helps learning, and is more interesting and entertaining than adding reams of text.</li>
+</ul>
+<p><img src="./assets/intro.gif" alt="Lute v3 demo" /></p>
+<p>This 5-minute video gives a very brief demonstration and shows how easy it is to install Lute:</p>
+<iframe width="720" height="615"
+src="https://www.youtube.com/embed/7X3OkcljoCk">
+</iframe>
+<p>Lute has many other features, see the sidebar and browse around.</p>
+<p>Lute is a work in progress, as is all software, but it works.  I've been using it to learn Spanish, and it's super.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="background"><a class="header" href="#background">Background</a></h1>
+<p>Lute -- Learning Using Texts -- is software for learning foreign languages by reading.</p>
+<p>In summary, you import foreign language texts into Lute, and read through them, creating saved definitions and associations for words as you read.  As you read more, you continue to build your personal dictionary.</p>
+<p>I am currently using Lute to read texts in Spanish, and it works great.  It should work very well for other left-to-right languages like French, German, English, Italian, Classical Chinese, etc.  Lute can also handle right-to-left languages like Persion, and with some extra tools installed, Japanese.</p>
+<p>Lute has a few features which I feel are critical:</p>
+<ul>
+<li><strong>Parent terms.</strong>  For example, in Spanish, "hablo" is a conjugation of "hablar".  With Lute, you can specify these links, and see how different forms are used in the texts you read.</li>
+<li><strong>Images.</strong>  Lute lets you add an image to words.  It's much more fun and intuitive to attach a picture of a cat to a Spanish term "gato".</li>
+</ul>
+<p>In addition, the spirit of Lute is full open-source software:</p>
+<ul>
+<li><strong>Installed locally.</strong>  I am leery of sending an data to a company that may change their direction or disappear, or change their pricing.</li>
+<li><strong>Data control.</strong>  Lute runs on your machine.  You own the data, you can do what you want with it.  Ultimately, I hope for Lute to interoperate seamlessly with other tools, rather than become yet another closed garden.</li>
+<li><strong>Free, no limits.</strong>  I've benefitted hugely from free tools such as Anki -- my hope is that Lute, or a successor, makes an impact.</li>
+</ul>
+<h2 id="lute-alternatives"><a class="header" href="#lute-alternatives">Lute alternatives</a></h2>
+<p>There are other projects out that Lute took inspiration from:</p>
+<ul>
+<li><a href="https://www.lingq.com/">LingQ</a> - a commercial product</li>
+<li><a href="https://github.com/HugoFara/lwt">LWT</a></li>
+<li><a href="https://readlang.com/">Readlang</a></li>
+</ul>
+<blockquote>
+<p>Lute v1 and v2 started in late 2022 as a rewrite of <a href="https://github.com/HugoFara/lwt">LWT (Learning With Texts)</a>, overhauling the architecture, data structure, and algorithms, and adding critical features.  Lute v3 (this project) is a full Python rewrite to address installation and maintenance/sustainability issues.  Lute would never exist without LWT and Hugo's LWT fork, so <strong>a big thanks to those projects.</strong></p>
+</blockquote>
+<h2 id="should-i-use-lute-lwt-hugos-fork-or-something-else"><a class="header" href="#should-i-use-lute-lwt-hugos-fork-or-something-else">Should I use Lute, LWT, Hugo's fork, or something else?</a></h2>
+<p>Sensible question, so here's my take:</p>
+<p>If you <em>just want to use something</em>, I'd recommend <a href="https://www.lingq.com/en/">Lingq</a>!  It's a paid solution, they deal with the software and the headaches, you just pay for it and use it.  They have pre-selected texts and a wide customer base.  With any other software, you're going to pay in <em>time</em>.  I've tried to simplify and streamline Lute to reduce that time investment, but it will always be there.</p>
+<p>If you want to run your own thing on your machine, the options I can see are:</p>
+<ul>
+<li>The <a href="https://sourceforge.net/projects/learning-with-texts/">original LWT project</a> is, as far as I can tell, still <em>massively popular.</em>  Even if the code is old, and it might have bugs or be slow, it has the advantage of being tried-and-tested, and you might find people who can help you with issues.</li>
+<li><a href="https://sourceforge.net/projects/foreign-language-text-reader/">FLTR</a>, a Java project by the same author of LWT.</li>
+<li><a href="https://github.com/HugoFara/lwt">Hugo Fara's LWT fork</a> has taken the original project and refined the code, but has kept the same features and overall design/architecture.</li>
+</ul>
+<h2 id="so-why-even-consider-lute"><a class="header" href="#so-why-even-consider-lute">So why even consider Lute?</a></h2>
+<p>At present (late 2023), the main features differentiating Lute v3 are parent terms and images.  The installation has been drastically simplified -- with the right tools (Python or Docker), you can be up and running in a few minutes.</p>
+<p>Secondary reasons: Lute feels faster and lighter than LWT, and it has just enough features to be useful.  The UI's a bit leaner, if that matters to you.</p>
+<p>More geeky reasons, yet still important (to me): Lute is a full redesign of the original LWT idea using modern code and architecture.  It accomplishes almost the same feature set as LWT at a fraction of the code size and complexity.  It also has a full set of automated tests for project stability.  This might not mean much to regular peeps who just want to learn languages, but from the perspective of project maintainability and growth, it's paramount.</p>
+<p>(Also, if you are into software, like the idea of LWT, and want to contribute to an open-source project, I believe that Lute is a compelling place to start.  It uses Python and Flask, which are good things to know, and has good test coverage so you can hack at things without fear.)</p>
+<h2 id="why-might-you-not-use-lute"><a class="header" href="#why-might-you-not-use-lute">Why might you NOT use Lute?</a></h2>
+<p>As good as Lute is, it might not be for you.  Below are some things that may lead you to decide to postpone using Lute for now:</p>
+<div class="table-wrapper"><table><thead><tr><th>Item</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Single-word audio</td><td>Lute has an audio player for books, but you can't click a single word to hear its audio.</td></tr>
+<tr><td>Support "non-consecutive multiword terms"</td><td>Some languages, like German and Dutch, have terms that that split apart.  For example, in German, the verb "einladen" can be split into "laden ... ein": "Ich lade dich zu meiner Party ein."  I don't think any tool currently solves this well.  See the notes at on <a href="https://github.com/jzohrab/lute/issues/58">this GitHub issue</a>.</td></tr>
+<tr><td>Flashcards/testing</td><td>Lute is designed for reading only, there is no testing.</td></tr>
+<tr><td>Automated or bulk translation</td><td>Lute isn't designed to automatically create bidirectional readers, or to auto-create translations.  You can use Lute's <a href="https://github.com/jzohrab/lute/wiki/Bulk-Term-Import">Term import</a> feature, along with something like Google Sheets, to imitate that.</td></tr>
+</tbody></table>
+</div>
+<p>There are other smaller features that Lute doesn't have yet, but the above are the biggest ones that may be dealbreakers for you at the moment.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p>There are currently three different methods to install Lute v3 on your system, with different system requirements:</p>
+<ul>
+<li><a href="install/install.html#using-pip">Python package install using <code>pip</code></a></li>
+<li><a href="install/install.html#using-docker">Docker</a></li>
+<li><a href="install/install.html#from-source">From source</a></li>
+</ul>
+<p>I can't recommend any particular installation method: they all have trade offs.  My personal preference is to install using pip.  If you're studying Japanese and your system supports Docker, I'd recommend using Docker as it the lute3 image includes some other needed dependencies.</p>
+<hr />
+<p><strong>Windows users:</strong> The instructions below are for Unix/Mac users.  Windows installations are <em>similar</em>, but have some challenges, so see <a href="install/./windows/index.html">Installing on Windows</a>.</p>
+<hr />
+<h2 id="using-pip"><a class="header" href="#using-pip">Using pip</a></h2>
+<p>System requirements:</p>
+<ul>
+<li>Python 3.8+ and pip.  Run <code>python3 --version</code> from the terminal to check.</li>
+<li>Japanese learners will also need to <a href="install/./mecab.html">install MeCab</a></li>
+</ul>
+<p>Lute can be installed from <a href="https://pypi.org/project/lute3/">https://pypi.org/project/lute3/</a>.  Here's a summary of the instructions from that page for Linux and Mac, Windows will be similar.  All of these commands are run from the Terminal.</p>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event, 'piptab', 'PipSteps')">Steps</button>
+  <button class="tablinks" onclick="openTab(event, 'piptab', 'PipScriptNix')">Steps as a copy-paste script</button>
+</div>
+<!-- Tab content -->
+<div id="PipSteps" class="tabcontent piptab">
+<p>Create a Lute folder.  This can be anywhere on your system.</p>
+<pre><code>mkdir -p ~/my_lute
+cd ~/my_lute
+</code></pre>
+<p>Set up the virtual environment.  If this gives an error, check your Python installation (see "system requirements").</p>
+<pre><code>python3 -m venv myenv
+source myenv/bin/activate
+</code></pre>
+<p>Install Lute.</p>
+<pre><code>pip install --upgrade lute3
+</code></pre>
+<p>Start Lute.</p>
+<pre><code>python -m lute.main
+</code></pre>
+</div>
+<!-- Tab content -->
+<div id="PipScriptNix" class="tabcontent piptab">
+<pre><code># Create a Lute folder
+mkdir -p ~/my_lute
+cd ~/my_lute
+
+# Set up virtual environment.  If this line gives an error, see "system reqs" above.
+python3 -m venv myenv
+source myenv/bin/activate
+
+# Install
+pip install --upgrade lute3
+
+# Start
+python -m lute.main
+</code></pre>
+</div>
+<p>Now open your web browser to <code>http://localhost:5000</code>.  <strong>Leave the terminal window open while you're using Lute.</strong> When you're done, hit <code>Ctl-C</code> to stop Lute.</p>
+<p>You can start lute on a different port if needed:</p>
+<pre><code>python -m lute.main --port 9876
+</code></pre>
+<h2 id="using-docker"><a class="header" href="#using-docker">Using Docker</a></h2>
+<p>System requirements: Docker<sup class="footnote-reference"><a href="#what-is-docker">1</a></sup></p>
+<p>Lute has a pre-built docker image at <a href="https://hub.docker.com/r/jzohrab/lute3">https://hub.docker.com/r/jzohrab/lute3</a>.  There are notes on that page about the image.</p>
+<p>Using a <code>docker-compose.yml</code> file:</p>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event, 'dockertab', 'DockerSteps')">Steps</button>
+  <button class="tablinks" onclick="openTab(event, 'dockertab', 'DockerScriptNix')">Steps as copy-paste script</button>
+</div>
+<!-- Tab content -->
+<div id="DockerSteps" class="tabcontent dockertab">
+<p>Create a Lute folder.  This can be anywhere on your system.</p>
+<pre><code>mkdir -p ~/my_lute_docker
+cd ~/my_lute_docker
+</code></pre>
+<p>Create some subfolders (These subfolders will be mounted to the container)</p>
+<pre><code>mkdir data
+mkdir backups
+</code></pre>
+<p>Create a file named <code>docker-compose.yml</code> in the <code>my_lute</code> folder with the following content:</p>
+<pre><code>version: '3.9'
+services:
+  lute:
+    image: jzohrab/lute3:latest
+    ports:
+      - 5000:5000
+    volumes:
+      - ./data:/lute_data
+      - ./backups:/lute_backup
+</code></pre>
+<p>Run it:</p>
+<pre><code>docker compose up
+</code></pre>
+</div>
+<!-- Tab content -->
+<div id="DockerScriptNix" class="tabcontent dockertab">
+<pre><code># Create Lute folders
+mkdir -p ~/my_lute_docker
+cd ~/my_lute_docker
+# (These subfolders will be mounted to the container)
+mkdir data
+mkdir backups
+
+# Docker-compose.yml:
+cat &gt; docker-compose.yml &lt;&lt;EOF
+version: '3.9'
+services:
+  lute:
+    image: jzohrab/lute3:latest
+    ports:
+      - 5000:5000
+    volumes:
+      - ./data:/lute_data
+      - ./backups:/lute_backup
+EOF
+
+# Run it:
+docker compose up
+</code></pre>
+</div>
+<p>As with the <code>pip</code> installation, you can change the port if your machine is already using port 5000, e.g.:</p>
+<pre><code>...
+    ports:
+      - 9876:5000
+...
+</code></pre>
+<h2 id="from-source"><a class="header" href="#from-source">From source</a></h2>
+<p>Developers and gearheads can install Lute from source: see the <a href="https://github.com/jzohrab/lute-v3/wiki/Development">Lute repository</a>.</p>
+<p>If you want to develop Lute, you'll also need to <a href="install/./mecab.html">install MeCab</a>.</p>
+<p>If you install from source and tinker with the code, make sure you can update later!  See <a href="install/../usage/updating.html#keeping-up-to-date-when-installing-from-source">Keeping up-to-date when installing from source</a>.</p>
+<hr />
+<div class="footnote-definition" id="what-is-docker"><sup class="footnote-definition-label">1</sup>
+<p>Docker is a containerization platform that allows you to run applications in a sandboxed environment (ref the <a href="https://docs.docker.com/">Docker documentation</a>).  <strong>Docker is not available or is problematic on some systems, particularly Windows.</strong></p>
+</div>
+<script>
+function openTab(evt, tabclass, tabName) {
+  // Hide all tabs.
+  var tabcontent = document.getElementsByClassName(tabclass);
+  for (var i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Show the specified tab.
+  document.getElementById(tabName).style.display = "block";
+
+  if (evt == null) {
+    // First time running this, there is no
+    // "clicked link", so leave all styles as-is.
+    return;
+  }
+  
+  // Remove "active" from all tablinks.
+  var tablinks = document.getElementsByClassName("tablinks");
+  for (var i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Add "active" to clicked tab.
+  evt.currentTarget.className += " active";
+}
+
+openTab(null, 'piptab', 'PipSteps');
+openTab(null, 'dockertab', 'DockerSteps');
+</script>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="windows"><a class="header" href="#windows">Windows</a></h1>
+<p>Windows sometimes makes installations more challenging due to OS variants and lack of support for som tech.  Some users have provided more detailed instructions for Windows:</p>
+<ul>
+<li>The YouTube channel is4ndroide made a <strong>fantastic</strong> video on <a href="https://www.youtube.com/watch?v=qtClbRqBiEM">installing Lute for Windows</a>.<sup class="footnote-reference"><a href="#1">1</a></sup></li>
+<li><a href="install/windows/./windows-10-32-bit-using-python.html">Windows 10 (32 bit) using Python and pip</a></li>
+<li><a href="install/windows/./windows-using-docker.html">Windows using Docker</a></li>
+</ul>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Discord user Keruah noted that you may need to set the Execution Policy for the shell script: "... when you launch the environment script, your Windows may say that you don't have permissions ... open PowerShell, and type <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned</code> to define the policy." -- See <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4">about Execution Policies - PowerShell</a></p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="windows-10-32-bit-using-python"><a class="header" href="#windows-10-32-bit-using-python">Windows 10 (32 bit) using Python</a></h1>
+<p><em>(Instructions courtesy of user <code>axmanalex</code>, so you'll see that username in these notes.)</em></p>
+<p>A summary of what you're doing:</p>
+<ol>
+<li>Download and install <a href="https://www.python.org/downloads/windows/">Python 3.8.0</a>, and put Python on your system <code>PATH</code></li>
+<li>Create a directory in your Documents</li>
+<li>Install Lute into a virtual environment, and start it up.</li>
+</ol>
+<h2 id="detailed-instructions"><a class="header" href="#detailed-instructions">Detailed instructions</a></h2>
+<ol>
+<li>
+<p>Download Python version 3.8.0: <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></p>
+</li>
+<li>
+<p>Install Python with admin privileges, tick "Add python 3.8 to PATH" and click on install.</p>
+</li>
+</ol>
+<p><img src="install/windows/../../assets/install/windows/pip/01_installer.png" alt="image" /></p>
+<ol start="3">
+<li>When the install is done, open CMD with admin privileges and write "python --version" to check it works.  You should see something like the below:</li>
+</ol>
+<p><img src="install/windows/../../assets/install/windows/pip/02_check_python_version.png" alt="image" /></p>
+<ol start="4">
+<li>Still in CMD, type <code>cd C:\Users</code>, hit Enter, then type <code>dir</code> and hit Enter.  Your screen should look like this:</li>
+</ol>
+<p><img src="install/windows/../../assets/install/windows/pip/03_cd_users.png" alt="image" /></p>
+<p>This shows all users on your machine.</p>
+<ol start="5">
+<li>Now you'll <code>cd</code> (change directory) to your personal user directory.  This user's name was <code>axmanalex</code>, so he wrote</li>
+</ol>
+<pre><code>cd axmanalex
+</code></pre>
+<p>and then hit Enter.</p>
+<p>Use your own user name instead of <code>axmanalex</code>, and hit Enter.  Then type <code>dir</code> and hit Enter.  Your screen should look like this:</p>
+<p><img src="install/windows/../../assets/install/windows/pip/04_dir_user.png" alt="image" /></p>
+<ol start="6">
+<li>You'll install Lute in one of your personal folders.  axmanalex chose to install it in <code>Documents</code>, so he wrote</li>
+</ol>
+<pre><code>cd Documents
+</code></pre>
+<p>and hit Enter.</p>
+<p>Replace <code>Documents</code> with where you want to put Lute.</p>
+<ol start="7">
+<li>Make a folder for Lute with the following commands (hit Enter after each line):</li>
+</ol>
+<pre><code>mkdir my_lute
+cd my_lute
+</code></pre>
+<ol start="8">
+<li>Create and activate your "virtual environment" with the following commands (hit Enter after each line):</li>
+</ol>
+<pre><code>python -m venv myenv
+.\myenv\Scripts\activate.bat
+</code></pre>
+<ol start="9">
+<li>Install Lute</li>
+</ol>
+<pre><code>pip install --upgrade lute3
+</code></pre>
+<p>and press Enter.</p>
+<p>Lute will now start to download and install all the components.  Errors will be printed as red text -- if you get any errors, google for solutions or ask for help in Discord.</p>
+<ol start="10">
+<li>Start it up!</li>
+</ol>
+<pre><code>python -m lute.main
+</code></pre>
+<p>and press Enter.  The screen should look something like this:</p>
+<p><img src="install/windows/../../assets/install/windows/pip/05_lute_main.png" alt="image" /></p>
+<p>The server should be running.</p>
+<p>Open any browser (Chrome, Firefox, etc), and go to <a href="http://localhost:5000/">http://localhost:5000/</a>.  It should look like this:</p>
+<p><img src="install/windows/../../assets/install/windows/pip/05_homescreen.png" alt="image" /></p>
+<p>... and that's it, you're up and running!</p>
+<p>Leave this command prompt window running while you're using Lute.</p>
+<h2 id="stopping-lute"><a class="header" href="#stopping-lute">Stopping Lute</a></h2>
+<p>When you're done, if you want to stop the server, press Ctrl + C on your cmd and close it.</p>
+<h2 id="restarting-lute"><a class="header" href="#restarting-lute">Restarting Lute</a></h2>
+<p>To run the server again, open CMD again with admin privileges, and at the prompt enter the following commands (hitting Enter after each line):</p>
+<pre><code>cd C:\Users\ ... path to your lute ...\
+.\myenv\Scripts\activate.bat
+</code></pre>
+<p>Note that the route depends on where you installed your Lute.  Here's what axamanalex writes:</p>
+<pre><code>cd C:\Users\axmanalex\Documents\my_lute
+.\myenv\Scripts\activate.bat
+</code></pre>
+<p>Then start Lute again:</p>
+<pre><code>python -m lute.main
+</code></pre>
+<p>and press Enter.  The server starts again.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="windows-using-docker"><a class="header" href="#windows-using-docker">Windows using Docker</a></h1>
+<p>These are step-by-step instructions for installing Lute using Docker.</p>
+<blockquote>
+<p>Note: this assumes that you have Docker already.  If not, install <a href="https://docs.docker.com/desktop/install/windows-install/">Docker for Windows</a>.  If your system doesn't support Docker, you can't use it!</p>
+</blockquote>
+<h2 id="1-start-docker-desktop"><a class="header" href="#1-start-docker-desktop">1. Start Docker Desktop.</a></h2>
+<p>This starts the service that will actually run the Lute Docker container.</p>
+<h2 id="2-create-the-necessary-folders"><a class="header" href="#2-create-the-necessary-folders">2. Create the necessary folders.</a></h2>
+<ul>
+<li>
+<p>Go to any folder, for example, your "My Documents" folder.</p>
+</li>
+<li>
+<p>Create a folder called <code>my_lute</code>, however you'd like (e.g., right-click on a blank space in the folder location, select "New" then "Folder", and rename the folder <code>my_lute</code>)</p>
+</li>
+<li>
+<p>Double-click on the <code>my_lute</code> folder to enter it.</p>
+</li>
+<li>
+<p>Within that folder, create two more folders, <code>data</code> and <code>backups</code>.</p>
+</li>
+</ul>
+<h2 id="3-create-docker-composeyml"><a class="header" href="#3-create-docker-composeyml">3. Create <code>docker-compose.yml</code></a></h2>
+<ul>
+<li>Open Notepad, and create a new file with the following content:</li>
+</ul>
+<pre><code>version: '3.9'
+services:
+  lute:
+    image: jzohrab/lute3:latest
+    ports:
+      - 5000:5000
+    volumes:
+      - ./data:/lute_data
+      - ./backups:/lute_backup
+</code></pre>
+<ul>
+<li>Save this file into the <code>my_lute</code> folder you created above.</li>
+</ul>
+<h2 id="4-open-a-command-prompt-and-go-to-the-my_lute-folder"><a class="header" href="#4-open-a-command-prompt-and-go-to-the-my_lute-folder">4. Open a command prompt, and go to the <code>my_lute</code> folder</a></h2>
+<blockquote>
+<p>Your system may vary on how to find the command prompt ... Google can help!</p>
+</blockquote>
+<ul>
+<li>
+<p>Open the "Start" menu and type "cmd". Click "Command Prompt".</p>
+</li>
+<li>
+<p>In the command prompt, go to your <code>my_lute</code> directory by using the <code>cd</code> command:</p>
+</li>
+</ul>
+<pre><code>cd "C:\My Documents\my_lute"
+</code></pre>
+<ul>
+<li>To confirm you're in the right spot, at the command prompt type <code>dir</code>.  You should get <em>something</em> like this:</li>
+</ul>
+<pre><code>dir
+Volume in drive C has no label.
+Volume Serial Number is B86A-EF32
+
+Directory of C:\My Documents\my_lute
+
+11/30/2023  01:40 PM &lt;DIR&gt;  .
+11/30/2023  01:40 PM &lt;DIR&gt; ..
+11/30/2023  11:05 AM &lt;DIR&gt; data
+11/30/2023  11:05 AM &lt;DIR&gt; backups
+11/30/2023  01:16 PM docker-compose.yml
+</code></pre>
+<p>I'm totally paraphrasing here ... The important thing is that your directory contains the <code>data</code>, <code>backups</code>, and <code>docker-compose.yml</code> file!</p>
+<h2 id="5-run-it"><a class="header" href="#5-run-it">5. Run it!</a></h2>
+<p>If everything is set up, and your Docker Desktop is running, then in that same command prompt, type this:</p>
+<pre><code>docker compose up
+</code></pre>
+<p>This should kick off the docker image download.  Your terminal will show a bunch of messages showing progress, and Lute will start.</p>
+<h2 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h2>
+<p>Running <code>docker compose up</code> may give some errors.  Unfortunately, every system is different, and here Google is your friend.</p>
+<ul>
+<li>The error "error during connect: this error may indicate that the docker daemon is not running" is most commonly caused by the Docker daemon (the service) not running.  So be sure you've started your Docker Desktop.</li>
+<li>Per the StackOverflow post <a href="https://stackoverflow.com/questions/40459280/docker-cannot-start-on-windows">"Docker cannot start on Windows"</a>, you may need to relaunch your command prompt as "administrator"</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><blockquote>
+<p>Note: this is for non-Docker users studying Japanese only (or devs who are working on Lute)</p>
+</blockquote>
+<p>Lute users who are studying Japanese will need to install MeCab and an appropriate dictionary for parsing Japanese text.  If MeCab is not installed or not on your PATH, you will not be able to parse Japanese texts.</p>
+<h1 id="installation-1"><a class="header" href="#installation-1">Installation</a></h1>
+<h2 id="mac"><a class="header" href="#mac">Mac</a></h2>
+<p>You can install MeCab and a dictionary using <code>homebrew</code>.</p>
+<p>If you don't have homebrew installed, then first <a href="https://brew.sh/">get homebrew</a>.  Then:</p>
+<pre><code>brew install mecab
+brew install mecab-ipadic
+</code></pre>
+<h2 id="windows-1"><a class="header" href="#windows-1">Windows</a></h2>
+<p>The link <a href="https://taku910.github.io/mecab/">https://taku910.github.io/mecab/</a> has a link under Binary package for MS-Windows: mecab-0.996.exe: <a href="https://drive.google.com/uc?export=download&amp;id=0B4y35FiV1wh7WElGUGt6ejlpVXc">ダウンロード</a>.  Verify this link and download.</p>
+<p>If your system is 64 bit, or the above MeCab is not working, try downloading from this link instead: <a href="https://github.com/ikegami-yukino/mecab/releases/download/v0.996.2/mecab-64-0.996.2.exe">MeCab 64bit</a></p>
+<p>Here's a video on installing MeCab for Lute, kindly put together by a Lute user:</p>
+<iframe width="720" height="480"
+src="https://www.youtube.com/embed/w8r51mn0ewQ?si=Z6SaV5TvBnKcKPx9">
+</iframe>
+<p>When installing MeCab, choose the <strong>UTF-8</strong> charset (I'm not sure if another charset will work).</p>
+<p>After installation, add the MeCab bin path to the <code>PATH</code> environment variable.  If you don't know how to edit the Environment Variables, see this video: <a href="https://www.youtube.com/watch?v=ow2jROvxyH4">How to Set Environment Variables in Windows 11</a>.  Usually the MeCab bin path as <code>C:\Program Files\MeCab\bin</code>, but it might be <code>C:\Program Files (x86)\MeCab\bin</code> ... <strong>make sure you use the right one!!</strong></p>
+<h3 id="verifying-on-windows"><a class="header" href="#verifying-on-windows">Verifying on Windows</a></h3>
+<p>To check that your installation and <code>PATH</code> are correct, open up a new command window, and type <code>mecab</code> at the prompt.</p>
+<ul>
+<li>If anything is wrong, you'll get an error like <code>The term 'mecab' is not recognized</code> or similar.  Fix your PATH and try again.</li>
+<li>If you type "mecab" and hit return and nothing happens, then your mecab is actually installed correctly, as mecab is waiting to parse your input.  Hit return, and you should get an "EOS" message -- that's mecab responding with "end of sentence".  Hit Control-C to quit mecab.</li>
+</ul>
+<h3 id="continuing-on"><a class="header" href="#continuing-on">Continuing on</a></h3>
+<p>After installing MeCab, you <em>may</em> need to shut down Lute if it's running, open a new Terminal (command window), and restart Lute, for the PATH changes to take effect.</p>
+<h2 id="linux"><a class="header" href="#linux">Linux</a></h2>
+<p>Use apt-get:</p>
+<pre><code>sudo apt-get update -y
+sudo apt-get install -y mecab mecab-ipadic-utf8
+</code></pre>
+<h1 id="verification"><a class="header" href="#verification">Verification</a></h1>
+<p>Test mecab from the terminal:</p>
+<pre><code>$ mecab
+すもももももももものうち
+すもも    名詞,一般,*,*,*,*,すもも,スモモ,スモモ
+も    助詞,係助詞,*,*,*,*,も,モ,モ
+もも    名詞,一般,*,*,*,*,もも,モモ,モモ
+</code></pre>
+<h1 id="lute-configuration"><a class="header" href="#lute-configuration">Lute configuration</a></h1>
+<p>If everything is installed correctly, you will see a Japanese sample story when you start Lute.  If you <em>don't</em> see that story, then either your MeCab isn't set up correctly, or Lute can't find it.</p>
+<p>Lute uses a library called <a href="https://github.com/buruzaemon/natto-py">natto-py</a> that <em>usually</em> finds and uses MeCab automatically.  If it can't, you'll need to specify the path to your MeCab library in Lute's Settings (top right menu bar).  There is a box for you to enter your MeCab path and do a test parse.  If that test succeeds, you're good to go.  If not, jump into the Lute Discord.</p>
+<h2 id="sample-mecab_path-values"><a class="header" href="#sample-mecab_path-values">Sample <code>MECAB_PATH</code> values</a></h2>
+<blockquote>
+<p>The <a href="https://github.com/buruzaemon/natto-py">natto-py</a> gives a few possibilities for the path, which may just be examples and not really valid.</p>
+</blockquote>
+<div class="table-wrapper"><table><thead><tr><th>System</th><th>MECAB_PATH</th></tr></thead><tbody>
+<tr><td>Mac OS</td><td><code>/usr/local/Cellar/mecab/0.996/lib/libmecab.dylib</code></td></tr>
+<tr><td>bash on UNIX/Linux</td><td><code>/usr/local/lib/libmecab.so</code></td></tr>
+<tr><td>Windows</td><td><code>C:\Program Files\MeCab\bin\libmecab.dll</code></td></tr>
+<tr><td>Lute's docker container</td><td><code>/lib/aarch64-linux-gnu/libmecab.so.2</code></td></tr>
+<tr><td>Linux Mint</td><td><code>/lib/x86_64-linux-gnu/libmecab.so.2</code></td></tr>
+</tbody></table>
+</div>
+<h2 id="finding-the-mecab-library"><a class="header" href="#finding-the-mecab-library">Finding the mecab library</a></h2>
+<blockquote>
+<p>These are various notes about finding MeCab, hopefully it will help you find your MeCab library.</p>
+</blockquote>
+<p>When setting up MeCab in Docker and GitHub, I found the mecab library like this:</p>
+<pre><code>which mecab
+
+# make note of the path, then:
+ldd &lt;/path/returned/by/which/mecab&gt;
+</code></pre>
+<p>returned:</p>
+<pre><code>linux-vdso.so.1 (0x00007ffd280a8000)
+libmecab.so.2 =&gt; /lib/x86_64-linux-gnu/libmecab.so.2 (0x00007f9fe7cdf000)
+libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007f9fe7a00000)
+libstdc++.so.6 =&gt; /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f9fe7600000)
+libm.so.6 =&gt; /lib/x86_64-linux-gnu/libm.so.6 (0x00007f9fe7919000)
+/lib64/ld-linux-x86-64.so.2 (0x00007f9fe7dc4000)
+libgcc_s.so.1 =&gt; /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f9fe7cbb000)
+</code></pre>
+<p>For this OS, the correct library was actually <code>libmecab.so.2</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="troubleshooting-1"><a class="header" href="#troubleshooting-1">Troubleshooting</a></h1>
+<p>Tech is complicated, tech can break.</p>
+<p>As always, Google is your best friend here.</p>
+<h2 id="certificate_verify_failed"><a class="header" href="#certificate_verify_failed">CERTIFICATE_VERIFY_FAILED</a></h2>
+<p>One user (on a Mac, pip install of Lute) reported an error on doing image or dictionary lookups:</p>
+<pre><code>Mac OSX python ssl.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:749)
+</code></pre>
+<p>Likely solutions are outlined in <a href="https://stackoverflow.com/questions/42098126/mac-osx-python-ssl-sslerror-ssl-certificate-verify-failed-certificate-verify">this StackOverflow post</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="beta-releases"><a class="header" href="#beta-releases">Beta releases</a></h1>
+<p>When you do a <code>pip install</code> or <code>--upgrade</code>, pip will automatically use the latest stable release.</p>
+<p>If you're feeling daring, you can also install Lute beta releases.  As Lute's developer/owner, I use the beta releases in my personal prod environment, actually using it to ensure there aren't any problems.  When the beta is good, it's made into a stable release.</p>
+<p>Beta releases end with <code>b&lt;number&gt;</code>, and are betas for the <em>next</em> planned release.  This follows <a href="https://packaging.python.org/en/latest/specifications/version-specifiers/#version-specifiers">the Python recommendation</a>.</p>
+<p>For example, if the current prod release is <code>3.0.4</code>, the next planned release will be <code>3.0.5</code>.  Betas before that release will be <code>3.0.5.b1</code>, <code>.b2</code>, etc, so the numbering will be:</p>
+<pre><code>3.0.4
+3.0.5b1
+3.0.5
+</code></pre>
+<p>To install a beta release, you have to fully specify the version number, e.g.</p>
+<pre><code>pip install lute3==3.0.5.b1
+</code></pre>
+<p>Beta releases are not released to Docker Hub.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="starting-and-stopping"><a class="header" href="#starting-and-stopping">Starting and stopping</a></h1>
+<p>These scripts are on a Mac; Linux will be the same, Windows slightly different.  They're rough guides only, your system may vary.</p>
+<ul>
+<li><a href="usage/starting-and-stopping.html#if-using-pip">Python/pip</a></li>
+<li><a href="usage/starting-and-stopping.html#if-using-docker">Docker</a></li>
+<li><a href="usage/starting-and-stopping.html#if-you-installed-from-source">Source</a></li>
+</ul>
+<p>You can usually <a href="usage/starting-and-stopping.html#startup-scripts">write a script</a> to make your life easier.</p>
+<h2 id="if-using-pip"><a class="header" href="#if-using-pip">If using pip</a></h2>
+<p>Assuming you're using venv:</p>
+<pre><code>cd ~/my_lute
+
+# Activate the virtual environment
+source myenv/bin/activate
+
+# Start
+python -m lute.main
+
+# ... Open your web browser to http://localhost:5000.
+
+# Leave the terminal window open while you're using Lute!
+
+# When done, hit Ctl-C to stop
+
+deactivate
+</code></pre>
+<h3 id="custom-configyml"><a class="header" href="#custom-configyml">Custom config.yml</a></h3>
+<p>By default, Lute stores your data in the appropriate "user data" directory, as determined by the <a href="https://pypi.org/project/platformdirs/">PlatformDirs</a> library.</p>
+<p>If you want to change that or a few other basic settings, you can create a custom <code>config.yml</code> file and store it in the same folder where you run <code>lute.main</code>:</p>
+<ul>
+<li>Copy the
+<a href="https://raw.githubusercontent.com/jzohrab/lute-v3/master/lute/config/config.yml.example">config.yml.example</a>
+to a new file named <code>config.yml</code> in your Lute folder</li>
+<li>edit and save it</li>
+</ul>
+<p>Lute will automatically use that <code>config.yml</code> file when you run <code>python -m lute.main</code>.</p>
+<h3 id="pythonpip-startup-options"><a class="header" href="#pythonpip-startup-options">Python/pip startup options</a></h3>
+<p>The python <code>lute.main</code> defaults for Lute startup should be fine for most people, but some things can be customized.</p>
+<pre><code>$ python -m lute.main --help
+usage: main.py [-h] [--port PORT] [--config CONFIG]
+
+Start lute.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --port PORT      Port number (default: 5000)
+  --config CONFIG  Custom path to override config file, if it's not named config.yml
+</code></pre>
+<p>e.g.</p>
+<pre><code>python -m lute.main --port 9876 --config ./my_personal_config.yml
+</code></pre>
+<h2 id="if-using-docker"><a class="header" href="#if-using-docker">If using Docker</a></h2>
+<p>Assuming you have your docker compose set up:</p>
+<pre><code>cd ~/my_lute_docker
+
+# Run it:
+docker compose up
+
+# ... Open your web browser to http://localhost:5000.
+# When done, hit Ctl-C to stop
+</code></pre>
+<p>You can also run it as a background job:</p>
+<pre><code>docker compose up -d
+# ... use Lute, then to stop it:
+docker compose down
+</code></pre>
+<h2 id="if-you-installed-from-source"><a class="header" href="#if-you-installed-from-source">If you installed from source</a></h2>
+<pre><code>cd ~/my_lute_source
+source .venv/bin/activate
+inv start   # or "python -m lute.main"
+# ... etc.
+# Ctl-C when done.
+deactivate
+</code></pre>
+<h1 id="startup-scripts"><a class="header" href="#startup-scripts">Startup scripts</a></h1>
+<p>Scripting is for everyone!  Well, sort of.  But for tedious commands like the above, it's perfect.  Some ideas below:</p>
+<h2 id="on-a-mac-with-pip"><a class="header" href="#on-a-mac-with-pip">On a Mac, with pip:</a></h2>
+<p>I start Lute with a small <code>start.sh</code> bash script containing the following:</p>
+<pre><code>#!/bin/bash
+
+# Start venv, pull a version from pypi if specified, and start lute with this config.
+
+source .venv/bin/activate
+
+VERSION="$1"
+if [[ -z "$VERSION" ]]; then
+    echo "Using existing install."
+else
+    echo "Pulling version $VERSION"
+    pip install --upgrade lute3==${VERSION}
+fi
+
+open http://localhost:9876
+python -m lute.main --port 9876
+</code></pre>
+<p>With this, I just <code>cd ~/lute; ./start.sh 3.0.0</code>.  The script fetches that version from Pypi, installs it, and starts a browser.  Magic.</p>
+<h2 id="on-windows-with-pip"><a class="header" href="#on-windows-with-pip">On Windows, with pip:</a></h2>
+<p>Open Notepad, and paste the following into a new file:</p>
+<pre><code>@echo
+:: edit the file path below!!
+cd **LUTE-FOLDER-FILE-PATH**
+call myenv\Scripts\activate
+
+:: Start a new Command Prompt instance with the activated virtual environment
+start cmd /k python -m lute.main
+</code></pre>
+<p>Save that file as, say, <code>lute.bat</code>.  Create a shortcut to this .bat file, and put it anywhere, pin it, etc as needed.  Then you can start Lute with by double-clicking this file.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="defining-a-language"><a class="header" href="#defining-a-language">Defining a language</a></h1>
+<p>When creating a new Language, you can use one of the existing languages as a template by selecting the dropdown at the top of the form and clicking "go."  Sensible defaults are set.</p>
+<p>Then add dictionaries, and you're pretty much set.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dictionaries"><a class="header" href="#dictionaries">Dictionaries</a></h1>
+<p>You can add multiple dictionaries for Term and Sentence lookups as part of your Language definition.</p>
+<img width="100%" alt="Dictionaries" src="usage/languages/../../assets/usage/languages/dicts_01.png">
+<p>Term dictionaries are shown as tabs in the term form.</p>
+<p>Sentence dictionaries are used during sentence translation, when you hover over a term and hit the <code>t</code> hotkey.  If you have multiple Sentence dictionaries, you can cycle through them by repeatedly hitting <code>t</code> (or <code>Shift + t</code> for the paragraph).</p>
+<h2 id="embedded-or-popup"><a class="header" href="#embedded-or-popup">Embedded or Popup</a></h2>
+<p>Dictionaries can either be configured to be "Embedded" or "Pop-up".</p>
+<p>Some sites, like DeepL and Google Translate, don't work when embedded within sites.  These sites have to be viewed in separate pop-up windows, outside of Lute itself.</p>
+<p>You can test a dictionary by clicking the small "out arrow" icon next to the dictionary.  For example, here I've tried to set DeepL.com as an embedded dictionary, which they don't allow:</p>
+<img width="100%" alt="image" src="usage/languages/../../assets/usage/languages/dicts_02.png">
+<h2 id="the-dictionary-url"><a class="header" href="#the-dictionary-url">The dictionary URL</a></h2>
+<p>The dictionary link entry on the form must contain "###".  Lute substitutes that with the actual term you're looking up.</p>
+<p>Some dictionaries don't take parameters at all.  For example, <code>https://www.cherokeedictionary.net/###</code> gives an error.  In these cases, add a fake parameter, e.g. <code>https://www.cherokeedictionary.net?lute=###</code>.[^linkhack]</p>
+<h2 id="misc-notes"><a class="header" href="#misc-notes">Misc notes</a></h2>
+<ul>
+<li>Reorder the dictionaries by dragging the drag handle on the left hand side up and down.</li>
+<li>Some dictionary sites may occasionally be unavailable, so you can deactivate them in your language by un-checking the checkbox.</li>
+<li>Delete dictionaries with the delete button, and add a new one with the green plus.</li>
+<li>Save the Language to save your dictionary changes.</li>
+</ul>
+<hr />
+<p>[^linkhack] This is a hack.  There's an issue to remove the requirement for a ### parameter.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="word-characters"><a class="header" href="#word-characters">Word characters</a></h1>
+<p>The "Word characters" field in the language form tells Lute how to find words in your texts.  In most cases<sup class="footnote-reference"><a href="#other_cases">1</a></sup>, Lute uses "regular expressions", or pattern matchers, to find words in a text.</p>
+<p>The default value, "a-zA-ZÀ-ÖØ-öø-ȳáéíóúÁÉÍÓÚñÑ", covers most romance languages such as English, French, Spanish, etc.</p>
+<p>For other languages, like Russian (word characters = "А-Яа-яЁё"), you have to find the characters.  This can be tricky, so here are some thoughts:</p>
+<ul>
+<li>search Google for "<your language> character python regex".  E.g. "russian character python regex" gives a few hits.</li>
+<li>search "<your language> unicode range"</li>
+<li>if you've <em>already</em> searched and can't figure it out, that's what Discord is for!</li>
+</ul>
+<h2 id="understanding-the-word-characters-field"><a class="header" href="#understanding-the-word-characters-field">Understanding the "Word characters" field</a></h2>
+<p>The word characters can contain individual characters or a range of characters.  For example, the following are equivalent:</p>
+<pre><code>abcdef
+</code></pre>
+<pre><code>a-f
+</code></pre>
+<p>As you can see, the default value <code>a-zA-ZÀ-ÖØ-öø-ȳáéíóúÁÉÍÓÚñÑ</code> contains all lowercase a through z, all uppercase A through Z, and whatever the heck those other character ranges are ... plus some extra accented characters.</p>
+<h2 id="unicode-word-characters"><a class="header" href="#unicode-word-characters">Unicode word characters</a></h2>
+<p>Many languages use non-Latin characters.  These are stored as unicode<sup class="footnote-reference"><a href="#what_is_unicode">2</a></sup>.  For example, here's Sanskrit:</p>
+<pre><code>a-zA-Z\u0900-\u0963\u0966-\u097F
+</code></pre>
+<p>The entries <code>\u0900</code>, <code>\u0963</code>, etc are all python equivalents for the actual Unicode character points <code>U+0900</code>, <code>U+0963</code>, etc.</p>
+<p>The <code>\u</code> indicator (called an "escape sequence") expects exactly four hexadecimal digits following it.  If your unicode character has 5 digits (e.g. <code>U+1F438</code>), <code>\u</code> won't work: you'd need to prepad the digits with 0, and have 8 digits.</p>
+<ul>
+<li><code>U+0963</code>: <code>\u0963</code> is valid.</li>
+<li><code>U+1F438</code>: <code>\u1F438</code> is <em>not</em> valid, <code>\U0001F438</code> works.</li>
+</ul>
+<p>For example, for Cuneiform, the character range is:</p>
+<pre><code>\U00012000-\U000123FF\U00012400-\U0001247F\U00012480-\U0001254F
+</code></pre>
+<p>Which breaks down to: <code>U+12000</code> to <code>U+123FF</code> inclusive, plus <code>U+12400</code> to <code>U1247F</code> inclusive, plus <code>U+12480</code> to <code>U+1254F</code> inclusive.</p>
+<hr />
+<div class="footnote-definition" id="other_cases"><sup class="footnote-definition-label">1</sup>
+<p>Japanese uses MeCab for parsing.</p>
+</div>
+<div class="footnote-definition" id="what_is_unicode"><sup class="footnote-definition-label">2</sup>
+<p>From <a href="https://en.wikipedia.org/wiki/Unicode">Wikipedia</a>: "Unicode ... is a text encoding standard maintained by the Unicode Consortium designed to support the use of text written in all of the world's major writing systems."</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="creating-books"><a class="header" href="#creating-books">Creating books</a></h1>
+<h2 id="from-input-or-files"><a class="header" href="#from-input-or-files">From input or files</a></h2>
+<p>You can create books by importing files (.txt or .epub) or just entering text into a text box.</p>
+<h2 id="importing-web-pages"><a class="header" href="#importing-web-pages">Importing web pages</a></h2>
+<p>From Books &gt; Import web page, you can import a new text to read in your target language.</p>
+<p>For example, a good source for Spanish news is bbc.com/mundo.  If you find a story that's interesting:</p>
+<img width="70%" src="usage/books/../../assets/usage/books/creating_01.png">
+<p>Copy the URL <code>https://www.bbc.com/mundo/noticias-65130863</code> and paste it in the text box:</p>
+<img width="70%" src="usage/books/../../assets/usage/books/creating_02.png">
+<p>Lute throws the whole page content into a new Book import screen:</p>
+<img width="70%" src="usage/books/../../assets/usage/books/creating_03.png">
+<p>You <strong>will</strong> want to edit the Text box content, because the import pulls in pretty much everything.  It's not perfect, but it lets you quickly get new content loaded.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-stats-calculation"><a class="header" href="#the-stats-calculation">The stats calculation</a></h1>
+<p>In your Book listing, Lute shows the word count for each book, and a small chart of the statuses for five pages of the book text, showing how tough the next few pages will be to work through.</p>
+<p>For example, after reading the first page of the Tutorial and marking various terms as statuses 1 through 5, the listing looks like this (the first row is the Tutorial, the second is the Tutorial follow-up):</p>
+<img width="70%" alt="image" src="usage/books/../../assets/usage/books/stats_01.png">
+<p>This shows that in the next five pages, about 70% of the words are brand new, 15% are well-known or ignored, etc.  This might let you know how much effort you have ahead of you!</p>
+<h2 id="updating-the-stats"><a class="header" href="#updating-the-stats">Updating the stats</a></h2>
+<p>Note that in the above, the stats on the second row -- the Tutorial follow-up -- are still shown as 100% unknown.  Stats for a book aren't calculated until you open it for reading, because the calculation can be quite slow; however, you can refresh the stats for all active books by clicking the small circular arrows in the header:</p>
+<img width="70%" alt="image" src="usage/books/../../assets/usage/books/stats_02.png">
+<h2 id="sorting"><a class="header" href="#sorting">Sorting</a></h2>
+<p>Clicking on the "sort" arrows in the Statuses column sort the rows by the unknown percentage only, so you can roughly work through certain books first, if you'd like.</p>
+<h2 id="note-for-for-character-based-languages"><a class="header" href="#note-for-for-character-based-languages">Note for for character-based languages</a></h2>
+<p>Suppose you're studying Chinese, a character-based language, and are reading the text "這是東西".  If you you define "東西" (the last two characters of the text) as a Term, Lute will say that you now know 33% of the text:</p>
+<ul>
+<li>"這" is unknown</li>
+<li>"是" is unknown</li>
+<li>"東西" is considered "known", regardless of its status (1-5 etc)</li>
+</ul>
+<h2 id="why-lute-only-calculates-stats-using-a-sample-of-the-text"><a class="header" href="#why-lute-only-calculates-stats-using-a-sample-of-the-text">Why Lute only calculates stats using a sample of the text.</a></h2>
+<p>Your question: Can't Lute calculate the percent using the whole text?  Answer: Yes, but it's too slow for long texts.</p>
+<p>Since multi-word Terms can overlap or hide other terms, Lute needs to work through the full display of each text.  For longer novels (e.g. 200K+ words), the full calculation is too slow to be usable.  I've considered various simplifications to the calculation, such as ignoring multi-word Terms.  This makes the checks faster, but wildly inaccurate in some cases.</p>
+<p>As a compromise, I figured that a sample of a handful of pages would be sufficient.  In real life, when considering a book, I just check a few pages to see if it's way above my level, I don't need to flip through every page.  That's the approach that Lute takes, and it seems sensible.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reading"><a class="header" href="#reading">Reading</a></h1>
+<p>Lute comes with a Tutorial demo (you can find the text <a href="usage/reading/./tutorial.html">here</a>).  Here's a very brief overview of the key features:</p>
+<p><em>(Note: This page is slightly out of date, but the ideas are the same)</em></p>
+<p>When you first open a text, it will look something like this:</p>
+<p><img src="usage/reading/../../assets/usage/reading/reading_01.png" alt="image" /></p>
+<p>All of these words are blue because they are "unknown" - according to Lute, this is the first time you're seeing these words.</p>
+<p>If you click on a word, you can add a definition and some detail:</p>
+<p><img src="usage/reading/../../assets/usage/reading/reading_02.png" alt="image" /></p>
+<p>When you save the term, the reading pane is updated:</p>
+<p><img src="usage/reading/../../assets/usage/reading/reading_03.png" alt="image" /></p>
+<p>If you hover over the word, the information is shown in a pop-up:</p>
+<p><img src="usage/reading/../../assets/usage/reading/reading_04.png" alt="image" /></p>
+<p>When you are done reading a page, you can mark any remaining terms as "well known" using the checkmark buttons at the bottom of the page:</p>
+<p><img src="usage/reading/../../assets/usage/reading/reading_05.png" alt="image" /></p>
+<p>The green checkmark sets any blue items to "well known", the checkmark with the "&gt;" sets all to well-known and moves to the next page.</p>
+<p>Here's what the page looks like after the green checkmark is clicked:</p>
+<p><img src="usage/reading/../../assets/usage/reading/reading_06.png" alt="image" /></p>
+<p>Lute has other features like hotkeys to quickly set term statuses (New, Learning, Well-known, Ignore), bulk updates, parent terms, term images, etc.  These are documented in the Tutorial, which you can walk through when you first install Lute.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="key-bindings"><a class="header" href="#key-bindings">Key bindings</a></h1>
+<blockquote>
+<p>Note: Before using the keyboard you must set the focus within the frame by clicking once on the frame.</p>
+</blockquote>
+<p>Some of these actions refer to the "current word" - that's either the word you're hovering over, or have clicked.</p>
+<h2 id="navigation"><a class="header" href="#navigation">Navigation</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Action</th></tr></thead><tbody>
+<tr><td><code>Right</code></td><td>Move to next word</td></tr>
+<tr><td><code>Left</code></td><td>Move to previous word</td></tr>
+<tr><td><code>Esc</code></td><td>Reset marked term(s)</td></tr>
+</tbody></table>
+</div>
+<h2 id="misc-actions"><a class="header" href="#misc-actions">Misc actions</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Action</th></tr></thead><tbody>
+<tr><td><code>t</code></td><td>Translate the sentence of the current word</td></tr>
+<tr><td><code>Shift</code> + <code>t</code></td><td>Translate the paragraph of the current word</td></tr>
+<tr><td><code>c</code></td><td>Copy the sentence of the current word to the clipboard</td></tr>
+<tr><td><code>Shift</code> + <code>c</code></td><td>Copy the paragraph of the current word to the clipboard</td></tr>
+<tr><td><code>m</code></td><td>Change to the next theme</td></tr>
+<tr><td><code>h</code></td><td>Toggle highlights</td></tr>
+<tr><td><code>f</code></td><td>Toggle focus mode</td></tr>
+</tbody></table>
+</div>
+<h2 id="updating-status"><a class="header" href="#updating-status">Updating status</a></h2>
+<p>You can edit the status of the current word with a keystroke:</p>
+<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Set status of marked term(s) to</th></tr></thead><tbody>
+<tr><td><code>1</code> - <code>5</code></td><td>1 (Learning) to 5 (Learned)</td></tr>
+<tr><td><code>i</code></td><td>"Ignored"</td></tr>
+<tr><td><code>w</code></td><td>"Well Known"</td></tr>
+</tbody></table>
+</div>
+<p>You can also "bulk update" statuses by holding down Shift and clicking with the mouse.  All of the underlined terms will then be affected when you hit 1, 2, etc.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overlapping-terms"><a class="header" href="#overlapping-terms">Overlapping terms</a></h1>
+<p>Sometimes Terms you define may "overlap", so Lute displays those with an extra indicator.</p>
+<p>For example, suppose you're studying Spanish, and you have already defined two Terms: "tengo un gato", and "un gato bueno y gordo" (with different Statuses, one is new, the other is easy).  If you were reading a book with text "Tengo un gato bueno y gordo.", Lute displays that like this:</p>
+<img width="293" alt="image" src="usage/reading/../../assets/usage/reading/overlap_01.png">
+<p>The small "+" sign next to the "bueno y gordo" indicates that the full Term "un gato bueno y gordo" is _partially overlapped by the preceding term.</p>
+<p>If you hover over the "+ bueno y gordo", you'll see the full term:</p>
+<img width="313" alt="image" src="usage/reading/../../assets/usage/reading/overlap_02.png">
+<p>and clicking on it will open the Term form with the full term as well:</p>
+<img width="592" alt="image" src="usage/reading/../../assets/usage/reading/overlap_03.png">
+<p>If you don't like the "+" sign as the overlap indicator, you can customize it using a custom style:</p>
+<pre><code>/* content in data/custom_styles/custom_styles.css */
+span.overlapped:before {
+   content: "\00BA";
+   color: green;
+}
+</code></pre>
+<p>which gives this:</p>
+<img width="300" alt="image" src="usage/reading/../../assets/usage/reading/overlap_04.png"><div style="break-before: page; page-break-before: always;"></div><h1 id="the-demo-tutorial"><a class="header" href="#the-demo-tutorial">The demo tutorial</a></h1>
+<p>Lute comes with an interactive tutorial when first installed.  The tutorial text is in the the Lute repository:</p>
+<ul>
+<li><a href="https://github.com/jzohrab/lute-v3/blob/master/lute/db/demo/stories/tutorial.txt">The tutorial</a></li>
+<li><a href="https://github.com/jzohrab/lute-v3/blob/master/lute/db/demo/stories/tutorial_follow_up.txt">The follow-up</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="terms"><a class="header" href="#terms">Terms</a></h1>
+<p>On the Terms page (Home &gt; Terms), Lute lists all the terms you've defined.</p>
+<h2 id="filtering"><a class="header" href="#filtering">Filtering</a></h2>
+<p>Lute shows all terms you've created, except for ones you've marked as "Ignored".</p>
+<p>Sometimes it's useful to filter terms further.  The green plus sign next to "Filters" reveals extra filters you can apply.  For example, the filter below only includes parent terms created in the last 4 days up to "Learn (3)" status:</p>
+<img width="520" alt="image" src="usage/terms/../../assets/usage/terms/terms_01.png">
+<p>One possible use of filtering might be to filter for terms with Age max = 0, Status max = New after a day's reading, so you can do a quick review of new material.</p>
+<p>Filters are applied <em>before</em> the "Search" text is applied.</p>
+<h2 id="searching"><a class="header" href="#searching">Searching</a></h2>
+<p>You can search for terms using the "Search" text box.  You can use the special characters "^" and "$" to mark the start and end of strings, respectively.  This is useful when searching for terms with similar root forms.</p>
+<p>Examples:</p>
+<div class="table-wrapper"><table><thead><tr><th>Search</th><th>Returns</th></tr></thead><tbody>
+<tr><td>at</td><td><strong>at</strong>, <strong>at</strong>tack, c<strong>at</strong></td></tr>
+<tr><td>^at</td><td><strong>at</strong>, <strong>at</strong>tack</td></tr>
+<tr><td>at$</td><td><strong>at</strong>, c<strong>at</strong></td></tr>
+</tbody></table>
+</div>
+<h2 id="csv-export"><a class="header" href="#csv-export">CSV Export</a></h2>
+<p>At the bottom of the term table listing is an "Export CSV" button.  This exports all the Terms that match the current filters and search.</p>
+<blockquote>
+<p>The CSV export is a simple tool that doesn't include sample sentences or images for the terms ... see <a href="https://github.com/jzohrab/lute-v3/issues/3">this issue</a> for a description of a better feature that would take more work.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="parent-terms"><a class="header" href="#parent-terms">Parent terms</a></h1>
+<p>Lute lets you define "Parent Terms", which is helpful for things like verb infinites, adjectives, etc.  For example, "to have" could be the parent term for "has".  This is useful because you only need to define things like root term meanings at the root level.</p>
+<p>Here's the popup for a term with a parent term:</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_01.png" alt="image" /></p>
+<h1 id="setting-an-existing-term-as-a-parent"><a class="header" href="#setting-an-existing-term-as-a-parent">Setting an existing term as a parent</a></h1>
+<p>In the example below, you've already defined the term "have", and you're now creating a new term for "has".  In the "parent term" text box, if you type "ha", Lute then suggests the predefined term "have" as the parent:</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_02.png" alt="image" /></p>
+<h1 id="defining-a-term-and-a-new-parent"><a class="header" href="#defining-a-term-and-a-new-parent">Defining a term and a new parent</a></h1>
+<blockquote>
+<p>Note the UI has changed slightly since this was written, but the idea is still the same.</p>
+</blockquote>
+<p>In the example below, you're defining the term "dogs", and creating the parent term "dog" at the same time ("dog" wasn't defined previously):</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_03.png" alt="image" /></p>
+<p>Here's the popup for the "dogs" term:</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_04.png" alt="image" /></p>
+<p>And for "dog":</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_05.png" alt="image" /></p>
+<p>Note that the new parent term ("dog") gets the exact same information as the new term ("dogs"):</p>
+<div class="table-wrapper"><table><thead><tr><th>term</th><th>details</th></tr></thead><tbody>
+<tr><td>dogs</td><td><img src="usage/terms/../../assets/usage/terms/parent_06.png" alt="image" /></td></tr>
+<tr><td>dog</td><td><img src="usage/terms/../../assets/usage/terms/parent_07.png" alt="image" /></td></tr>
+</tbody></table>
+</div>
+<p>While this might feel counter-intuitive, I've found that it provides the fastest input and term definition for Lute as I'm reading.  If I need, I can go back to the parent term later and clean things up.</p>
+<h1 id="click-a-parent-tag-to-edit-the-parent-term"><a class="header" href="#click-a-parent-tag-to-edit-the-parent-term">Click a Parent tag to edit the parent Term</a></h1>
+<p>When you click on a Term with parents, the parent tags are clickable, so you can quickly move to the parent Term.</p>
+<p>For example, I've clicked on the term "existing" to show its form:</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_08.png" alt="image" /></p>
+<p>If I click on the parent tag "exist", the form moves to that Term:</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_09.png" alt="image" /></p>
+<p>I can then edit and save that parent term normally.</p>
+<h1 id="multiple-parents"><a class="header" href="#multiple-parents">Multiple parents</a></h1>
+<p>Sometimes, a word might have multiple parents.  For example, in Czech, "hoře" is a declension of "hora", the regular form of "hoře", and a conjugation of "hořet".  In Spanish, "se sienta" could be a conjugation of "sentarse" or "sentirse".  Each parent is entered as a separate tag.  You can add multiple parents by typing them and hitting space or return.</p>
+<h1 id="bulk-assigning-parents"><a class="header" href="#bulk-assigning-parents">Bulk assigning parents</a></h1>
+<p>You can bulk assign terms to a <em>pre-defined</em> parent from the Terms screen (Home &gt; Terms).  Below shows how it's done:</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_10.png" alt="image" /></p>
+<p>I had several terms which should be mapped to the <em>pre-defined</em> parent term "to have" (the infinitive).</p>
+<h2 id="1-search-for-the-terms-you-want"><a class="header" href="#1-search-for-the-terms-you-want">1. Search for the terms you want</a></h2>
+<p>Filter for terms with the Search box in the top right.</p>
+<p>In that box, I entered "^ha".  "^" is a special search character that says "the start of a word", so "^ha" means "show every term that starts with "ha".  If I had entered just "ha", terms such as "chat", "that", and "shorthair" would have been included.</p>
+<h2 id="2-check-the-boxes-next-to-the-terms-you-want-to-assign"><a class="header" href="#2-check-the-boxes-next-to-the-terms-you-want-to-assign">2. Check the boxes next to the terms you want to assign</a></h2>
+<p>I clicked "has", "had", etc.</p>
+<h2 id="2-set-the-parent"><a class="header" href="#2-set-the-parent">2. Set the parent</a></h2>
+<p>In the "Set parent" box, I typed "to" and Lute showed "to have".  When I click "go", those terms will be assigned to the parent:</p>
+<p><img src="usage/terms/../../assets/usage/terms/parent_11.png" alt="image" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linking-parent-child-statuses"><a class="header" href="#linking-parent-child-statuses">Linking parent-child statuses</a></h1>
+<blockquote>
+<p>Feature introduced in Lute 3.1.0.</p>
+</blockquote>
+<p>With "linked parent-child statuses", so that you can update whole families of terms at once.</p>
+<p>For example, if you're studying Spanish, you have the verb "comer" and all of its conjugations: como, comes, come, ... (comí, comías, comíamos, ... (comiera, comieras, comiéramos ... etc!!)).  At a certain point in your learning, these all merge into a single unit in your mind, perhaps with one or two exceptions, so you can link statuses to simplify updates and help organize your knowledge.</p>
+<h2 id="linking-statuses"><a class="header" href="#linking-statuses">Linking statuses</a></h2>
+<p>The Term form has a "Link to parent" checkbox.  It is disabled for Terms that have zero or multiple parents:</p>
+<img width="70%" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_01.png">
+<p>If you add a single parent to a Term, the "Link to parent" checkbox is enabled and checked by default.  If the parent exists and has a status, the child inherits the status of its parent:</p>
+<img width="70%" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_02.png">
+<p>Note: the parent term does <em>not</em> have a "link children" checkbox, the linking is all handled by the children.</p>
+<h2 id="updating-the-status-while-reading"><a class="header" href="#updating-the-status-while-reading">Updating the status while reading</a></h2>
+<p>Once the Term with linked status is saved, updating the child status propagates to the parent, and vice-versa.  For example, during reading, if I hit the "4" hotkey to update the status of "como", the parent "comer" is also updated:</p>
+<img width="225" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_03.png">
+<p>If other terms also had their statuses linked to that same parent, they would get updated as well.  Everything is tracked together, as a single unit.</p>
+<h2 id="dont-link-difficult-forms"><a class="header" href="#dont-link-difficult-forms">Don't link difficult forms</a></h2>
+<p>You don't have to link all children to their parent, of course.  Some verb forms may be more difficult than others.  For example, in Spanish, the present tense is usually learned quite early -- "yo como" (I eat) is the present tense of "comer" (to eat) -- but different tenses might be more difficult -- "comiera" is a more advanced form of "comer" (it's the subjunctive).  So you might choose to <em>not</em> link the "comiera" term's status to its parent:</p>
+<img width="70%" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_04.png">
+<p>Then updates to the parent term would only propagate to child terms that have linked statuses:</p>
+<img width="380" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_05.png">
+<h2 id="status-can-only-be-linked-for-single-parent-terms"><a class="header" href="#status-can-only-be-linked-for-single-parent-terms">Status can only be linked for single-parent Terms</a></h2>
+<p>If you add more than one parent, the "link status" checkbox is unchecked and deactivated, because Lute can't tell which parent this term should follow:</p>
+<img width="70%" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_06.png">
+<h2 id="bulk-linking-of-parents-and-children"><a class="header" href="#bulk-linking-of-parents-and-children">Bulk linking of parents and children</a></h2>
+<p>If you've been using Lute prior to v3.1.0, you might have a bunch of terms and parents, and may want to do a bulk update.  Lute currently doesn't have a "web only" form to bulk update your existing data, but you can achieve the same effect with the CSV export and import as a workaround.</p>
+<p>First, from the home screen menu, choose "Terms" to see a listing of terms.  Set the filters as you wish, such as a Language filter, and then click "Export CSV":</p>
+<img width="100%" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_07.png">
+<p>Edit that CSV file (for example using Google sheets), putting "y" the "link_status" column for the terms that you want to link to their parents:</p>
+<img width="100%" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_08.png">
+<p>Save that CSV file, and import it into Lute using "Import Terms" from the menu.  Select "Update existing terms" so that your terms will be updated:</p>
+<img width="70%" alt="image" src="usage/terms/../../assets/usage/terms/link_pc_status_09.png">
+<p>You may have to adjust the statuses again as you read, but when you do the entire "term family" will be updated.</p>
+<!--
+Sample story for demo and images.
+=================================
+
+Link statuses
+
+A ella le gusta comer.
+
+Yo como una manzana.
+
+Ayer, le dije a ella que comiera la manzana.
+-->
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bulk-term-import"><a class="header" href="#bulk-term-import">Bulk term import</a></h1>
+<p>If you have existing vocabulary lists, you can bulk import new Terms, or update existing Terms, with a properly-formatted CSV file.</p>
+<p>From the menu, click Terms &gt; Import Terms.  Choose the CSV file, and indicate if you want to import new Terms, update existing ones, or both.</p>
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+<ul>
+<li><a href="usage/terms/bulk-term-import.html#csv-file-format">CSV File Format</a>
+<ul>
+<li><a href="usage/terms/bulk-term-import.html#field-notes">Field notes</a></li>
+<li><a href="usage/terms/bulk-term-import.html#examples">Examples</a>
+<ul>
+<li><a href="usage/terms/bulk-term-import.html#ex-1---single-record">ex. 1 - single record</a></li>
+<li><a href="usage/terms/bulk-term-import.html#ex-2---carriage-return-in-field">ex. 2 - carriage return in field</a></li>
+<li><a href="usage/terms/bulk-term-import.html#ex-3---parent-record">ex. 3 - parent record</a></li>
+<li><a href="usage/terms/bulk-term-import.html#ex-4---translation-only">ex. 4 - translation only</a></li>
+<li><a href="usage/terms/bulk-term-import.html#ex-5---multiple-parents">ex. 5 - multiple parents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="usage/terms/bulk-term-import.html#creating-csv-files">Creating CSV files</a></li>
+<li><a href="usage/terms/bulk-term-import.html#importing-new-terms-as-unknown">Importing new terms as "Unknown"</a></li>
+</ul>
+<!-- TOC end -->
+<h2 id="csv-file-format"><a class="header" href="#csv-file-format">CSV File Format</a></h2>
+<ul>
+<li>The CSV file should be properly formatted; i.e., carriage returns in fields are allowed, but the field should be enclosed in quotes.</li>
+<li>The first line of the CSV file <strong>must</strong> have the field headings: <code>language, term</code></li>
+<li>The first line of the CSV file may also have any of these headings: <code>translation, parent, status, tags, pronunciation, link_status</code></li>
+<li>Fields can be in any order.</li>
+<li>An error is raised if the file contains other headings.</li>
+</ul>
+<h3 id="field-notes"><a class="header" href="#field-notes">Field notes</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Required</th><th>Notes</th></tr></thead><tbody>
+<tr><td>language</td><td>Yes</td><td>Must be the name of one of the languages you have saved in Lute</td></tr>
+<tr><td>term</td><td>Yes</td><td>The new Term</td></tr>
+<tr><td>translation</td><td></td><td></td></tr>
+<tr><td>parent</td><td></td><td>The "parent" of this term (e.g., an infinitive form of a verb, etc.).  This will automatically create the parent term if it doesn't exist already, or if it's not created in the same import file.  If a term has multiple parents, you can enclose the list in quotes, and comma-separate the parents (e.g., the term <code>se sienta</code> could have parents <code>"sentirse, sentarse"</code>.</td></tr>
+<tr><td>status</td><td></td><td>One of 1, 2, 3, 4, 5, W (for Well-Known), or I (for Ignored).  If missing, it's set to 1</td></tr>
+<tr><td>link_status</td><td></td><td>Y or blank.  If Y and this term has a single parent, its status is linked to the parent status</td></tr>
+<tr><td>tags</td><td></td><td>A comma-delimited list of tags to add to the Term</td></tr>
+<tr><td>pronunciation</td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<h4 id="ex-1---single-record"><a class="header" href="#ex-1---single-record">ex. 1 - single record</a></h4>
+<p>The simplest example.  Note that the tags <code>animal, noun</code> must be enclosed in quotes.</p>
+<pre><code>language, term, translation, parent, status, tags, pronunciation
+Spanish,gato,cat,,W,"animal, noun",GA-toh
+</code></pre>
+<h4 id="ex-2---carriage-return-in-field"><a class="header" href="#ex-2---carriage-return-in-field">ex. 2 - carriage return in field</a></h4>
+<pre><code>language,term,translation,parent,status,tags,pronunciation
+Spanish,gato,"A cat.
+A house cat.",,1,"animal, noun",GA-toh
+</code></pre>
+<p>This would create a term "gato" with the translation "A cat (carriage return) A house cat".</p>
+<h4 id="ex-3---parent-record"><a class="header" href="#ex-3---parent-record">ex. 3 - parent record</a></h4>
+<pre><code>language,term,translation,parent,status,tags,pronunciation
+Spanish,gatos,cat,gato,W,,
+</code></pre>
+<p>This would create the term "gatos" (status = Well Known), and also the term "gato", setting "gato" as the parent for "gatos" (the plural form).</p>
+<p>Parent records may be useful, for example, if you're learning conjugations of irregular verbs.</p>
+<h4 id="ex-4---translation-only"><a class="header" href="#ex-4---translation-only">ex. 4 - translation only</a></h4>
+<pre><code>language,term,translation
+Spanish,gato,cat
+</code></pre>
+<h4 id="ex-5---multiple-parents"><a class="header" href="#ex-5---multiple-parents">ex. 5 - multiple parents</a></h4>
+<pre><code>language,term,translation
+Spanish,se sienta,"sentirse, sentarse"
+</code></pre>
+<h2 id="creating-csv-files"><a class="header" href="#creating-csv-files">Creating CSV files</a></h2>
+<p>The easiest way to create <strong>properly-formatted</strong> CSV files is probably through something like Excel or Google Sheets.  Create a sheet with the correct headings.  You can enter carriage returns into a given cell using something like Shift-Return, or Ctrl-Return ... depending on your system.  Then export that as a CSV using File &gt; Download &gt; Comma Separated Values.</p>
+<p>Using Google Sheets, you might also be able to get some <em>basic</em> translations.  For example, if I have "colima" in cell B2, the formula <code>=GOOGLETRANSLATE(B2,"es", "en")</code> in cell B3 would give "hill".</p>
+<h2 id="importing-new-terms-as-unknown"><a class="header" href="#importing-new-terms-as-unknown">Importing new terms as "Unknown"</a></h2>
+<p>You can import terms to act as "placeholders" for when you encounter them.  This may be useful for sharing vocabulary lists or prepopulating your term database without impacting your reading stats.</p>
+<p>For example, suppose I had the following import file:</p>
+<pre><code>term,language,translation
+guide,English,blah
+</code></pre>
+<p>I can import this file and specify that I want any new terms to be "Unknown" as follows:</p>
+<img width="80%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_01.png">
+<p>When I do so, the term still shows up as "unknown" when reading, but it will be pre-populated with the imported data:</p>
+<img width="30%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_02.png"><div style="break-before: page; page-break-before: always;"></div><h1 id="themes"><a class="header" href="#themes">Themes</a></h1>
+<p><em>Added in Lute 3.0.2</em></p>
+<p>You can apply one of the predefined themes in the Settings.  Select the theme from the dropdown.</p>
+<h2 id="the-currently-available-themes"><a class="header" href="#the-currently-available-themes">The currently available themes</a></h2>
+<h3 id="default"><a class="header" href="#default">Default</a></h3>
+<img width="100%" alt="image" src="usage/themes/../../assets/usage/themes/theme_default.png">
+<h3 id="apple-books"><a class="header" href="#apple-books">Apple Books</a></h3>
+<img width="100%" alt="image" src="usage/themes/../../assets/usage/themes/theme_applebooks.png">
+<h3 id="dark-slate"><a class="header" href="#dark-slate">Dark slate</a></h3>
+<img width="100%" alt="image" src="usage/themes/../../assets/usage/themes/theme_darkslate.png">
+<h3 id="night"><a class="header" href="#night">Night</a></h3>
+<img width="100%" alt="image" src="usage/themes/../../assets/usage/themes/theme_night.png">
+<h2 id="change-theme-hotkey---m"><a class="header" href="#change-theme-hotkey---m">"Change theme" hotkey - "m"</a></h2>
+<p>You can quickly cycle through the themes while reading by hitting the "m" hotkey.  Find what feels best.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="toggling-highlights"><a class="header" href="#toggling-highlights">Toggling highlights</a></h1>
+<p>On the Settings page is a "Highlight terms by status" checkbox.  If you uncheck that, the term status highlights are removed, except for when you mouseover the term.</p>
+<p>Here is the default theme with term highlights:</p>
+<img width="100%" alt="image" src="usage/themes/../../assets/usage/themes/toggle_highlights_01.png">
+<p>Here is the same, without highlights:</p>
+<img width="100%" alt="image" src="usage/themes/../../assets/usage/themes/toggle_highlights_02.png">
+<p>If you hover over a term, or cursor through it, the highlight for that term is shown.</p>
+<h2 id="toggling-highlight-hotkey-h"><a class="header" href="#toggling-highlight-hotkey-h">Toggling highlight hotkey "h"</a></h2>
+<p>While reading, you can toggle term highlighting by pressing "h".</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="custom-styles"><a class="header" href="#custom-styles">Custom styles</a></h1>
+<p>You can tailor the existing Lute themes by using your own custom styles in the Settings menu.  These overrides are applied <em>after</em> the theme selected.</p>
+<p>Open Settings, and in the "Custom styles" text box in the settings, enter valid CSS.  For example, this:</p>
+<pre><code>span.textitem { font-size: 16px; }
+span.status1 { background-color: pink; }               /* status2-5 for the rest */
+span.status98 { background-color: lightgrey; }         /* Ignored terms */
+span.status99 { background-color: none; color: red; }  /* Well-known terms */
+</code></pre>
+<p>yields this:</p>
+<img width="194" alt="image" src="usage/themes/../../assets/usage/themes/cust_styles_01.png">
+<h2 id="styling-examples-for-your-inspiration"><a class="header" href="#styling-examples-for-your-inspiration">Styling examples for your inspiration</a></h2>
+<h3 id="change-colors"><a class="header" href="#change-colors">Change colors</a></h3>
+<p>fyi the CSS selectors for the statuses are <code>span.status1</code> through <code>span.status5</code>, with <code>.status98</code> for ignored and <code>.status99</code> for well-known.</p>
+<pre><code> span.status0  { background-color: #ADD8E6; }  /* Unknown. */
+ span.status1  { background-color: red; }
+ span.status2  { background-color: red; }
+ span.status3  { background-color: orange; }
+ span.status4  { background-color: orange; }
+ span.status5  { background-color: green; }
+ span.status98 { background-color: white; }    /* Ignored. */
+ span.status99 { background-color: white; }    /* Well known. */
+</code></pre>
+<h3 id="language-specific-styles"><a class="header" href="#language-specific-styles">Language-specific styles</a></h3>
+<p>You might want different colors or font sizes for different languages.  You can get the language ID by clicking on it in the language listing (Settings &gt; Languages), it's at the end of the URL; e.g., <code>http://localhost:5000/language/edit/9</code>, "9" is the ID.</p>
+<pre><code>span.status0[data-lang-id="8"] { background-color: red; }
+span.status0[data-lang-id="4"] { background-color: blue; }
+</code></pre>
+<h3 id="larger-text-with-more-space-between-each-line"><a class="header" href="#larger-text-with-more-space-between-each-line">Larger text with more space between each line</a></h3>
+<pre><code>div#thetext p { line-height: 2; }
+span.textitem { font-size: 18px; }
+</code></pre>
+<h3 id="hide-the-green-checkmarks-at-the-bottom-of-the-reading-pane"><a class="header" href="#hide-the-green-checkmarks-at-the-bottom-of-the-reading-pane">Hide the green checkmarks at the bottom of the reading pane</a></h3>
+<p>Clicking the green checks sets unknown to well-known, which you might not like.</p>
+<pre><code>#footerMarkRestAsKnown { display: none; }
+#footerMarkRestAsKnownNextPage { display: none; }
+</code></pre>
+<h3 id="text-justification"><a class="header" href="#text-justification">Text justification</a></h3>
+<pre><code>div#thetext {
+  text-align: justify;
+  text-justify: inter-word;
+}
+</code></pre>
+<h3 id="paragraph-spacing"><a class="header" href="#paragraph-spacing">Paragraph spacing</a></h3>
+<pre><code>#thetext p:after {
+  content: "\00a0"; /* Adds a non-breaking space */
+  display: block;
+  margin-bottom: 10px; /* Adjust the value for the desired space */
+}
+</code></pre>
+<h3 id="hide-the-frame-borders"><a class="header" href="#hide-the-frame-borders">Hide the frame borders</a></h3>
+<p>The reading page has frames for the content and the form and dictionaries.  Hide the borders with this:</p>
+<pre><code>#read_pane_right::after {
+    background-color: transparent;
+    width: 4px;
+}
+
+.dictframecontainer::after {
+    background-color: transparent;
+    height: 4px;
+}
+</code></pre>
+<h3 id="increase-the-size-of-the-term-pop-up-text"><a class="header" href="#increase-the-size-of-the-term-pop-up-text">Increase the size of the term pop-up text</a></h3>
+<pre><code>div.ui-tooltip {  font-size: 150%; }
+</code></pre>
+<h3 id="vertical-text-for-japanese"><a class="header" href="#vertical-text-for-japanese">Vertical text for Japanese</a></h3>
+<pre><code>div#thetext {writing-mode: vertical-rl;}
+</code></pre>
+<h3 id="why-would-you-ever-do-this"><a class="header" href="#why-would-you-ever-do-this">Why would you ever do this?</a></h3>
+<pre><code>body { font-family: "Comic Sans MS"; }
+</code></pre>
+<p>Yuck.</p>
+<h2 id="notes"><a class="header" href="#notes">Notes:</a></h2>
+<ul>
+<li>The styles used by Lute out-of-the-box are in <a href="https://github.com/jzohrab/lute-v3/blob/master/lute/static/css/styles.css">the GitHub repo</a>, hack away!</li>
+<li>The data you put in the text box must be valid CSS, as it is picked up verbatim and inserted into the HTML.</li>
+<li>Some of the current css class names are bad (e.g. "status98" means "ignored", but that's pretty hard to follow).  If those class names get changed in a future release, I'll add a note in the release notes.</li>
+<li>Using css is pretty tricky, but it works for now!</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="adding-audio"><a class="header" href="#adding-audio">Adding audio</a></h1>
+<p><em>Feature added in Lute 3.0.5</em></p>
+<p>Lute lets you add an audio file (.mp3, .wav, .ogg) to any book so you can listen to your book as you read.</p>
+<h2 id="adding-audio-1"><a class="header" href="#adding-audio-1">Adding audio</a></h2>
+<p>You can add audio to a new book during creation, or to an existing book using the "Edit" action in the book listing.</p>
+<p>Lute stores a copy of the added audio in your <code>data</code> folder, in the same folder where it stores your database and user images.</p>
+<h2 id="the-player"><a class="header" href="#the-player">The player</a></h2>
+<p>If your book has an audio file, a player is included on the reading page:</p>
+<p><img src="usage/../assets/usage/audio_player.png" alt="image" /></p>
+<p>You can do the usual things: start and pause the player (either with the buttons or the space bar), and fast-forward and rewind.  The "sticky player" toggle sticks the player to the bottom of the screen.</p>
+<p>You can increase and decrease the playback speed by hovering over the playback speed control and scrolling up or down.  Clicking it resets the playback speed to 1.0, the regular speed.</p>
+<p>When you start the player, it plays until you stop it, or until you open the Term form by clicking on a word or defining a new multi-word Term.  Once you've defined a term, click Play to restart the player from where it stopped.</p>
+<h2 id="bookmarks"><a class="header" href="#bookmarks">Bookmarks</a></h2>
+<p>You can add and remove bookmarks to your book's audio, and jump back and forth along the timeline to your bookmarks.</p>
+<p>Lute's audio playback is <strong>not</strong> syncronized with the text or pages in any way, so for multi-page books with audio, you'll likely want to use bookmarks to note the start of each page.  If you move back and forth between pages, the player doesn't follow you.</p>
+<h2 id="suggestions-for-using-audio"><a class="header" href="#suggestions-for-using-audio">Suggestions for using audio</a></h2>
+<p><em>A suggestion only, do how you see fit!</em></p>
+<ul>
+<li>Do several passes through the book and audio, marking each new page with a bookmark, adding any new Terms as needed.</li>
+<li>Re-listen and read along</li>
+<li>Listen to the audio alone</li>
+</ul>
+<h3 id="why-isnt-the-player-synced-with-the-pages"><a class="header" href="#why-isnt-the-player-synced-with-the-pages">Why isn't the player synced with the pages?</a></h3>
+<p>Good question.  There are a few reasons, none of which may satisfy you!</p>
+<ul>
+<li>Currently, Lute lets you add an arbitrary number of bookmarks to each book audio.  There is no simple way to differentiate between an arbitrary bookmark vs. a special bookmark indicating the start of a page.</li>
+<li>I believe that audio books are vital for the beginning and intermediate phases of learning, for which the reading materials are likely going to be short.  Syncing is not as critical here, as you will be able to find the accompanying portion of the audio track easily using simple bookmarks.</li>
+</ul>
+<p>Syncing audio to page turns is possible, and perhaps will be delivered at some point in the future (if a developer really wants it!).  Having used this feature myself, I find the current implementation completely satisfactory -- I rarely jump around to random pages in lengthy texts.</p>
+<p>Lute's still open source software, so we do the best we can in the time we have available to work on it!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="backup"><a class="header" href="#backup">Backup</a></h1>
+<p>Lute provides a simple backup facility that creates copies your Sqlite database and all of your term images to a backup folder that you specify.  You don't <em>have</em> to use it, but please be sure that you have some kind of backup strategy in place!</p>
+<blockquote>
+<p>Back up your stuff!</p>
+</blockquote>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<p>Backup is configured in the Settings.</p>
+<div class="table-wrapper"><table><thead><tr><th>Setting</th><th>Values</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Backup enabled</td><td>yes or no</td><td>Set to "yes" if you want to run them through the Lute UI or have Lute do daily backups, and "no" if you're handling your own backups with scripts or whatever.</td></tr>
+<tr><td>Backup directory <strong>(Non-Docker users only)</strong></td><td>Full directory path</td><td>This is the <em>existing</em> directory where a gzipped database export, and copy of all of your images, will be sent.  Set this to something that is backed up, such as to a DropBox folder or similar.  This is disabled for Docker users, because the backup directory has to be mounted to a host folder.</td></tr>
+<tr><td>Run backups automatically (daily)</td><td>yes or no</td><td>If <code>yes</code>, Lute will run the backup <em>from the Home page</em> every day.  Note that this is only from the Home page, so if you have a book open for reading for 2 weeks, it won't be backed up. :-)</td></tr>
+<tr><td>Warn if backup hasn't run in a week</td><td>yes or no</td><td>If <code>yes</code>, Lute will print a warning <em>on the Home page</em> if the last backup was run more than one week ago.  Again, this is only from the home page.</td></tr>
+<tr><td>Retain backup count</td><td>Number</td><td>The number of automatic backup files to keep.  Backups are created with date-time stamp added (e.g. <code>lute_backup_2023-04-19_204452.db.gz</code>), and Lute only keeps the specified count of most recent backups.  Note that this number is only used for automatic backups.  For "manual" backups (where you click the link to create a backup from the Home page), you have to delete old files.</td></tr>
+</tbody></table>
+</div>
+<h2 id="manual-and-automatic-backups"><a class="header" href="#manual-and-automatic-backups">Manual and automatic backups</a></h2>
+<p>There are two kinds of backups, "manual" and "automatic".  Both are placed in the folder you specify in your settings.</p>
+<ul>
+<li>Manual backups are created when you click "create backup" from the Home page.  All of these are kept.</li>
+<li>Automatic backups are created every day by Lute, if you enable them, <strong>but only from the home screen</strong> (see below).  Lute only stores a limited number of automatic backups.</li>
+</ul>
+<p>Here's an example on my system:</p>
+<pre><code>$ ls -1 zz_backup/
+lute_backup_2023-04-20_204452.db.gz
+lute_backup_2023-04-21_204512.db.gz
+lute_backup_2023-04-22_204519.db.gz
+lute_backup_2023-04-23_204547.db.gz
+lute_backup_2023-04-24_204604.db.gz
+manual_lute_backup_2023-04-19_204132.db.gz
+manual_lute_backup_2023-04-19_204204.db.gz
+manual_lute_backup_2023-04-19_204652.db.gz
+userimages_backup/
+</code></pre>
+<ul>
+<li>I only have 5 "automatic" backups</li>
+<li>I have as many <code>manual_</code> backups as I need/want</li>
+<li>There is only one <code>userimages_backup/</code> folder, ever.</li>
+</ul>
+<h2 id="automatic-backups-only-run-from-the-home-screen"><a class="header" href="#automatic-backups-only-run-from-the-home-screen">Automatic backups only run from the Home screen</a></h2>
+<p>If you just leave Lute running all the time, and have it opened to a book that you're reading, Lute's automatic backup process <strong>doesn't start</strong>.</p>
+<p>Lute only runs the daily automated backups from the Home screen -- so, periodically, head on to Lute Home, and wait for that to complete.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="restoring-backups"><a class="header" href="#restoring-backups">Restoring backups</a></h1>
+<p>As you use Lute more and more, you're building up a ton of valuable data!  It would <em>really suck</em> to lose that.</p>
+<blockquote>
+<p>I'm hoping that you have configured backups in your Settings, and that you are periodically backing up.  If you're not using Lute's built-in backup methods, <strong>please take time to set up some kind of backup.</strong>  All you need to do is copy your <code>data</code> file to some location and zip it -- that will back up your database and images.</p>
+</blockquote>
+<p>Restoring backups are as simple as replacing your Lute database with one of your unzipped backups, and restoring your image folder as well.</p>
+<h2 id="database-restores"><a class="header" href="#database-restores">Database restores</a></h2>
+<blockquote>
+<p>To find the directory where your database is, start Lute and go to About &gt; Version and Software Info.  It's the "Data path" line. (<strong>Docker users:</strong> use the data directory you mounted for the container.)</p>
+</blockquote>
+<p>Summary: you replace your database with an unzipped and renamed db backup.  Here's one way to do that:</p>
+<ol>
+<li>Copy a db backup that you want to restore from your backup directory to the "data path" directory.  For example, after this step, I might have <code>lute/data/lute_backup_2023-10-04_022616.db.gz</code>.</li>
+<li><strong>Stop Lute.</strong></li>
+<li>Browse to that "Data path" directory on your machine, and rename the file <code>lute.db</code> to <code>old_lute.db</code> (the exact name you pick doesn't matter -- this is just in case your restore goes wrong)</li>
+<li>Unzip your backup from step 1, and rename it to <code>lute.db</code>.  Your data folder should now contain <code>old_lute.db</code> and <code>lute.db</code></li>
+<li>Start Lute, and refresh the browser.  Lute is now connected to your restored backup db.</li>
+<li>You can either get rid of the <code>old_lute.db</code>, or move it somewhere else if you want to keep it.</li>
+</ol>
+<h2 id="image-restores"><a class="header" href="#image-restores">Image restores</a></h2>
+<blockquote>
+<p>The images directory is the same as the database directory.</p>
+</blockquote>
+<p>Summary: copy files!</p>
+<p>Your backup images are stored in your backup directory, in <code>userimages_backup</code>.  Copy the contents of that directory to the <code>userimages</code> directory of your "Data path" directory.</p>
+<h1 id="test-your-backups"><a class="header" href="#test-your-backups">Test your backups!</a></h1>
+<p>It's a good idea to periodically check your backups to ensure that they're good.</p>
+<h2 id="checking-database-backupa"><a class="header" href="#checking-database-backupa">Checking database backupa</a></h2>
+<p>First obvious thing to check is the backup file size -- if it's way too small, that's no good.</p>
+<h3 id="check-using-queries"><a class="header" href="#check-using-queries">Check using queries</a></h3>
+<p>You can query the backup database just to validate that the data is present.  Unzip one of your backups, and use Sqlite to connect to it and run queries.</p>
+<p>For example, in my backup folder, I have <code>lute_backup_2023-10-04_022616.db.gz</code>.  I can unzip this somewhere as <code>lute_backup_2023-10-04_022616.db</code> and then try some queries:</p>
+<pre><code>sqlite3 lute_backup_2023-10-04_022616.db
+
+SQLite version 3.39.5 2022-10-14 20:58:05
+Enter ".help" for usage hints.
+sqlite&gt; select count(*) from words;     # &lt;-- this is my query
+51839
+</code></pre>
+<p>That's about right.</p>
+<h3 id="check-using-lute-itself-replace-your-current-db-with-a-backup-and-verify"><a class="header" href="#check-using-lute-itself-replace-your-current-db-with-a-backup-and-verify">Check using Lute itself (replace your current DB with a backup and verify)</a></h3>
+<p>Another option is to temporarily replace your current <code>lute.db</code> with one of your backups.  You could follow the steps you did for the database restore, but as a final step rename your <code>old_lute.db</code> to <code>lute.db</code> again.</p>
+<h2 id="checking-image-backup"><a class="header" href="#checking-image-backup">Checking image backup</a></h2>
+<p>You can check the <code>userimages_backup</code> folder in your designated backup folder to see if your images are there.  Just check the dates of the last handful of files.</p>
+<p>On a Mac (and perhaps on Linux systems), you could also use terminal.  E.g. on my Mac, I can check the latest files:</p>
+<pre><code>ls -larth ~/Dropbox/LuteBackup/userimages_backup/1  | tail -n 20
+...
+-rw-r--r--@    1 jeff  staff    15K 18 Sep 13:56 cenagoso.jpeg
+-rw-r--r--@    1 jeff  staff   3.0K 18 Sep 13:56 patena.jpeg
+-rw-r--r--@    1 jeff  staff    15K 20 Sep 22:01 carrocería.jpeg
+-rw-r--r--@    1 jeff  staff   5.4K 20 Sep 22:01 escupitajo.jpeg
+-rw-r--r--@    1 jeff  staff    12K 20 Sep 22:01 broche.jpeg
+drwxr-xr-x@ 1895 jeff  staff    59K 26 Sep 17:17 .
+-rw-r--r--@    1 jeff  staff    11K 26 Sep 17:17 encuadre.jpeg
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="command-line-jobs"><a class="header" href="#command-line-jobs">Command line jobs</a></h1>
+<p>While Lute is almost solely a web app, it has some jobs that are run from the terminal, outside of the browser.</p>
+<ul>
+<li><code>hello</code>: Say hi!  Proof-of-concept</li>
+<li><code>language_export</code>: Get all terms from active books in the language, and write a data file of term frequencies and children.</li>
+</ul>
+<h2 id="how-to-run-the-jobs"><a class="header" href="#how-to-run-the-jobs">How to run the jobs</a></h2>
+<p><strong>These jobs are (currently) only runnable through the command line for pip installs.</strong></p>
+<p>Open a terminal, change directory to your Lute folder, and enter the following commands:</p>
+<pre><code>source .venv/bin/activate    # Activate your virtual environment.
+flask --app lute.app_factory cli &lt;command_name&gt; [arg1] [arg2...]
+</code></pre>
+<p>The <code>--app lute.app_factory</code> part is <strong>required</strong><sup class="footnote-reference"><a href="#these-calls-are-ugly">1</a></sup>.</p>
+<p>Lute does not need to be running when you're running a command.</p>
+<p>List all jobs:</p>
+<pre><code>flask --app lute.app_factory cli --help
+</code></pre>
+<p>To see help about a job:</p>
+<pre><code>flask --app lute.app_factory cli &lt;command_name&gt; --help
+</code></pre>
+<h3 id="sample-calls"><a class="header" href="#sample-calls">Sample calls</a></h3>
+<pre><code>flask --app lute.app_factory cli hello
+flask --app lute.app_factory cli language_export Spanish sp_terms.csv
+</code></pre>
+<p>You can do things like <a href="https://flask.palletsprojects.com/en/2.3.x/cli/#environment-variables-from-dotenv">export environment variables</a> to simplify your calls if you wish.</p>
+<h2 id="configyml-file"><a class="header" href="#configyml-file">config.yml file</a></h2>
+<p>If you have a <a href="usage/./starting-and-stopping.html#custom-configyml">custom config.yml</a>, Lute jobs will use those settings; otherwise, it uses the built-in defaults.</p>
+<h2 id="why-arent-these-built-into-the-ui"><a class="header" href="#why-arent-these-built-into-the-ui">Why aren't these built into the UI?</a></h2>
+<p>Good question, here are some reasons:</p>
+<ul>
+<li><strong>Unsure how to add to UI.</strong> Lute is primarily for reading, and I've tried to keep the UI clean and focused on that.  Some things are <em>related</em> to Lute but don't necessarily fall within its main purpose.</li>
+<li><strong>Long-running jobs.</strong> Some jobs might take a <em>long</em> time to complete.  While there are ways to have the server communicate back to a browser client (WebSockets), I have no experience with these things.</li>
+<li><strong>"Good enough" is better than perfect.</strong> Shipping something working is better than trying to perfect it.  Sometimes jobs are a hacky but effective way to get things out the door.</li>
+</ul>
+<h2 id="docker-users"><a class="header" href="#docker-users">Docker users</a></h2>
+<p>You have a few ways to run command-line jobs, if your Lute runs in Docker.  Both are a bit janky, so pick your poison.  My preference would be the first one, just because you don't have to install anything new.</p>
+<h3 id="1-ssh-into-the-running-docker-instance"><a class="header" href="#1-ssh-into-the-running-docker-instance">1. ssh into the running Docker instance</a></h3>
+<p>If your container is running, you can jump into it and run commands.  For example:</p>
+<pre><code>$ docker ps
+
+CONTAINER ID   IMAGE                           COMMAND            CREATED          STATUS          PORTS                    NAMES
+4a01240e5678   jzohrab/lute3:latest            "/lute/start.sh"   52 seconds ago   Up 52 seconds   0.0.0.0:5000-&gt;5000/tcp   lute_test_docker-lute-1
+
+# Connect to the running container
+$ docker exec -it lute_test_docker-lute-1 /bin/bash
+
+# Run the export.  Put the file in the lute_data folder so it's available back on the host.
+root@4a01240e5678:/# flask --app lute.app_factory cli language_export English ./lute_data/MY_DATA.csv
+Loading data for book Tutorial ...
+... etc ...
+
+# Leave the container
+root@4a01240e5678:/# exit
+
+# Back on the host system!
+$ ls data
+README.md	MY_DATA.csv	lute.db		userimages
+</code></pre>
+<h3 id="2-with-pip"><a class="header" href="#2-with-pip">2. With pip</a></h3>
+<ul>
+<li>Install Lute into a virtual environment using pip</li>
+<li>Create a config.yml file with the data folder pointing to where your lute.db is stored</li>
+<li>Run the commands as above.</li>
+</ul>
+<hr />
+<div class="footnote-definition" id="these-calls-are-ugly"><sup class="footnote-definition-label">1</sup>
+<p><em>Note from the dev (me!):</em> I recognize how ugly the "--app lute.app_factory" portion of the command is, but it is not trivial to get rid of.  The commands are built on part of the framework that Lute uses, and there is no easy way to avoid the "--app" flag, as far as I know.  I tried other design options, but they all had drawbacks.  In future, these jobs may be incorporated into Lute's UI.  For now, this is good enough.</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="updating-lute"><a class="header" href="#updating-lute">Updating Lute</a></h1>
+<p>First, you <strong>must <a href="usage/./starting-and-stopping.html">stop Lute</a></strong>.</p>
+<p>(Lute or Python may lock certain files while running, shutting down ensures that things will update safely.)</p>
+<p>Then:</p>
+<h2 id="-if-using-pip"><a class="header" href="#-if-using-pip">... if using pip</a></h2>
+<pre><code>cd /path/to/your/lute         # change this line. :-)
+source myenv/bin/activate     # Activate your virtual environment. See below for Windows
+pip install --upgrade lute3
+</code></pre>
+<p>For Windows, instead of <code>source myenv/bin/activate</code>, do</p>
+<pre><code>.\myenv\Scripts\activate.bat
+</code></pre>
+<h2 id="-if-using-docker"><a class="header" href="#-if-using-docker">... if using Docker</a></h2>
+<p>This assumes you're using a <code>docker-compose.yml</code> file.</p>
+<pre><code>cd /path/to/your/lute    # change this line. :-)
+docker compose pull
+docker compose up -d --remove-orphans
+</code></pre>
+<p>(Note: if you're using Lute v2, you'll first have to <a href="usage/../faq/v2-to-v3.html">migrate to v3</a>.)</p>
+<h2 id="-if-using-source"><a class="header" href="#-if-using-source">... if using source</a></h2>
+<p>I assume you already know what you're doing, but here's a rough outline anyway:</p>
+<p>Stop Lute.</p>
+<pre><code>git remote add upstream git@github.com:jzohrab/lute-v3.git
+git fetch upstream
+git merge upstream/master
+</code></pre>
+<p>There are other ways to do this, like PR master into your own fork, etc.</p>
+<h3 id="keeping-up-to-date-when-installing-from-source"><a class="header" href="#keeping-up-to-date-when-installing-from-source">Keeping up-to-date when installing from source</a></h3>
+<p>All Lute development happens on the <code>develop</code> branch in the main repo, and when launched that code is merged into <code>master</code>.</p>
+<p>If you install from source and make any modifications to Lute -- which <em>of course</em> you're welcome to do -- then you may want to periodically check the <code>develop</code> branch in the main Lute repo to ensure that you can merge in <code>master</code> when it is released.  Here's roughly what you'd do:</p>
+<pre><code># Commit your local changes
+git add [your files]
+git commit -m "[changes]"
+
+git remote add upstream git@github.com:jzohrab/lute-v3.git
+git fetch upstream
+
+# Check commits, if you want
+git log HEAD..upstream/develop --oneline
+
+git merge upstream/develop
+</code></pre>
+<p>Lute source code could change at any time, and I <strong>almost certainly will not</strong> be able to help you resolve code conflicts.  With that said, I'm certainly interested in any changes that would be beneficial to the health/clarity of the code or would be useful for others, so if you make changes that you think would be good, let me know!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="where-can-i-get-help"><a class="header" href="#where-can-i-get-help">Where can I get help?</a></h1>
+<p>If you need help with Python, pip, or Docker, the first and best place to look is Google!</p>
+<p>But if it's a Lute issue or question, the best places to ask for help are:</p>
+<ul>
+<li>the <a href="https://discord.gg/CzFUQP5m8u">Lute Discord</a> "issues and bugs" channel.</li>
+<li>Lute v3 <a href="https://github.com/jzohrab/lute-v3/issues">GitHub Issues</a></li>
+</ul>
+<p>When coming in with a question, please be as specific with your details as possible.</p>
+<p>Good luck!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-run-lute-on-a-private-web-server"><a class="header" href="#can-i-run-lute-on-a-private-web-server">Can I run Lute on a private web server?</a></h1>
+<p>Lute can be run anywhere that has the necessary requirements (Python, etc).  For a server installation, Docker would probably be the easiest.</p>
+<p>It's outside of the scope of this manual to show how to set up your server in AWS, Digital Ocean, or wherever, but it's totally possible.</p>
+<p>The biggest thing you probably have to worry about is your backup and disaster recovery plan.  Lute writes disk for the database and images, so make sure you're backing up and exporting to some secure, reliable location.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-store-lute-data-on-a-usb-key"><a class="header" href="#can-i-store-lute-data-on-a-usb-key">Can I store Lute data on a USB key?</a></h1>
+<p>If you regularly switch between computers, one option for setup (which sounds dicey to me :-) ) is to store your data in a USB key.</p>
+<h2 id="pip"><a class="header" href="#pip">Pip</a></h2>
+<p>For pip users, you could custom config.yml file, and put it in the root folder where you run Lute, with something like the following:</p>
+<pre><code># File config.yml
+ENV: prod
+DBNAME: lute.db
+DATAPATH: /full/path/to/your/usb/lute/folder
+BACKUP_PATH: /full/path/to/backup/folder
+</code></pre>
+<p>When Lute runs, it uses this config file, and will write all of its data in the folder specified in the DATAPATH.</p>
+<h2 id="docker"><a class="header" href="#docker">Docker</a></h2>
+<p>Docker users should change their docker-compose.yml to map the USB key folder to the mounted /lute/data directory.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-make-lute-secure"><a class="header" href="#can-i-make-lute-secure">Can I make Lute secure?</a></h1>
+<p>Lute doesn't come with authentication, so if you want to add security, the easiest way to do that is with a server that acts as a gatekeeper to the app (a reverse proxy).  The easiest way to do this is with Docker compose.</p>
+<blockquote>
+<p>Below is a working example using an nginx reverse proxy that may be useful as a starting point.  One caveat which I haven't bothered investigating further: the session doesn't expire (quickly?), so once you log in, anyone using your same browser will have access.</p>
+</blockquote>
+<h2 id="docker-composeyml"><a class="header" href="#docker-composeyml">docker-compose.yml</a></h2>
+<pre><code>version: '3.9'
+services:
+  lute:
+    image: jzohrab/lute3:latest
+    volumes:
+      - ./data:/lute_data
+      - ./backups:/lute_backup
+
+  nginx-proxy:
+    image: nginx
+    ports:
+      - "5000:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - .htpasswd:/etc/nginx/.htpasswd
+    depends_on:
+      - lute
+</code></pre>
+<p>Notes:</p>
+<ul>
+<li>This uses the same <code>lute3</code> image, but doesn't expose the port</li>
+<li>The <code>nginx.conf</code> and <code>.htpasswd</code> files will exist in the same folder as this compose file; they're created below</li>
+<li>This maps host port 5000 to the nginx port 80, so the message <code>http://localhost:5000</code> when you run <code>docker compose up</code> is still valid :-P</li>
+</ul>
+<h2 id="nginxconf"><a class="header" href="#nginxconf">nginx.conf</a></h2>
+<p>Content:</p>
+<pre><code>user  nginx;
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+    types_hash_max_size 2048;
+
+    # Allow large audio files.  Increase this if your files are large.
+    client_max_body_size 100M;
+
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    server {
+        listen 80;
+        server_name localhost;
+
+        location / {
+            # This nginx server is running in a docker compose environment,
+            # so the name "lute" is resolved using compose's dns resolution.
+            proxy_pass http://lute:5000;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+        # Basic Authentication
+        auth_basic "Restricted Access";
+        auth_basic_user_file /etc/nginx/.htpasswd;
+    }
+}
+</code></pre>
+<h2 id="htpasswd"><a class="header" href="#htpasswd">.htpasswd</a></h2>
+<p>Use the <code>htpasswd</code> command to generate a new <code>.htpasswd</code> file.  With username = "username" and password = "password":</p>
+<pre><code>htpasswd -c ./.htpasswd username
+</code></pre>
+<p>generates the following <code>.htpasswd</code> file</p>
+<pre><code>username:$apr1$MNsKt1Ie$vuho4oeZV78PSLApjZ3vm.
+</code></pre>
+<h1 id="start-it-up"><a class="header" href="#start-it-up">Start it up</a></h1>
+<p>With the three files in place in the same directory (and the data and backup folders created), you can start it up:</p>
+<pre><code>docker compose up
+</code></pre>
+<p>nginx will ask for username/password authentication, and then everything works as before.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="is-there-an-online-version-of-lute"><a class="header" href="#is-there-an-online-version-of-lute">Is there an online version of Lute?</a></h1>
+<p>It's called <a href="https://www.lingq.com/">LingQ</a>. :-)</p>
+<p>LingQ is great.  Pay a nominal fee and you get tons of content and a big community of users.  LingQ is also a business, so they have staff, and (hopefully) proper tech support.</p>
+<p>Lute will never be online in the way that LingQ is.  While it's possible to build an online company with various cloud providers (AWS, Google, Digital Ocean, etc), running a <em>proper</em> company with <em>unbreakable confidence</em> requires a great deal of ongoing work:</p>
+<ul>
+<li>scalability</li>
+<li>monitoring and alerting</li>
+<li>security</li>
+<li>backup and restore</li>
+<li>disaster recovery</li>
+<li>... etc.</li>
+</ul>
+<p>Rather than try to go online and compete with existing solutions, Lute opts to emulate the Anki desktop approach: individual user app installs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="migrating-from-v2-to-v3"><a class="header" href="#migrating-from-v2-to-v3">Migrating from v2 to v3</a></h1>
+<h2 id="database-and-images"><a class="header" href="#database-and-images">Database and images</a></h2>
+<p>If you're already using Lute v2 (written in PHP), and want to migrate to v3, it's pretty straightforward: you just have to move some files around.</p>
+<p>Step 1. <a href="faq/../install/install.html">install Lute v3</a>, and start it up.  Then:</p>
+<h3 id="for-non-docker-users"><a class="header" href="#for-non-docker-users">For non-Docker users</a></h3>
+<ol start="2">
+<li>In the top right corner of the home screen, click About &gt; Version and software info</li>
+<li>The "Data path" folder is where you should put your database and images, replacing the files that Lute v3 automatically put there.</li>
+<li><strong>Stop Lute v3</strong></li>
+<li>Replace the files that Lute created in the "Data path" folder with your files.</li>
+<li>Start Lute up again.</li>
+</ol>
+<h3 id="for-docker-users"><a class="header" href="#for-docker-users">For Docker users</a></h3>
+<p>It's even easier: when you started Lute v3, you had to mount some directories to the container.</p>
+<ol start="2">
+<li>Shut down Lute v3!</li>
+<li>Put your database and image folder in the folder that you mounted to the <code>/lute_data</code> directory, replacing the files that Lute created there.</li>
+<li>Start Lute up again.</li>
+</ol>
+<h2 id="backup-settings"><a class="header" href="#backup-settings">Backup settings</a></h2>
+<p>Lute v2 has backup settings stored in the <code>.env</code> file.  v3 uses a Settings screen. The mapping of values from the <code>.env</code> file is obvious.</p>
+<h2 id="custom-styles-1"><a class="header" href="#custom-styles-1">Custom styles</a></h2>
+<p>Lute v2 uses a "custom_styles.css" file in the data folder.  v3 uses a Setting text box, so copy any content from your custom_styles.css file into Lute v3 Settings.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-you-add-language-x"><a class="header" href="#can-you-add-language-x">Can you add language X?</a></h1>
+<p>Yes, but you'll need to <strong>get it working in your own Lute first</strong>.</p>
+<p>Once you've figured out good language settings, please open an "Add language" <a href="https://github.com/jzohrab/lute-v3/issues/new/choose">GitHub issue</a>.  Thank you!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="where-can-i-find-books-to-import"><a class="header" href="#where-can-i-find-books-to-import">Where can I find books to import?</a></h1>
+<p>On the internet!</p>
+<p>But, since you asked, some of my favorites:</p>
+<ul>
+<li>Google :-) -- search for "<language name> download ebooks" or "<language> online stories" or similar.</li>
+<li><a href="https://www.gutenberg.org/">Project Gutenberg</a></li>
+<li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="why-wont-my-epub-import-correctly"><a class="header" href="#why-wont-my-epub-import-correctly">Why won't my epub import correctly?</a></h1>
+<p>Lute uses an open source epub parser named <code>openepub</code> kindly created by a Lute user to avoid licensing issues with currently available epub parsers.</p>
+<p>The parser project is on GitHub at <a href="https://github.com/sakolkar/openepub">https://github.com/sakolkar/openepub</a>.<sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<p>Parsing is always a challenge, and some epubs may contain strange formatting that the library can't handle.  If your epub doesn't parse correctly, please open a GitHub issue in the <code>openepub</code> repo.</p>
+<p>In the meantime, use any of the tools available to convert your epub to a text file for import, such as <a href="https://calibre-ebook.com/">Calibre</a>.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>as at Dec 28, 2023!</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="why-wont-my-pdf-import-correctly"><a class="header" href="#why-wont-my-pdf-import-correctly">Why won't my pdf import correctly?</a></h1>
+<p>Lute uses the <a href="https://pypi.org/project/PyPDF2/">PyPDF2</a> library for PDF imports.</p>
+<p>PDF imports sometimes add extra unwanted spaces: for example, the word "happiness" in your PDF may be imported as "happi ness".  For this reason, when you import your PDF, Lute will give you a warning that it may be inaccurate.</p>
+<p>This issue is not a problem with Lute, or even with the PyPDF2 library ... correctly parsing PDFs is actually <em>extremely</em> tough.  Per the authors of PyPDF2:</p>
+<blockquote>
+<p>Getting whitespaces right is notoriously hard. @pubpub-zz is the expert in that topic; I'll leave it to him to decide if we should leave this issue open. The issue is that PDF does not (necessarily) represent the words as words internally. In the worst case, it just gives the absolute position of each character in the document.</p>
+</blockquote>
+<p>References:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/76546531/why-does-pypdf-stuff-text-with-extra-spaces-when-extracting-text">StackOverflow - pypdf extra spaces</a></li>
+<li><a href="https://github.com/py-pdf/pypdf/issues/1507">Random whitespaces are inserted when using page.extract_text()</a></li>
+</ul>
+<p>In summary, the best that we can do is say that PDF imports are not perfect, and you should be aware of that while reading.  You can edit each page as you come across problems, or just ignore the incorrect words.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="my-text-file-import-is-giving-a-utf-8-encoding-error-message"><a class="header" href="#my-text-file-import-is-giving-a-utf-8-encoding-error-message">My text file import is giving a "utf-8 encoding" error message</a></h1>
+<p>Lute can only import utf-8 encoded text files.<sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<p>Your file may already be in utf-8 encoding, but if not, you'll need to first convert it.</p>
+<p>I don't know of all of the options available, but here are some suggestions:</p>
+<ul>
+<li><a href="https://subtitletools.com/convert-text-files-to-utf8-online">https://subtitletools.com/convert-text-files-to-utf8-online</a></li>
+<li>if using Microsoft Word, you can export your file, but you have to choose "other encoding" and then unicode (utf-8).  See e.g. <a href="https://support.3playmedia.com/hc/en-us/articles/227730088-Exporting-a-UTF-8-txt-file-from-Word">https://support.3playmedia.com/hc/en-us/articles/227730088-Exporting-a-UTF-8-txt-file-from-Word</a></li>
+</ul>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://en.wikipedia.org/wiki/UTF-8">https://en.wikipedia.org/wiki/UTF-8</a>: "UTF-8 is a variable-length character encoding standard used for electronic communication."  It defines how characters are actually written to disk, essentially.</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="why-cant-i-change-a-term"><a class="header" href="#why-cant-i-change-a-term">Why can't I change a Term?</a></h1>
+<p>Lute won't let you change a Term's actual text once it has been created and saved, you can only change the case of existing characters.  For example, you could change "CAT" to "Cat" or "cat", but not to "dog".</p>
+<p>Allowing Terms themselves to be changed once created creates potential problems, so (for now) Lute just disables that.</p>
+<blockquote>
+<p><em>As I get more experience with this feature of Lute, I may do away with this restriction.</em></p>
+</blockquote>
+<p>Reasons for this restriction:</p>
+<ul>
+<li>
+<p>a typo or other mistake would cause previously entered information to get accidentally overwritten.  For example, if you'd created a Spanish Term and translation "chico / boy", and then accidentally edited another existing term "CHICA / girl" to "chic<strong>o</strong> / girl" (accidentally hitting "o" instead of "a") and saved it, the existing "chico / boy" term would be updated instead.</p>
+</li>
+<li>
+<p>During reading, if you click on an unknown word, and decide to change the term's capitalization, Lute won't let you mis-type the word.  For example, if you're reading a shocking Spanish newspaper article about "GATOS SALVAJES" (wild cats!), you might want to save the term "GATOS", but as lowercase "gatos".  Lute stops you from typing "gattos" during the fix, so the new term is created correctly.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="where-are-my-new-terms-sentences"><a class="header" href="#where-are-my-new-terms-sentences">Where are my new Term's sentences?</a></h1>
+<p>Lute shows sentences for a Term and its siblings when you click the Sentences link on the Term form, but it only includes sentences for pages marked as "read".  Pages are marked as "read" when you click either the links at the bottom of the reading page:</p>
+<img width="285" alt="image" src="faq/terms/../../assets/faq/terms/sentences_marked_read.png">
+<p>(The green checkmark also changes all unknown terms to well-known.)</p>
+<p>Lute only includes sentences from pages marked "read" for a few reasons:</p>
+<ul>
+<li>Only sentences you've seen before are included, so you'll have had some exposure to the vocabulary already.  Including unread sentences would possibly show you new, confusing, or distracting vocabulary or ideas.</li>
+<li>Showing unread sentences can spoil books!  (I was reading a book and when I looked up a sentence I found out that a character died ...)</li>
+</ul>
+<p>In summary, when you first create a new term, the Sentences link won't show any sentences right away, but once you mark the page as "read" the sentences will be shown in the future.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-should-i-use-statuses"><a class="header" href="#how-should-i-use-statuses">How should I use statuses?</a></h1>
+<p>Lute has statuses 1 through 5, plus Well-Known, and Ignored.  For some people, including me sometimes, that's a lot of statuses!  Your usage of these values is totally up to you, so pick your own rating scheme and stick with it.</p>
+<p>For me personally, as a longtime user of Lute, I'll say that beyond a certain point, statuses don't really matter much, except perhaps to filter later in the Term listing screen.  I use the following levels:</p>
+<ul>
+<li>1 for brand new or tricky things</li>
+<li>3 for stuff I've seen before</li>
+<li>5 for stuff I know well</li>
+<li>Well-Known for things that occur so frequently that I don't need to look them up</li>
+<li>Ignore for things like names, locations, or really specialized terms that I'm certain I'll never see again, like chemical compounds</li>
+</ul>
+<p>Others have more nuanced levels:</p>
+<ul>
+<li>1: Defined and seen at least once before, but unlikely to understand and no attempt has been made at truly understanding/memorizing</li>
+<li>2: At some point I have somewhat memorized this or understood it within context. 50% chance I will remember it if I sit and think about it for a bit, but its somewhat straining.</li>
+<li>3: I can recognize this word fairly quickly and understand it. Every now and again I will have to stop and think about it for a a moment.</li>
+<li>4: I recognize it and I'm comfortable with it. I've seen it semi-frequently and I'd probably remember it even if I didn't see it for a while.</li>
+<li>5: Instant recall, and there's almost no chance that I'll forget this word any time soon. It should probably be WKn but I like the way green looks and makes me feel.</li>
+</ul>
+<p>Still others just use status 1-3.</p>
+<p>So, pick whatever you feel is best, don't sweat it too much, and just start reading.  You can always revise term statuses as you go.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-import-data-from-other-systems"><a class="header" href="#can-i-import-data-from-other-systems">Can I import data from other systems?</a></h1>
+<p>You can import data into Lute via <a href="faq/../usage/terms/bulk-term-import.html">bulk term import</a>, you just have to get your data into .csv file format.</p>
+<h2 id="importing-data-from-lwt"><a class="header" href="#importing-data-from-lwt">Importing data from LWT</a></h2>
+<p>LWT has an "export" feature:</p>
+<p><img src="faq/../assets/faq/import_from_lwt.png" alt="image" /></p>
+<p>Use "Export ALL Terms (TSV)" to export a tab-separated value file.  The file may get downloaded as a ".txt" file, in which case, rename it to ".tsv".</p>
+<p>A sample row of data exported from LWT looks like this:</p>
+<pre><code>gato	cat	Tengo un {gato}		1	Spanish	20
+</code></pre>
+<p>You can then import that file into something like <a href="https://docs.google.com/spreadsheets/u/0/">Google Sheets</a>, and prepare it for import.</p>
+<p>As the <a href="faq/../usage/terms/bulk-term-import.html">bulk term import</a> page says:</p>
+<ul>
+<li>The first line of the CSV file must have the field headings: language, term</li>
+<li>The first line of the CSV file may also have any of these headings: translation, parent, status, tags, pronunciation</li>
+</ul>
+<p>Add a blank line, and then place Lute headings in the appropriate columns.  Continuing with the above example, the data becomes:</p>
+<div class="table-wrapper"><table><thead><tr><th>term</th><th>translation</th><th>n/a</th><th>n/a</th><th>status</th><th>language</th><th>n/a</th><th>tags</th></tr></thead><tbody>
+<tr><td>gato</td><td>cat</td><td>Tengo un {gato}</td><td></td><td>1</td><td>Spanish</td><td>20</td><td></td></tr>
+</tbody></table>
+</div>
+<p>Removing the unmapped columns (with "n/a" in the heading) gives:</p>
+<div class="table-wrapper"><table><thead><tr><th>term</th><th>translation</th><th>status</th><th>language</th><th>tags</th></tr></thead><tbody>
+<tr><td>gato</td><td>cat</td><td>1</td><td>Spanish</td><td></td></tr>
+</tbody></table>
+</div>
+<p>Export this to a .csv file, and import it into Lute.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="why-doesnt-lute-have-flashcards-or-an-srs"><a class="header" href="#why-doesnt-lute-have-flashcards-or-an-srs">Why doesn't Lute have flashcards, or an SRS?</a></h1>
+<p>I do feel that SRS<sup class="footnote-reference"><a href="#1">1</a></sup> plays an important role in language learning (if you like using SRS!).</p>
+<p>Lute currently doesn't have a "testing" mode or SRS for a few reasons:</p>
+<ul>
+<li>The core feature of Lute is reading, so I have been focused on making reading and parsing the most pleasant experience.  To me, testing is sort of outside of this.</li>
+<li>Adding a satisfying testing experience is tricky, and could explode into a ton of work.  Anything else feels half-baked.  Here are some things I'd want to see in testing:
+<ul>
+<li>Efficiently testing terms and parent terms (there's no need to test each instance of every word, in my opinion) -- how to manage this best?</li>
+<li>Testing for recall by image</li>
+<li>Selecting terms to test</li>
+<li>Testing by "category"</li>
+<li>... etc</li>
+</ul>
+</li>
+</ul>
+<p>I would rather keep Lute focused on reading, and delegate testing to something that is dedicated to that -- like Anki.  There is an issue for <a href="https://github.com/jzohrab/lute-v3/issues/3">Anki export</a>.  Then there would need to be a feedback loop for statuses to get updated, etc.</p>
+<p>Lute is open-sourced software, though, so if someone feels a burning need to implement an SRS in Lute, they are welcome to do it.  For it to be included in the main Lute package, the code would need to pass the various quality checks, and would also need to have sufficient testing and documentation (user docs and technical docs).  It could also be written as a standalone app that interfaces with the Lute database, or perhaps via an API.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Spaced Repetition Software</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-is-development-work-prioritized"><a class="header" href="#how-is-development-work-prioritized">How is development work prioritized?</a></h1>
+<p><em>Variations on this:</em></p>
+<ul>
+<li>where's the roadmap?</li>
+<li>what's the long-term plan?</li>
+<li>can you add feature X?</li>
+<li>why was feature Y added before feature Z?</li>
+</ul>
+<p>These are all great questions, and at the moment there's really not a good answer in the normal "product" sense.</p>
+<p>The goal is for Lute, or something a lot like it, to become a default viable tool for a large user base.  At the moment, the steps for getting there are not planned or roadmapped like a regular product would be: good planning takes a lot of time and energy.  Lute's free and open source, so I and others work on it as we can<sup class="footnote-reference"><a href="#testing">1</a></sup>.</p>
+<p>Lute's got a big backlog of issues and ideas.  You may be wondering why your small request has been sitting in the queue since like <em>forever</em>.  There are some criteria I use to pick what to work on:</p>
+<ul>
+<li><strong>Relative size of work:</strong> how fast/easy it is to design, code, test, and document.  Sometimes small-seeming things aren't feasible.  E.g., "Couldn't you just query the database and tell me how many unknown words are in my book?"  No, unfortunately, because of the way that Lute stores data.  (It seems like it would be easy, right?  But it's not.)  Some requests are intertwined with others, or fundamentally don't follow Lute's technical design.  All good, but big changes take time.</li>
+<li><strong>User impact:</strong> when I was coding just for me, this was easy.  But now with many users, I try to take that into account.</li>
+<li><strong>Fun and usefulness for me personally:</strong> This keeps me motivated, and ensures that Lute doesn't have any obvious jankiness.</li>
+<li><strong>Code and architecture quality:</strong> Since Lute should be open source and hackable, it should be clear.  Though I've tried to keep things sane, in some places it's tough.  So this kind of work (refactoring: improving the quality of existing code) is important.</li>
+<li><strong>Differentiators:</strong> there are a few things that could make a big difference to learning.  With Lute, term images and parent terms were two of the initial things that drove me to write it in the first place.  I think that there are others as well: "word families", "sentence notes", and of course AI integration ... all of these might just be personal projects and thoughts though, I'm not sure!</li>
+</ul>
+<p>Lute's open source, so anyone is welcome to make forks and tweak it for their own learning and fun.  But most of us want to just <em>get on with it</em>.</p>
+<div class="footnote-definition" id="testing"><sup class="footnote-definition-label">1</sup>
+<p>"Work on it as we can" sounds chaotic.  To counteract this chaos, Lute has a decent set of automated tests and checks to ensure that the code is viable.</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="why-is-this-free"><a class="header" href="#why-is-this-free">Why is this free?</a></h1>
+<p>Lute is and will always remain free for a few reasons.</p>
+<ol>
+<li>
+<p>Reciprocity.  When I've studied languages, I've had the great benefit of finding top-notch free technology and content from many, many people and organizations.</p>
+</li>
+<li>
+<p>Freedom from accountability!  Yep, I said that.  While I would appreciate any kind of voluntary donation you might wish to give me for making Lute, I can't ask for payment.  Lute is open source software, and as such will always be a work-in-progress, no matter how great it is.  Requiring payment for use would create an additional burden of responsibility towards each user, and potentially cause frustration for users who buy something that doesn't quite work for them.</p>
+</li>
+<li>
+<p>Anki does it, why can't Lute?  Anki is miraculously free.  They have a great system, central server syncing, a massive community ... it's something to aspire to.</p>
+</li>
+</ol>
+<p>Who knows, maybe at some point Lute will become financially rewarding.  That would be a happy accident, but that's not the main goal.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="changelog"><a class="header" href="#changelog">Changelog</a></h1>
+<p>Lute's changelog is on <a href="https://github.com/jzohrab/lute-v3/blob/master/docs/CHANGELOG.md">GitHub</a>.</p>
+<h2 id="notes-about-the-version-numbers"><a class="header" href="#notes-about-the-version-numbers">Notes about the version numbers</a></h2>
+<p>Lute's version numbering is as follows:</p>
+<p><code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>, followed by an optional <code>.b&lt;number&gt;</code>.</p>
+<p>This schema is documented (exhaustively) at <a href="https://packaging.python.org/en/latest/specifications/version-specifiers/#version-specifiers">packaging.python.org/</a>.</p>
+<h3 id="stable-versions"><a class="header" href="#stable-versions">Stable versions</a></h3>
+<p>Each release number that doesn't end with <code>.b&lt;number&gt;</code> is stable.  Stable releases are pushed to pypi and to Docker Hub.</p>
+<p>When you do a <code>pip install</code> or <code>--upgrade</code>, pip will automatically use the latest stable release.</p>
+<h3 id="beta-launches"><a class="header" href="#beta-launches">Beta launches</a></h3>
+<p>Beta launches end with <code>b&lt;number&gt;</code>, and are betas for the <em>next</em> planned release.  This follows <a href="https://packaging.python.org/en/latest/specifications/version-specifiers/#version-specifiers">the Python recommendation</a>.</p>
+<p>For example, if the current prod release is <code>3.0.4</code>, the next planned release will be <code>3.0.5</code>.  Betas before that release will be <code>3.0.5.b1</code>, <code>.b2</code>, etc, so the numbering will be:</p>
+<pre><code>3.0.4
+3.0.5b1
+3.0.5
+</code></pre>
+<p>As Lute's developer/owner, I use the beta releases in my personal prod environment, actually using it to ensure there aren't any problems.  When the beta is good, it's made into a stable release.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="backlog"><a class="header" href="#backlog">Backlog</a></h1>
+<p>Lute's backlog is tracked in <a href="https://github.com/jzohrab/lute-v3/issues">GitHub issues</a>.</p>
+<p>There's also a <a href="https://github.com/users/jzohrab/projects/1">GitHub Lute-v3 project</a>, where I track some other items for the issues like category, priority, and size, but at present (Dec 2023) I'm not sure how much utility that has.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="documentation-feedback"><a class="header" href="#documentation-feedback">Documentation feedback</a></h1>
+<p>If this documentation is unclear or has an error, please open a new <a href="https://github.com/jzohrab/lute-manual/issues/new">GitHub issue</a> in the <a href="https://github.com/jzohrab/lute-manual">lute-manual repository</a>.</p>
+<p>Thank you!</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="en" class="rust" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Parent terms - Lute manual</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../css/custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../intro.html">Introduction</a></li><li class="chapter-item "><a href="../../background.html">Background</a></li><li class="chapter-item affix "><li class="part-title">Installation</li><li class="chapter-item "><a href="../../install/install.html">Installation</a></li><li class="chapter-item "><a href="../../install/windows/index.html">Installing on Windows</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../install/windows/windows-10-32-bit-using-python.html">Windows 10 (32 bit) using Python and pip</a></li><li class="chapter-item "><a href="../../install/windows/windows-using-docker.html">Windows using Docker</a></li></ol></li><li class="chapter-item "><a href="../../install/mecab.html">MeCab for Japanese</a></li><li class="chapter-item "><a href="../../install/troubleshooting.html">Troubleshooting</a></li><li class="chapter-item "><a href="../../install/beta-releases.html">Beta releases</a></li><li class="chapter-item affix "><li class="part-title">Usage</li><li class="chapter-item "><a href="../../usage/starting-and-stopping.html">Starting and stopping</a></li><li class="chapter-item "><div>Languages</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../usage/languages/defining-languages.html">Defining a language</a></li><li class="chapter-item "><a href="../../usage/languages/dictionaries.html">Dictionaries</a></li><li class="chapter-item "><a href="../../usage/languages/word-characters.html">Word characters</a></li></ol></li><li class="chapter-item "><div>Books</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../usage/books/creating-books.html">Creating books</a></li><li class="chapter-item "><a href="../../usage/books/stats.html">The stats calculation</a></li></ol></li><li class="chapter-item "><div>Reading</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../usage/reading/reading.html">Reading</a></li><li class="chapter-item "><a href="../../usage/keyboard-bindings.html">Key bindings</a></li><li class="chapter-item "><a href="../../usage/reading/overlapping-terms.html">Overlapping terms</a></li><li class="chapter-item "><a href="../../usage/reading/tutorial.html">The demo tutorial</a></li></ol></li><li class="chapter-item expanded "><div>Terms</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../usage/terms/terms.html">Terms</a></li><li class="chapter-item expanded "><a href="../../usage/terms/parent-terms.html" class="active">Parent terms</a></li><li class="chapter-item "><a href="../../usage/terms/link-parent-child-statuses.html">Linking parent-child statuses</a></li><li class="chapter-item "><a href="../../usage/terms/bulk-term-import.html">Bulk term import</a></li></ol></li><li class="chapter-item "><div>Themes</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../usage/themes/themes.html">Themes</a></li><li class="chapter-item "><a href="../../usage/themes/toggling-highlights.html">Toggling highlights</a></li><li class="chapter-item "><a href="../../usage/themes/custom-styles.html">Custom styles</a></li></ol></li><li class="chapter-item "><a href="../../usage/audio.html">Adding audio</a></li><li class="chapter-item "><a href="../../backup/backup.html">Backup</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../backup/restore.html">Restoring backups</a></li></ol></li><li class="chapter-item "><a href="../../usage/command-line-jobs.html">Command line jobs</a></li><li class="chapter-item "><a href="../../usage/updating.html">Updating Lute</a></li><li class="chapter-item affix "><li class="part-title">FAQs</li><li class="chapter-item "><a href="../../faq/help.html">Where can I get help?</a></li><li class="chapter-item "><div>Setup</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../faq/setup/web-server.html">Can I run Lute on a private web server?</a></li><li class="chapter-item "><a href="../../faq/setup/usb.html">Can I store Lute data on a USB key?</a></li><li class="chapter-item "><a href="../../faq/adding-basic-auth.html">Can I make Lute secure?</a></li><li class="chapter-item "><a href="../../faq/online-lute.html">Is there an online version of Lute?</a></li><li class="chapter-item "><a href="../../faq/v2-to-v3.html">How can I migrate from Lute v2 to v3?</a></li></ol></li><li class="chapter-item "><div>Languages</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../faq/language/add-a-language.html">Can you add language X?</a></li></ol></li><li class="chapter-item "><div>Books</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../faq/books/finding-stuff.html">Where can I find books to import?</a></li><li class="chapter-item "><a href="../../faq/books/epub-import.html">Why won't my epub import correctly?</a></li><li class="chapter-item "><a href="../../faq/books/pdf-import.html">Why won't my pdf import correctly?</a></li><li class="chapter-item "><a href="../../faq/books/utf-8.html">My text file import is giving a "utf-8 encoding" error message</a></li></ol></li><li class="chapter-item "><div>Terms</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../faq/terms/terms-cannot-be-changed-once-created.html">Why can't I change a Term?</a></li><li class="chapter-item "><a href="../../faq/terms/sentences-only-shown-when-page-is-read.html">Where are my new Term's sentences?</a></li><li class="chapter-item "><a href="../../faq/terms/term-statuses.html">How should I use statuses?</a></li></ol></li><li class="chapter-item "><a href="../../faq/import-from-other-systems.html">Can I import data from other systems?</a></li><li class="chapter-item "><a href="../../faq/why-no-flashcards.html">Why doesn't Lute have flashcards, or an SRS?</a></li><li class="chapter-item "><a href="../../faq/prioritizing-dev-work.html">How is development work prioritized?</a></li><li class="chapter-item "><a href="../../faq/free.html">Why is this free?</a></li><li class="chapter-item affix "><li class="part-title">Misc</li><li class="chapter-item "><a href="../../misc/changelog.html">Changelog</a></li><li class="chapter-item "><a href="../../misc/backlog.html">Backlog</a></li><li class="chapter-item "><a href="../../misc/doc-feedback.html">Documentation feedback</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Lute manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/jzohrab/lute-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="parent-terms"><a class="header" href="#parent-terms">Parent terms</a></h1>
+<p>Lute lets you define "Parent Terms", which is helpful for things like verb infinites, adjectives, etc.  For example, "to have" could be the parent term for "has".  This is useful because you only need to define things like root term meanings at the root level.</p>
+<p>Here's the popup for a term with a parent term:</p>
+<p><img src="../../assets/usage/terms/parent_01.png" alt="image" /></p>
+<h1 id="setting-an-existing-term-as-a-parent"><a class="header" href="#setting-an-existing-term-as-a-parent">Setting an existing term as a parent</a></h1>
+<p>In the example below, you've already defined the term "have", and you're now creating a new term for "has".  In the "parent term" text box, if you type "ha", Lute then suggests the predefined term "have" as the parent:</p>
+<p><img src="../../assets/usage/terms/parent_02.png" alt="image" /></p>
+<h1 id="defining-a-term-and-a-new-parent"><a class="header" href="#defining-a-term-and-a-new-parent">Defining a term and a new parent</a></h1>
+<blockquote>
+<p>Note the UI has changed slightly since this was written, but the idea is still the same.</p>
+</blockquote>
+<p>In the example below, you're defining the term "dogs", and creating the parent term "dog" at the same time ("dog" wasn't defined previously):</p>
+<p><img src="../../assets/usage/terms/parent_03.png" alt="image" /></p>
+<p>Here's the popup for the "dogs" term:</p>
+<p><img src="../../assets/usage/terms/parent_04.png" alt="image" /></p>
+<p>And for "dog":</p>
+<p><img src="../../assets/usage/terms/parent_05.png" alt="image" /></p>
+<p>Note that the new parent term ("dog") gets the exact same information as the new term ("dogs"):</p>
+<div class="table-wrapper"><table><thead><tr><th>term</th><th>details</th></tr></thead><tbody>
+<tr><td>dogs</td><td><img src="../../assets/usage/terms/parent_06.png" alt="image" /></td></tr>
+<tr><td>dog</td><td><img src="../../assets/usage/terms/parent_07.png" alt="image" /></td></tr>
+</tbody></table>
+</div>
+<p>While this might feel counter-intuitive, I've found that it provides the fastest input and term definition for Lute as I'm reading.  If I need, I can go back to the parent term later and clean things up.</p>
+<h1 id="click-a-parent-tag-to-edit-the-parent-term"><a class="header" href="#click-a-parent-tag-to-edit-the-parent-term">Click a Parent tag to edit the parent Term</a></h1>
+<p>When you click on a Term with parents, the parent tags are clickable, so you can quickly move to the parent Term.</p>
+<p>For example, I've clicked on the term "existing" to show its form:</p>
+<p><img src="../../assets/usage/terms/parent_08.png" alt="image" /></p>
+<p>If I click on the parent tag "exist", the form moves to that Term:</p>
+<p><img src="../../assets/usage/terms/parent_09.png" alt="image" /></p>
+<p>I can then edit and save that parent term normally.</p>
+<h1 id="multiple-parents"><a class="header" href="#multiple-parents">Multiple parents</a></h1>
+<p>Sometimes, a word might have multiple parents.  For example, in Czech, "hoře" is a declension of "hora", the regular form of "hoře", and a conjugation of "hořet".  In Spanish, "se sienta" could be a conjugation of "sentarse" or "sentirse".  Each parent is entered as a separate tag.  You can add multiple parents by typing them and hitting space or return.</p>
+<h1 id="bulk-assigning-parents"><a class="header" href="#bulk-assigning-parents">Bulk assigning parents</a></h1>
+<p>You can bulk assign terms to a <em>pre-defined</em> parent from the Terms screen (Home &gt; Terms).  Below shows how it's done:</p>
+<p><img src="../../assets/usage/terms/parent_10.png" alt="image" /></p>
+<p>I had several terms which should be mapped to the <em>pre-defined</em> parent term "to have" (the infinitive).</p>
+<h2 id="1-search-for-the-terms-you-want"><a class="header" href="#1-search-for-the-terms-you-want">1. Search for the terms you want</a></h2>
+<p>Filter for terms with the Search box in the top right.</p>
+<p>In that box, I entered "^ha".  "^" is a special search character that says "the start of a word", so "^ha" means "show every term that starts with "ha".  If I had entered just "ha", terms such as "chat", "that", and "shorthair" would have been included.</p>
+<h2 id="2-check-the-boxes-next-to-the-terms-you-want-to-assign"><a class="header" href="#2-check-the-boxes-next-to-the-terms-you-want-to-assign">2. Check the boxes next to the terms you want to assign</a></h2>
+<p>I clicked "has", "had", etc.</p>
+<h2 id="2-set-the-parent"><a class="header" href="#2-set-the-parent">2. Set the parent</a></h2>
+<p>In the "Set parent" box, I typed "to" and Lute showed "to have".  When I click "go", those terms will be assigned to the parent:</p>
+<p><img src="../../assets/usage/terms/parent_11.png" alt="image" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../usage/terms/terms.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../usage/terms/link-parent-child-statuses.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../usage/terms/terms.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../usage/terms/link-parent-child-statuses.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
