@@ -1,6 +1,6 @@
 # Changelog
 
-Lute's changelog is on [GitHub](https://github.com/jzohrab/lute-v3/blob/master/docs/CHANGELOG.md).
+Lute's changelog is on [GitHub](https://github.com/luteorg/lute-v3/blob/master/docs/CHANGELOG.md).
 
 ## Notes about the version numbers
 

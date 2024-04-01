@@ -39,7 +39,7 @@ I assume you already know what you're doing, but here's a rough outline anyway:
 Stop Lute.
 
 ```
-git remote add upstream git@github.com:jzohrab/lute-v3.git
+git remote add upstream git@github.com:luteorg/lute-v3.git
 git fetch upstream
 git merge upstream/master
 ```
@@ -57,7 +57,7 @@ If you install from source and make any modifications to Lute -- which _of cours
 git add [your files]
 git commit -m "[changes]"
 
-git remote add upstream git@github.com:jzohrab/lute-v3.git
+git remote add upstream git@github.com:luteorg/lute-v3.git
 git fetch upstream
 
 # Check commits, if you want

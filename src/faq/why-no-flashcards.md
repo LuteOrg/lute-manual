@@ -12,7 +12,7 @@ Lute currently doesn't have a "testing" mode or SRS for a few reasons:
   * Testing by "category"
   * ... etc
 
-I would rather keep Lute focused on reading, and delegate testing to something that is dedicated to that -- like Anki.  There is an issue for [Anki export](https://github.com/jzohrab/lute-v3/issues/3).  Then there would need to be a feedback loop for statuses to get updated, etc.
+I would rather keep Lute focused on reading, and delegate testing to something that is dedicated to that -- like Anki.  There is an issue for [Anki export](https://github.com/luteorg/lute-v3/issues/3).  Then there would need to be a feedback loop for statuses to get updated, etc.
 
 Lute is open-sourced software, though, so if someone feels a burning need to implement an SRS in Lute, they are welcome to do it.  For it to be included in the main Lute package, the code would need to pass the various quality checks, and would also need to have sufficient testing and documentation (user docs and technical docs).  It could also be written as a standalone app that interfaces with the Lute database, or perhaps via an API.
 

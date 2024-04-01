@@ -37,7 +37,7 @@ By default, Lute stores your data in the appropriate "user data" directory, as d
 If you want to change that or a few other basic settings, you can create a custom `config.yml` file and store it in the same folder where you run `lute.main`:
 
 * Copy the
-[config.yml.example](https://raw.githubusercontent.com/jzohrab/lute-v3/master/lute/config/config.yml.example)
+[config.yml.example](https://raw.githubusercontent.com/luteorg/lute-v3/master/lute/config/config.yml.example)
 to a new file named `config.yml` in your Lute folder
 * edit and save it
 

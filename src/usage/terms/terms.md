@@ -30,4 +30,4 @@ Examples:
 
 At the bottom of the term table listing is an "Export CSV" button.  This exports all the Terms that match the current filters and search.
 
-> The CSV export is a simple tool that doesn't include sample sentences or images for the terms ... see [this issue](https://github.com/jzohrab/lute-v3/issues/3) for a description of a better feature that would take more work.
+> The CSV export is a simple tool that doesn't include sample sentences or images for the terms ... see [this issue](https://github.com/luteorg/lute-v3/issues/3) for a description of a better feature that would take more work.

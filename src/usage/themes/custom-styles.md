@@ -115,7 +115,7 @@ Yuck.
 
 ## Notes:
 
-* The styles used by Lute out-of-the-box are in [the GitHub repo](https://github.com/jzohrab/lute-v3/blob/master/lute/static/css/styles.css), hack away!
+* The styles used by Lute out-of-the-box are in [the GitHub repo](https://github.com/luteorg/lute-v3/blob/master/lute/static/css/styles.css), hack away!
 * The data you put in the text box must be valid CSS, as it is picked up verbatim and inserted into the HTML.
 * Some of the current css class names are bad (e.g. "status98" means "ignored", but that's pretty hard to follow).  If those class names get changed in a future release, I'll add a note in the release notes.
 * Using css is pretty tricky, but it works for now!

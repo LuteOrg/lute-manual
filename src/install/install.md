@@ -181,7 +181,7 @@ As with the `pip` installation, you can change the port if your machine is alrea
 
 ## From source
 
-Developers and gearheads can install Lute from source: see the [Lute repository](https://github.com/jzohrab/lute-v3/wiki/Development).
+Developers and gearheads can install Lute from source: see the [Lute repository](https://github.com/luteorg/lute-v3/wiki/Development).
 
 If you want to develop Lute, you'll also need to [install MeCab](./mecab.md).
 
