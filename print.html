@@ -241,9 +241,9 @@ src="https://www.youtube.com/embed/7X3OkcljoCk">
 <p>As good as Lute is, it might not be for you.  Below are some things that may lead you to decide to postpone using Lute for now:</p>
 <div class="table-wrapper"><table><thead><tr><th>Item</th><th>Notes</th></tr></thead><tbody>
 <tr><td>Single-word audio</td><td>Lute has an audio player for books, but you can't click a single word to hear its audio.</td></tr>
-<tr><td>Support "non-consecutive multiword terms"</td><td>Some languages, like German and Dutch, have terms that that split apart.  For example, in German, the verb "einladen" can be split into "laden ... ein": "Ich lade dich zu meiner Party ein."  I don't think any tool currently solves this well.  See the notes at on <a href="https://github.com/jzohrab/lute/issues/58">this GitHub issue</a>.</td></tr>
+<tr><td>Support "non-consecutive multiword terms"</td><td>Some languages, like German and Dutch, have terms that that split apart.  For example, in German, the verb "einladen" can be split into "laden ... ein": "Ich lade dich zu meiner Party ein."  I don't think any tool currently solves this well.  See the notes at on <a href="https://github.com/luteorg/lute-v3/issues/9">this GitHub issue</a>.</td></tr>
 <tr><td>Flashcards/testing</td><td>Lute is designed for reading only, there is no testing.</td></tr>
-<tr><td>Automated or bulk translation</td><td>Lute isn't designed to automatically create bidirectional readers, or to auto-create translations.  You can use Lute's <a href="https://github.com/jzohrab/lute/wiki/Bulk-Term-Import">Term import</a> feature, along with something like Google Sheets, to imitate that.</td></tr>
+<tr><td>Automated or bulk translation</td><td>Lute isn't designed to automatically create bidirectional readers, or to auto-create translations.  You can use Lute's Term CSV import feature, along with something like Google Sheets, to imitate that.</td></tr>
 </tbody></table>
 </div>
 <p>There are other smaller features that Lute doesn't have yet, but the above are the biggest ones that may be dealbreakers for you at the moment.</p>
@@ -375,7 +375,7 @@ docker compose up
 ...
 </code></pre>
 <h2 id="from-source"><a class="header" href="#from-source">From source</a></h2>
-<p>Developers and gearheads can install Lute from source: see the <a href="https://github.com/jzohrab/lute-v3/wiki/Development">Lute repository</a>.</p>
+<p>Developers and gearheads can install Lute from source: see the <a href="https://github.com/luteorg/lute-v3/wiki/Development">Lute repository</a>.</p>
 <p>If you want to develop Lute, you'll also need to <a href="install/./mecab.html">install MeCab</a>.</p>
 <p>If you install from source and tinker with the code, make sure you can update later!  See <a href="install/../usage/updating.html#keeping-up-to-date-when-installing-from-source">Keeping up-to-date when installing from source</a>.</p>
 <hr />
@@ -718,7 +718,7 @@ deactivate
 <p>If you want to change that or a few other basic settings, you can create a custom <code>config.yml</code> file and store it in the same folder where you run <code>lute.main</code>:</p>
 <ul>
 <li>Copy the
-<a href="https://raw.githubusercontent.com/jzohrab/lute-v3/master/lute/config/config.yml.example">config.yml.example</a>
+<a href="https://raw.githubusercontent.com/luteorg/lute-v3/master/lute/config/config.yml.example">config.yml.example</a>
 to a new file named <code>config.yml</code> in your Lute folder</li>
 <li>edit and save it</li>
 </ul>
@@ -959,8 +959,8 @@ span.overlapped:before {
 <img width="300" alt="image" src="usage/reading/../../assets/usage/reading/overlap_04.png"><div style="break-before: page; page-break-before: always;"></div><h1 id="the-demo-tutorial"><a class="header" href="#the-demo-tutorial">The demo tutorial</a></h1>
 <p>Lute comes with an interactive tutorial when first installed.  The tutorial text is in the the Lute repository:</p>
 <ul>
-<li><a href="https://github.com/jzohrab/lute-v3/blob/master/lute/db/demo/stories/tutorial.txt">The tutorial</a></li>
-<li><a href="https://github.com/jzohrab/lute-v3/blob/master/lute/db/demo/stories/tutorial_follow_up.txt">The follow-up</a></li>
+<li><a href="https://github.com/luteorg/lute-v3/blob/master/lute/db/demo/stories/tutorial.txt">The tutorial</a></li>
+<li><a href="https://github.com/luteorg/lute-v3/blob/master/lute/db/demo/stories/tutorial_follow_up.txt">The follow-up</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="terms"><a class="header" href="#terms">Terms</a></h1>
 <p>On the Terms page (Home &gt; Terms), Lute lists all the terms you've defined.</p>
@@ -982,7 +982,7 @@ span.overlapped:before {
 <h2 id="csv-export"><a class="header" href="#csv-export">CSV Export</a></h2>
 <p>At the bottom of the term table listing is an "Export CSV" button.  This exports all the Terms that match the current filters and search.</p>
 <blockquote>
-<p>The CSV export is a simple tool that doesn't include sample sentences or images for the terms ... see <a href="https://github.com/jzohrab/lute-v3/issues/3">this issue</a> for a description of a better feature that would take more work.</p>
+<p>The CSV export is a simple tool that doesn't include sample sentences or images for the terms ... see <a href="https://github.com/luteorg/lute-v3/issues/3">this issue</a> for a description of a better feature that would take more work.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="parent-terms"><a class="header" href="#parent-terms">Parent terms</a></h1>
 <p>Lute lets you define "Parent Terms", which is helpful for things like verb infinites, adjectives, etc.  For example, "to have" could be the parent term for "has".  This is useful because you only need to define things like root term meanings at the root level.</p>
@@ -1251,7 +1251,7 @@ span.textitem { font-size: 18px; }
 <p>Yuck.</p>
 <h2 id="notes"><a class="header" href="#notes">Notes:</a></h2>
 <ul>
-<li>The styles used by Lute out-of-the-box are in <a href="https://github.com/jzohrab/lute-v3/blob/master/lute/static/css/styles.css">the GitHub repo</a>, hack away!</li>
+<li>The styles used by Lute out-of-the-box are in <a href="https://github.com/luteorg/lute-v3/blob/master/lute/static/css/styles.css">the GitHub repo</a>, hack away!</li>
 <li>The data you put in the text box must be valid CSS, as it is picked up verbatim and inserted into the HTML.</li>
 <li>Some of the current css class names are bad (e.g. "status98" means "ignored", but that's pretty hard to follow).  If those class names get changed in a future release, I'll add a note in the release notes.</li>
 <li>Using css is pretty tricky, but it works for now!</li>
@@ -1472,7 +1472,7 @@ docker compose up -d --remove-orphans
 <h2 id="-if-using-source"><a class="header" href="#-if-using-source">... if using source</a></h2>
 <p>I assume you already know what you're doing, but here's a rough outline anyway:</p>
 <p>Stop Lute.</p>
-<pre><code>git remote add upstream git@github.com:jzohrab/lute-v3.git
+<pre><code>git remote add upstream git@github.com:luteorg/lute-v3.git
 git fetch upstream
 git merge upstream/master
 </code></pre>
@@ -1484,7 +1484,7 @@ git merge upstream/master
 git add [your files]
 git commit -m "[changes]"
 
-git remote add upstream git@github.com:jzohrab/lute-v3.git
+git remote add upstream git@github.com:luteorg/lute-v3.git
 git fetch upstream
 
 # Check commits, if you want
@@ -1498,7 +1498,7 @@ git merge upstream/develop
 <p>But if it's a Lute issue or question, the best places to ask for help are:</p>
 <ul>
 <li>the <a href="https://discord.gg/CzFUQP5m8u">Lute Discord</a> "issues and bugs" channel.</li>
-<li>Lute v3 <a href="https://github.com/jzohrab/lute-v3/issues">GitHub Issues</a></li>
+<li>Lute v3 <a href="https://github.com/luteorg/lute-v3/issues">GitHub Issues</a></li>
 </ul>
 <p>When coming in with a question, please be as specific with your details as possible.</p>
 <p>Good luck!</p>
@@ -1641,7 +1641,7 @@ http {
 <p>Lute v2 uses a "custom_styles.css" file in the data folder.  v3 uses a Setting text box, so copy any content from your custom_styles.css file into Lute v3 Settings.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="can-you-add-language-x"><a class="header" href="#can-you-add-language-x">Can you add language X?</a></h1>
 <p>Yes, but you'll need to <strong>get it working in your own Lute first</strong>.</p>
-<p>Once you've figured out good language settings, please open an "Add language" <a href="https://github.com/jzohrab/lute-v3/issues/new/choose">GitHub issue</a>.  Thank you!</p>
+<p>Once you've figured out good language settings, please open an "Add language" <a href="https://github.com/luteorg/lute-v3/issues/new/choose">GitHub issue</a>.  Thank you!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="where-can-i-find-books-to-import"><a class="header" href="#where-can-i-find-books-to-import">Where can I find books to import?</a></h1>
 <p>On the internet!</p>
 <p>But, since you asked, some of my favorites:</p>
@@ -1768,7 +1768,7 @@ http {
 </ul>
 </li>
 </ul>
-<p>I would rather keep Lute focused on reading, and delegate testing to something that is dedicated to that -- like Anki.  There is an issue for <a href="https://github.com/jzohrab/lute-v3/issues/3">Anki export</a>.  Then there would need to be a feedback loop for statuses to get updated, etc.</p>
+<p>I would rather keep Lute focused on reading, and delegate testing to something that is dedicated to that -- like Anki.  There is an issue for <a href="https://github.com/luteorg/lute-v3/issues/3">Anki export</a>.  Then there would need to be a feedback loop for statuses to get updated, etc.</p>
 <p>Lute is open-sourced software, though, so if someone feels a burning need to implement an SRS in Lute, they are welcome to do it.  For it to be included in the main Lute package, the code would need to pass the various quality checks, and would also need to have sufficient testing and documentation (user docs and technical docs).  It could also be written as a standalone app that interfaces with the Lute database, or perhaps via an API.</p>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>Spaced Repetition Software</p>
@@ -1810,7 +1810,7 @@ http {
 </ol>
 <p>Who knows, maybe at some point Lute will become financially rewarding.  That would be a happy accident, but that's not the main goal.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelog"><a class="header" href="#changelog">Changelog</a></h1>
-<p>Lute's changelog is on <a href="https://github.com/jzohrab/lute-v3/blob/master/docs/CHANGELOG.md">GitHub</a>.</p>
+<p>Lute's changelog is on <a href="https://github.com/luteorg/lute-v3/blob/master/docs/CHANGELOG.md">GitHub</a>.</p>
 <h2 id="notes-about-the-version-numbers"><a class="header" href="#notes-about-the-version-numbers">Notes about the version numbers</a></h2>
 <p>Lute's version numbering is as follows:</p>
 <p><code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>, followed by an optional <code>.b&lt;number&gt;</code>.</p>
@@ -1827,8 +1827,8 @@ http {
 </code></pre>
 <p>As Lute's developer/owner, I use the beta releases in my personal prod environment, actually using it to ensure there aren't any problems.  When the beta is good, it's made into a stable release.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="backlog"><a class="header" href="#backlog">Backlog</a></h1>
-<p>Lute's backlog is tracked in <a href="https://github.com/jzohrab/lute-v3/issues">GitHub issues</a>.</p>
-<p>There's also a <a href="https://github.com/users/jzohrab/projects/1">GitHub Lute-v3 project</a>, where I track some other items for the issues like category, priority, and size, but at present (Dec 2023) I'm not sure how much utility that has.</p>
+<p>Lute's backlog is tracked in <a href="https://github.com/luteorg/lute-v3/issues">GitHub issues</a>.</p>
+<p>There's also a <a href="https://github.com/users/jzohrab/projects/1">GitHub Lute-v3 project</a>, where I track some other items for the issues like category, priority, and size.  This project will be moved to github.com/luteorg in the future.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="documentation-feedback"><a class="header" href="#documentation-feedback">Documentation feedback</a></h1>
 <p>If this documentation is unclear or has an error, please open a new <a href="https://github.com/LuteOrg/lute-manual/issues/new">GitHub issue</a> in the <a href="https://github.com/LuteOrg/lute-manual">lute-manual repository</a>.</p>
 <p>Thank you!</p>
