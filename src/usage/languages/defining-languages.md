@@ -1,5 +1,21 @@
 # Defining a language
 
-When creating a new Language, you can use one of the existing languages as a template by selecting the dropdown at the top of the form and clicking "go."  Sensible defaults are set.
+You can add a new language by going to Settings > Languages.  Your existing languages are listed there.
+
+At the bottom of the page are two links:
+
+* "Load predefined languages and sample stories"
+
+This link leads to a list of over 50 languages predefined in Lute, with sample stories and dictionaries pre-configured.  Click a language and it will be loaded so you can try it out.
+
+If the language you're interested in is not present in the predefined languages, you can create a new language with the "Create new" link.
+
+* "Create new"
+
+This link leads to a form for you to define your language.
+
+If your language is similar to one of the predefined languages, you can use that as a "template" by selecting it from the dropdown at the top of the form and clicking "go."
+
+If your language is new, you can check a [spreadsheet](https://docs.google.com/spreadsheets/d/1iBSwsKI-57HpjnNP8holmk_HDmjh16i5V_G8HJ-oNHY/edit#gid=1003964927) created by the Lute community, which contains many languages and dictionaries.  These are gradually being ported into Lute as volunteers find time.
 
 Then add dictionaries, and you're pretty much set.
