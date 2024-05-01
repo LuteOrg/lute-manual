@@ -4,13 +4,13 @@ You can add a new language by going to Settings > Languages.  Your existing lang
 
 At the bottom of the page are two links:
 
-* "Load predefined languages and sample stories"
+## "Load predefined languages and sample stories"
 
 This link leads to a list of over 50 languages predefined in Lute, with sample stories and dictionaries pre-configured.  Click a language and it will be loaded so you can try it out.
 
 If the language you're interested in is not present in the predefined languages, you can create a new language with the "Create new" link.
 
-* "Create new"
+## "Create new"
 
 This link leads to a form for you to define your language.
 
