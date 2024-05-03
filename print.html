@@ -1109,7 +1109,8 @@ Ayer, le dije a ella que comiera la manzana.
 <ul>
 <li>The CSV file should be properly formatted; i.e., carriage returns in fields are allowed, but the field should be enclosed in quotes.</li>
 <li>The first line of the CSV file <strong>must</strong> have the field headings: <code>language, term</code></li>
-<li>The first line of the CSV file may also have any of these headings: <code>translation, parent, status, tags, pronunciation, link_status</code></li>
+<li>The first line of the CSV file <strong>may</strong> also have any of these headings: <code>translation, parent, status, tags, pronunciation, link_status</code></li>
+<li>These field names are <strong>ignored</strong>: <code>added</code></li>
 <li>Fields can be in any order.</li>
 <li>An error is raised if the file contains other headings.</li>
 </ul>
@@ -1475,6 +1476,7 @@ pip install --upgrade lute3
 <p>For Windows, instead of <code>source myenv/bin/activate</code>, do</p>
 <pre><code>.\myenv\Scripts\activate.bat
 </code></pre>
+<p><strong>Note:</strong> The above assumes you named your folder <code>myenv</code>, as suggested in <a href="usage/../install/install.html">installation</a>.  You may have named this folder differently!</p>
 <h2 id="-if-using-docker"><a class="header" href="#-if-using-docker">... if using Docker</a></h2>
 <p>This assumes you're using a <code>docker-compose.yml</code> file.</p>
 <pre><code>cd /path/to/your/lute    # change this line. :-)

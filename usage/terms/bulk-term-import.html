@@ -204,7 +204,8 @@
 <ul>
 <li>The CSV file should be properly formatted; i.e., carriage returns in fields are allowed, but the field should be enclosed in quotes.</li>
 <li>The first line of the CSV file <strong>must</strong> have the field headings: <code>language, term</code></li>
-<li>The first line of the CSV file may also have any of these headings: <code>translation, parent, status, tags, pronunciation, link_status</code></li>
+<li>The first line of the CSV file <strong>may</strong> also have any of these headings: <code>translation, parent, status, tags, pronunciation, link_status</code></li>
+<li>These field names are <strong>ignored</strong>: <code>added</code></li>
 <li>Fields can be in any order.</li>
 <li>An error is raised if the file contains other headings.</li>
 </ul>
