@@ -20,6 +20,8 @@ For Windows, instead of `source myenv/bin/activate`, do
 .\myenv\Scripts\activate.bat
 ```
 
+**Note:** The above assumes you named your folder `myenv`, as suggested in [installation](../install/install.md).  You may have named this folder differently!
+
 ## ... if using Docker
 
 This assumes you're using a `docker-compose.yml` file.
