@@ -24,7 +24,8 @@ From the menu, click Terms > Import Terms.  Choose the CSV file, and indicate if
 
 * The CSV file should be properly formatted; i.e., carriage returns in fields are allowed, but the field should be enclosed in quotes.
 * The first line of the CSV file **must** have the field headings: `language, term`
-* The first line of the CSV file may also have any of these headings: `translation, parent, status, tags, pronunciation, link_status`
+* The first line of the CSV file **may** also have any of these headings: `translation, parent, status, tags, pronunciation, link_status`
+* These field names are **ignored**: `added`
 * Fields can be in any order.
 * An error is raised if the file contains other headings.
 
