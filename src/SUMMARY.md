@@ -49,6 +49,7 @@
 - [Where can I get help?](./faq/help.md)
 - [Setup]()
   - [Can I run Lute on a private web server?](./faq/setup/web-server.md)
+  - [Can I run Lute on my phone or pad?](./faq/setup/mobile-support.md)
   - [Can I store Lute data on a USB key?](./faq/setup/usb.md)
   - [Can I make Lute secure?](./faq/setup/adding-basic-auth.md)
   - [Is there an online version of Lute?](./faq/setup/online-lute.md)
