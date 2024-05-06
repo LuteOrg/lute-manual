@@ -27,6 +27,7 @@
 - [Reading]()
   - [Reading](./usage/reading/reading.md)
   - [Key bindings](./usage/keyboard-bindings.md)
+  - [Reading on mobile](./usage/reading-on-mobile.md)
   - [Overlapping terms](./usage/reading/overlapping-terms.md)
   - [The demo tutorial](./usage/reading/tutorial.md)
 - [Terms]()
