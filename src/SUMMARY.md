@@ -63,6 +63,8 @@
   - [Why won't my epub import correctly?](./faq/books/epub-import.md)
   - [Why won't my pdf import correctly?](./faq/books/pdf-import.md)
   - [My text file import is giving a "utf-8 encoding" error message](./faq/books/utf-8.md)
+- [Reading]()
+  - [I can't click on words in the reading screen](./faq/reading/click-not-working.md)
 - [Terms]()
   - [Why can't I change a Term?](./faq/terms/terms-cannot-be-changed-once-created.md)
   - [Where are my new Term's sentences?](./faq/terms/sentences-only-shown-when-page-is-read.md)

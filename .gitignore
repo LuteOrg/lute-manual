@@ -1,3 +1,5 @@
 book
 
 mdbook-linkcheck/
+
+.DS_Store
