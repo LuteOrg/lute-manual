@@ -17,8 +17,8 @@ Some of these actions refer to the "current word" - that's either the word you'r
 
 | Key         | Action                                           |
 |----------------|-----------------------------------------------|
-| `t`             | Translate the sentence of the current word   |
-| `Shift` + `t`   | Translate the paragraph of the current word   |
+| `t`             | Translate the sentence of the current word.  If you have multiple "sentence" dictionaries, hit `t` repeatedly to cycle through them for the current word.  |
+| `Shift` + `t`   | Translate the paragraph of the current word.  If you have multiple "sentence" dictionaries, hit `Shift` + `t` repeatedly to cycle through them for the current word.   |
 | `c`             | Copy the sentence of the current word to the clipboard |
 | `Shift` + `c`   | Copy the paragraph of the current word to the clipboard |
 | `m`             | Change to the next theme   |
