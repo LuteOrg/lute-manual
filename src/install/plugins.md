@@ -8,9 +8,9 @@ Some languages, such as Mandarin Chinese, require specialized parsers.
 
 Since adding support for all languages would lead to code bloat, Lute adds support for specialized parser through **plug-ins** that you install in your Lute `pip` environment.
 
-| Language | Pypi package name |
-| --- | --- |
-| Mandarin Chinese | `lute3-mandarin` |
+| Language | Pypi package name | Pypi URL |
+| --- | --- | --- |
+| Mandarin Chinese | `lute3-mandarin` | [link](https://pypi.org/project/lute3-mandarin/) |
 
 To install a plugin:
 
@@ -39,3 +39,5 @@ $ python -m lute.main
 
 ...
 ```
+
+If you add a plugin, see its README on [https://pypi.org/] for any configuration notes.
