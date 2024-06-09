@@ -180,28 +180,40 @@
                         <h1 id="command-line-jobs"><a class="header" href="#command-line-jobs">Command line jobs</a></h1>
 <p>While Lute is almost solely a web app, it has some jobs that are run from the terminal, outside of the browser.</p>
 <ul>
-<li><code>hello</code>: Say hi!  Proof-of-concept</li>
-<li><code>language_export</code>: Get all terms from active books in the language, and write a data file of term frequencies and children.</li>
+<li><code>hello</code>: Proof-of-concept command</li>
+<li><code>book_term_export</code>: Export a data file for all terms in a given book.</li>
+<li><code>language_export</code>: Export a data file of all terms in a language.</li>
 </ul>
 <h2 id="how-to-run-the-jobs"><a class="header" href="#how-to-run-the-jobs">How to run the jobs</a></h2>
 <p><strong>These jobs are (currently) only runnable through the command line for pip installs.</strong></p>
-<p>Open a terminal, change directory to your Lute folder, and enter the following commands:</p>
+<p>Lute does not need to be running when you're running a command!  Open a terminal, change directory to your Lute folder, and enter the following commands:</p>
 <pre><code>source .venv/bin/activate    # Activate your virtual environment.
 flask --app lute.app_factory cli &lt;command_name&gt; [arg1] [arg2...]
 </code></pre>
-<p>The <code>--app lute.app_factory</code> part is <strong>required</strong><sup class="footnote-reference"><a href="#these-calls-are-ugly">1</a></sup>.</p>
-<p>Lute does not need to be running when you're running a command.</p>
-<p>List all jobs:</p>
-<pre><code>flask --app lute.app_factory cli --help
+<p>The <code>--app lute.app_factory</code> part is <strong>required</strong><sup class="footnote-reference"><a href="#these-calls-are-ugly">1</a></sup>.  You might be able to <a href="https://flask.palletsprojects.com/en/2.3.x/cli/#environment-variables-from-dotenv">export environment variables</a> to simplify your calls.</p>
+<h2 id="sample-calls"><a class="header" href="#sample-calls">Sample calls</a></h2>
+<h3 id="book_term_export"><a class="header" href="#book_term_export"><code>book_term_export</code></a></h3>
+<pre><code># Usage: flask --app lute.app_factory cli book_term_export [OPTIONS] BOOKID OUTPUT_PATH
+# 
+#   Get all terms for the given book, and write a data file of term frequencies
+#   and children.
+
+flask --app lute.app_factory cli book_term_export 443 my_book.csv
 </code></pre>
-<p>To see help about a job:</p>
-<pre><code>flask --app lute.app_factory cli &lt;command_name&gt; --help
-</code></pre>
-<h3 id="sample-calls"><a class="header" href="#sample-calls">Sample calls</a></h3>
-<pre><code>flask --app lute.app_factory cli hello
+<h3 id="language_export"><a class="header" href="#language_export"><code>language_export</code></a></h3>
+<pre><code># Usage: flask cli language_export [OPTIONS] LANGUAGE OUTPUT_PATH
+# 
+#   Get all terms from all books in the language, and write a data file of term
+#   frequencies and children.
+
 flask --app lute.app_factory cli language_export Spanish sp_terms.csv
 </code></pre>
-<p>You can do things like <a href="https://flask.palletsprojects.com/en/2.3.x/cli/#environment-variables-from-dotenv">export environment variables</a> to simplify your calls if you wish.</p>
+<h3 id="list-all-jobs"><a class="header" href="#list-all-jobs">List all jobs</a></h3>
+<pre><code>flask --app lute.app_factory cli --help
+</code></pre>
+<h3 id="see-help-about-a-job"><a class="header" href="#see-help-about-a-job">See help about a job</a></h3>
+<pre><code>flask --app lute.app_factory cli &lt;command_name&gt; --help
+</code></pre>
 <h2 id="configyml-file"><a class="header" href="#configyml-file">config.yml file</a></h2>
 <p>If you have a <a href="./starting-and-stopping.html#custom-configyml">custom config.yml</a>, Lute jobs will use those settings; otherwise, it uses the built-in defaults.</p>
 <h2 id="why-arent-these-built-into-the-ui"><a class="header" href="#why-arent-these-built-into-the-ui">Why aren't these built into the UI?</a></h2>
