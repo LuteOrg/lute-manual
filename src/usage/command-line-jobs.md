@@ -2,44 +2,59 @@
 
 While Lute is almost solely a web app, it has some jobs that are run from the terminal, outside of the browser.
 
-* `hello`: Say hi!  Proof-of-concept
-* `language_export`: Get all terms from active books in the language, and write a data file of term frequencies and children.
+* `hello`: Proof-of-concept command
+* `book_term_export`: Export a data file for all terms in a given book.
+* `language_export`: Export a data file of all terms in a language.
 
 ## How to run the jobs
 
 **These jobs are (currently) only runnable through the command line for pip installs.**
 
-Open a terminal, change directory to your Lute folder, and enter the following commands:
+Lute does not need to be running when you're running a command!  Open a terminal, change directory to your Lute folder, and enter the following commands:
 
 ```
 source .venv/bin/activate    # Activate your virtual environment.
 flask --app lute.app_factory cli <command_name> [arg1] [arg2...]
 ```
 
-The `--app lute.app_factory` part is **required**[^these-calls-are-ugly].
+The `--app lute.app_factory` part is **required**[^these-calls-are-ugly].  You might be able to [export environment variables](https://flask.palletsprojects.com/en/2.3.x/cli/#environment-variables-from-dotenv) to simplify your calls.
 
-Lute does not need to be running when you're running a command.
+## Sample calls
 
-List all jobs:
+### `book_term_export`
+
+```
+# Usage: flask --app lute.app_factory cli book_term_export [OPTIONS] BOOKID OUTPUT_PATH
+# 
+#   Get all terms for the given book, and write a data file of term frequencies
+#   and children.
+
+flask --app lute.app_factory cli book_term_export 443 my_book.csv
+```
+
+### `language_export`
+
+```
+# Usage: flask cli language_export [OPTIONS] LANGUAGE OUTPUT_PATH
+# 
+#   Get all terms from all books in the language, and write a data file of term
+#   frequencies and children.
+
+flask --app lute.app_factory cli language_export Spanish sp_terms.csv
+```
+
+### List all jobs
 
 ```
 flask --app lute.app_factory cli --help
 ```
 
-To see help about a job:
+### See help about a job
 
 ```
 flask --app lute.app_factory cli <command_name> --help
 ```
 
-### Sample calls
-
-```
-flask --app lute.app_factory cli hello
-flask --app lute.app_factory cli language_export Spanish sp_terms.csv
-```
-
-You can do things like [export environment variables](https://flask.palletsprojects.com/en/2.3.x/cli/#environment-variables-from-dotenv) to simplify your calls if you wish.
 
 ## config.yml file
 
