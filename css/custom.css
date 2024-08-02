@@ -42,7 +42,7 @@ img {
 }
 
 
-li.chapter-item div {
+li.chapter-item > div {
   font-style: italic;
   color: rgb(200, 201, 219);
 }
