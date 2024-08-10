@@ -2,15 +2,17 @@
 
 > Feature introduced in Lute 3.4.0.
 
-> As of May 2024, only a Mandarin Chinese parser is available.  See the [Lute development wiki](https://github.com/LuteOrg/lute-v3/wiki/Developing-language-parser-plugins) for notes on how to develop parser for other languages.
+> As of May 2024, only a Mandarin Chinese parser is available.  See the [Lute development wiki](https://github.com/LuteOrg/lute-v3/wiki/Developing-language-parser-plugins) for notes on how to develop a parser for other languages.
 
 Some languages, such as Mandarin Chinese, require specialized parsers.
 
-Since adding support for all languages would lead to code bloat, Lute adds support for specialized parser through **plug-ins** that you install in your Lute `pip` environment.
+Since adding support for all languages would lead to code bloat, Lute adds support for specialized parsers through **plug-ins** that you install in your Lute `pip` environment.
 
 | Language | Pypi package name | Pypi URL |
 | --- | --- | --- |
-| Mandarin Chinese | `lute3-mandarin` | [link](https://pypi.org/project/lute3-mandarin/) |
+| Mandarin Chinese | `lute3-mandarin` | [README](https://pypi.org/project/lute3-mandarin/) |
+
+If you add a plugin, see the linked README in the above table for any configuration notes.
 
 To install a plugin:
 
@@ -39,5 +41,3 @@ $ python -m lute.main
 
 ...
 ```
-
-If you add a plugin, see its README on [https://pypi.org/] for any configuration notes.
