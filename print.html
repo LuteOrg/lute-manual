@@ -671,14 +671,15 @@ libgcc_s.so.1 =&gt; /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f9fe7cbb000)
 <p>Feature introduced in Lute 3.4.0.</p>
 </blockquote>
 <blockquote>
-<p>As of May 2024, only a Mandarin Chinese parser is available.  See the <a href="https://github.com/LuteOrg/lute-v3/wiki/Developing-language-parser-plugins">Lute development wiki</a> for notes on how to develop parser for other languages.</p>
+<p>As of May 2024, only a Mandarin Chinese parser is available.  See the <a href="https://github.com/LuteOrg/lute-v3/wiki/Developing-language-parser-plugins">Lute development wiki</a> for notes on how to develop a parser for other languages.</p>
 </blockquote>
 <p>Some languages, such as Mandarin Chinese, require specialized parsers.</p>
-<p>Since adding support for all languages would lead to code bloat, Lute adds support for specialized parser through <strong>plug-ins</strong> that you install in your Lute <code>pip</code> environment.</p>
+<p>Since adding support for all languages would lead to code bloat, Lute adds support for specialized parsers through <strong>plug-ins</strong> that you install in your Lute <code>pip</code> environment.</p>
 <div class="table-wrapper"><table><thead><tr><th>Language</th><th>Pypi package name</th><th>Pypi URL</th></tr></thead><tbody>
-<tr><td>Mandarin Chinese</td><td><code>lute3-mandarin</code></td><td><a href="https://pypi.org/project/lute3-mandarin/">link</a></td></tr>
+<tr><td>Mandarin Chinese</td><td><code>lute3-mandarin</code></td><td><a href="https://pypi.org/project/lute3-mandarin/">README</a></td></tr>
 </tbody></table>
 </div>
+<p>If you add a plugin, see the linked README in the above table for any configuration notes.</p>
 <p>To install a plugin:</p>
 <ul>
 <li>Install Lute itself, if you haven't already (as described on prior pages).</li>
@@ -704,7 +705,6 @@ libgcc_s.so.1 =&gt; /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f9fe7cbb000)
 
 ...
 </code></pre>
-<p>If you add a plugin, see its README on [https://pypi.org/] for any configuration notes.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="troubleshooting-1"><a class="header" href="#troubleshooting-1">Troubleshooting</a></h1>
 <p>Tech is complicated, tech can break.</p>
 <p>As always, Google is your best friend here.</p>
