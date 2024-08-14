@@ -84,7 +84,7 @@ Spanish,gato,cat
 #### ex. 5 - multiple parents
 
 ```
-language,term,translation
+language,term,parent
 Spanish,se sienta,"sentirse, sentarse"
 ```
 
