@@ -18,6 +18,10 @@ Note that in the above, the stats on the second row -- the Tutorial follow-up --
 
 Clicking on the "sort" arrows in the Statuses column sort the rows by the unknown percentage only, so you can roughly work through certain books first, if you'd like.
 
+## Changing the sample size.
+
+Lute lets you change the sample size for the book stats calculation on the Settings page.  Note that you have to open a book to force its stats to be recalculated.
+
 ## Note for for character-based languages
 
 Suppose you're studying Chinese, a character-based language, and are reading the text "這是東西".  If you you define "東西" (the last two characters of the text) as a Term, Lute will say that you now know 33% of the text:
@@ -32,4 +36,6 @@ Your question: Can't Lute calculate the percent using the whole text?  Answer: Y
 
 Since multi-word Terms can overlap or hide other terms, Lute needs to work through the full display of each text.  For longer novels (e.g. 200K+ words), the full calculation is too slow to be usable.  I've considered various simplifications to the calculation, such as ignoring multi-word Terms.  This makes the checks faster, but wildly inaccurate in some cases.
 
-As a compromise, I figured that a sample of a handful of pages would be sufficient.  In real life, when considering a book, I just check a few pages to see if it's way above my level, I don't need to flip through every page.  That's the approach that Lute takes, and it seems sensible.
+As a compromise, I figured that a sample of pages would be sufficient.  In real life, when considering a book, I just check a few pages to see if it's way above my level, I don't need to flip through every page.  That's the approach that Lute takes, and it seems sensible.
+
+In future, I do hope to make further improvements on the stats calculation.  As of September 2024, it seems like using a library like `ahocorapy` to create full-text indexes should be possible.
