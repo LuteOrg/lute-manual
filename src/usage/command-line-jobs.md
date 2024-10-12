@@ -5,6 +5,7 @@ While Lute is almost solely a web app, it has some jobs that are run from the te
 * `hello`: Proof-of-concept command
 * `book_term_export`: Export a data file for all terms in a given book.
 * `language_export`: Export a data file of all terms in a language.
+* `import_books_from_csv`: Import books from a CSV file.
 
 ## How to run the jobs
 
@@ -41,6 +42,52 @@ flask --app lute.app_factory cli book_term_export 443 my_book.csv
 #   frequencies and children.
 
 flask --app lute.app_factory cli language_export Spanish sp_terms.csv
+```
+
+### `import_books_from_csv`
+
+```
+# Usage: flask cli import_books_from_csv [OPTIONS] CSV_FILE
+#
+#   Import books from a CSV file.
+#
+#   NOTE: By default, this will run in dry-run mode. It will print out a list of
+#         changes that would be made, but not commit them. To actually import
+#         the CSV file, add the --commit option to the command.
+#
+#   The CSV file must have a header row with the following, case-sensitive,
+#   column names. The order of the columns does not matter. The CSV file may
+#   include additional columns, which will be ignored.
+#
+#     - title: the title of the book
+#
+#     - text: the text of the book
+#
+#     - language: [optional] the name of the language of book, as it appears in
+#       your language settings. If unspecified, the language specified on the
+#       command line (using the --language option) will be used.
+#
+#     - url: [optional] the source URL for the book
+#
+#     - tags: [optional] a comma-separated list of tags to apply to the book
+#       (e.g., "audiobook,beginner")
+#
+#     - audio: [optional] the path to the audio file of the book. This should
+#       either be an absolute path, or a path relative to the CSV file.
+#
+#     - bookmarks: [optional] a semicolon-separated list of audio bookmark
+#       positions, in seconds (decimals permitted; e.g., "12.34;42.89;89.00").
+#
+#   Example CSV file:
+#
+#     title,url,tags,audio,bookmarks,text
+#     A Book,http://www.example.com/book,"pangram,short",book.mp3,1.00;3.14;42.00,The quick brown fox jumps over the lazy dog.
+
+flask --app lute.app_factory cli import_books_from_csv \
+    --language=English \
+    --tags=audiobook,beginner \
+    --commit \
+    books.csv
 ```
 
 ### List all jobs
