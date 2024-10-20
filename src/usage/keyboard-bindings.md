@@ -1,5 +1,9 @@
 # Key bindings
 
+Lute comes with some default key bindings.
+
+You can change these and other shortcuts from the Settings > Keyboard Shortcuts menu.
+
 > Note: Before using the keyboard you must set the focus within the frame by clicking once on the frame.
 
 Some of these actions refer to the "current word" - that's either the word you're hovering over, or have clicked.
