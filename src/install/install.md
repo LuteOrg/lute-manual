@@ -79,7 +79,7 @@ python -m lute.main
 ```
 </div>
 
-Now open your web browser to `http://localhost:5000`.  **Leave the terminal window open while you're using Lute.** When you're done, hit `Ctl-C` to stop Lute.
+Now open your web browser to `http://localhost:5001`.  **Leave the terminal window open while you're using Lute.** When you're done, hit `Ctl-C` to stop Lute.
 
 You can start lute on a different port if needed:
 
@@ -127,7 +127,7 @@ services:
   lute:
     image: jzohrab/lute3:latest
     ports:
-      - 5000:5000
+      - 5001:5001
     volumes:
       - ./data:/lute_data
       - ./backups:/lute_backup
@@ -158,7 +158,7 @@ services:
   lute:
     image: jzohrab/lute3:latest
     ports:
-      - 5000:5000
+      - 5001:5001
     volumes:
       - ./data:/lute_data
       - ./backups:/lute_backup
@@ -169,13 +169,13 @@ docker compose up
 ```
 </div>
 
-As with the `pip` installation, you can change the port if your machine is already using port 5000, e.g.:
+As with the `pip` installation, you can change the port if your machine is already using port 5001, e.g.:
 
 
 ```
 ...
     ports:
-      - 9876:5000
+      - 9876:5001
 ...
 ```
 

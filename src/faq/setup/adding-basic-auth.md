@@ -18,7 +18,7 @@ services:
   nginx-proxy:
     image: nginx
     ports:
-      - "5000:80"
+      - "5001:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - .htpasswd:/etc/nginx/.htpasswd
@@ -30,7 +30,7 @@ Notes:
 
 * This uses the same `lute3` image, but doesn't expose the port
 * The `nginx.conf` and `.htpasswd` files will exist in the same folder as this compose file; they're created below
-* This maps host port 5000 to the nginx port 80, so the message `http://localhost:5000` when you run `docker compose up` is still valid :-P
+* This maps host port 5001 to the nginx port 80, so the message `http://localhost:5001` when you run `docker compose up` is still valid :-P
 
 ## nginx.conf
 
@@ -64,7 +64,7 @@ http {
         location / {
             # This nginx server is running in a docker compose environment,
             # so the name "lute" is resolved using compose's dns resolution.
-            proxy_pass http://lute:5000;
+            proxy_pass http://lute:5001;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

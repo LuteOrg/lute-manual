@@ -80,7 +80,7 @@ If your container is running, you can jump into it and run commands.  For exampl
 $ docker ps
 
 CONTAINER ID   IMAGE                           COMMAND            CREATED          STATUS          PORTS                    NAMES
-4a01240e5678   jzohrab/lute3:latest            "/lute/start.sh"   52 seconds ago   Up 52 seconds   0.0.0.0:5000->5000/tcp   lute_test_docker-lute-1
+4a01240e5678   jzohrab/lute3:latest            "/lute/start.sh"   52 seconds ago   Up 52 seconds   0.0.0.0:5001->5001/tcp   lute_test_docker-lute-1
 
 # Connect to the running container
 $ docker exec -it lute_test_docker-lute-1 /bin/bash

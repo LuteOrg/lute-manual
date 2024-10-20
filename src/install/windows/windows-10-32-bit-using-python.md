@@ -84,7 +84,7 @@ and press Enter.  The screen should look something like this:
 
 The server should be running.
 
-Open any browser (Chrome, Firefox, etc), and go to [http://localhost:5000/](http://localhost:5000/).  It should look like this:
+Open any browser (Chrome, Firefox, etc), and go to [http://localhost:5001/](http://localhost:5001/).  It should look like this:
 
 ![image](../../assets/install/windows/pip/05_homescreen.png)
 

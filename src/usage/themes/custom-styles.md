@@ -34,7 +34,7 @@ fyi the CSS selectors for the statuses are `span.status1` through `span.status5`
 
 ### Language-specific styles
 
-You might want different colors or font sizes for different languages.  You can get the language ID by clicking on it in the language listing (Settings > Languages), it's at the end of the URL; e.g., `http://localhost:5000/language/edit/9`, "9" is the ID.
+You might want different colors or font sizes for different languages.  You can get the language ID by clicking on it in the language listing (Settings > Languages), it's at the end of the URL; e.g., `http://localhost:5001/language/edit/9`, "9" is the ID.
 
 ```
 span.textitem[data-lang-id="2"] { font-family:"Comic Sans MS"; }
