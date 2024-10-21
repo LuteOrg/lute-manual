@@ -21,7 +21,7 @@ source myenv/bin/activate
 # Start
 python -m lute.main
 
-# ... Open your web browser to http://localhost:5000.
+# ... Open your web browser to http://localhost:5001.
 
 # Leave the terminal window open while you're using Lute!
 
@@ -55,7 +55,7 @@ Start lute.
 
 optional arguments:
   -h, --help       show this help message and exit
-  --port PORT      Port number (default: 5000)
+  --port PORT      Port number (default: 5001)
   --config CONFIG  Custom path to override config file, if it's not named config.yml
 ```
 
@@ -76,7 +76,7 @@ cd ~/my_lute_docker
 # Run it:
 docker compose up
 
-# ... Open your web browser to http://localhost:5000.
+# ... Open your web browser to http://localhost:5001.
 # When done, hit Ctl-C to stop
 ```
 
