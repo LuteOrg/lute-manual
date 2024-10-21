@@ -304,7 +304,7 @@ pip install --upgrade lute3
 python -m lute.main
 </code></pre>
 </div>
-<p>Now open your web browser to <code>http://localhost:5000</code>.  <strong>Leave the terminal window open while you're using Lute.</strong> When you're done, hit <code>Ctl-C</code> to stop Lute.</p>
+<p>Now open your web browser to <code>http://localhost:5001</code>.  <strong>Leave the terminal window open while you're using Lute.</strong> When you're done, hit <code>Ctl-C</code> to stop Lute.</p>
 <p>You can start lute on a different port if needed:</p>
 <pre><code>python -m lute.main --port 9876
 </code></pre>
@@ -333,7 +333,7 @@ services:
   lute:
     image: jzohrab/lute3:latest
     ports:
-      - 5000:5000
+      - 5001:5001
     volumes:
       - ./data:/lute_data
       - ./backups:/lute_backup
@@ -358,7 +358,7 @@ services:
   lute:
     image: jzohrab/lute3:latest
     ports:
-      - 5000:5000
+      - 5001:5001
     volumes:
       - ./data:/lute_data
       - ./backups:/lute_backup
@@ -368,10 +368,10 @@ EOF
 docker compose up
 </code></pre>
 </div>
-<p>As with the <code>pip</code> installation, you can change the port if your machine is already using port 5000, e.g.:</p>
+<p>As with the <code>pip</code> installation, you can change the port if your machine is already using port 5001, e.g.:</p>
 <pre><code>...
     ports:
-      - 9876:5000
+      - 9876:5001
 ...
 </code></pre>
 <h2 id="from-source"><a class="header" href="#from-source">From source</a></h2>
@@ -491,7 +491,7 @@ cd my_lute
 <p>and press Enter.  The screen should look something like this:</p>
 <p><img src="install/windows/../../assets/install/windows/pip/05_lute_main.png" alt="image" /></p>
 <p>The server should be running.</p>
-<p>Open any browser (Chrome, Firefox, etc), and go to <a href="http://localhost:5000/">http://localhost:5000/</a>.  It should look like this:</p>
+<p>Open any browser (Chrome, Firefox, etc), and go to <a href="http://localhost:5001/">http://localhost:5001/</a>.  It should look like this:</p>
 <p><img src="install/windows/../../assets/install/windows/pip/05_homescreen.png" alt="image" /></p>
 <p>... and that's it, you're up and running!</p>
 <p>Leave this command prompt window running while you're using Lute.</p>
@@ -541,7 +541,7 @@ services:
   lute:
     image: jzohrab/lute3:latest
     ports:
-      - 5000:5000
+      - 5001:5001
     volumes:
       - ./data:/lute_data
       - ./backups:/lute_backup
@@ -744,7 +744,7 @@ source myenv/bin/activate
 # Start
 python -m lute.main
 
-# ... Open your web browser to http://localhost:5000.
+# ... Open your web browser to http://localhost:5001.
 
 # Leave the terminal window open while you're using Lute!
 
@@ -771,7 +771,7 @@ Start lute.
 
 optional arguments:
   -h, --help       show this help message and exit
-  --port PORT      Port number (default: 5000)
+  --port PORT      Port number (default: 5001)
   --config CONFIG  Custom path to override config file, if it's not named config.yml
 </code></pre>
 <p>e.g.</p>
@@ -784,7 +784,7 @@ optional arguments:
 # Run it:
 docker compose up
 
-# ... Open your web browser to http://localhost:5000.
+# ... Open your web browser to http://localhost:5001.
 # When done, hit Ctl-C to stop
 </code></pre>
 <p>You can also run it as a background job:</p>
@@ -1298,7 +1298,7 @@ span.status99 { background-color: none; color: red; }  /* Well-known terms */
  span.status99 { background-color: white; }    /* Well known. */
 </code></pre>
 <h3 id="language-specific-styles"><a class="header" href="#language-specific-styles">Language-specific styles</a></h3>
-<p>You might want different colors or font sizes for different languages.  You can get the language ID by clicking on it in the language listing (Settings &gt; Languages), it's at the end of the URL; e.g., <code>http://localhost:5000/language/edit/9</code>, "9" is the ID.</p>
+<p>You might want different colors or font sizes for different languages.  You can get the language ID by clicking on it in the language listing (Settings &gt; Languages), it's at the end of the URL; e.g., <code>http://localhost:5001/language/edit/9</code>, "9" is the ID.</p>
 <pre><code>span.textitem[data-lang-id="2"] { font-family:"Comic Sans MS"; }
 span.status0[data-lang-id="8"] { background-color: red; }
 span.status0[data-lang-id="4"] { background-color: blue; }
@@ -1577,7 +1577,7 @@ flask --app lute.app_factory cli import_books_from_csv \
 <pre><code>$ docker ps
 
 CONTAINER ID   IMAGE                           COMMAND            CREATED          STATUS          PORTS                    NAMES
-4a01240e5678   jzohrab/lute3:latest            "/lute/start.sh"   52 seconds ago   Up 52 seconds   0.0.0.0:5000-&gt;5000/tcp   lute_test_docker-lute-1
+4a01240e5678   jzohrab/lute3:latest            "/lute/start.sh"   52 seconds ago   Up 52 seconds   0.0.0.0:5001-&gt;5001/tcp   lute_test_docker-lute-1
 
 # Connect to the running container
 $ docker exec -it lute_test_docker-lute-1 /bin/bash
@@ -1667,7 +1667,7 @@ git merge upstream/develop
 <p>One option is to set up a <a href="faq/setup/./web-server.html">web server</a> somewhere in the cloud, and access that.  (That might be tricky, I won't be able to help with that.)</p>
 <p>If your computer is running Lute, and it's on a Wifi network, you should be able to access it if your phone is on that same network:</p>
 <ul>
-<li>start Lute.  It will say something like <code>Lute is running.  Open a web browser, and go to: http://localhost:5000</code>.  The last 4 digits are the port number.</li>
+<li>start Lute.  It will say something like <code>Lute is running.  Open a web browser, and go to: http://localhost:5001</code>.  The last 4 digits are the port number.</li>
 <li>make a note of your computer's IP address (somewhere in your computer settings ... it might be something like <code>192.168.1.10</code>, or <code>10.0.0.126</code>.</li>
 <li>in your phone/tablet/whatever, connect to the same Wifi network, start up the browser, and go to <code>http://&lt;the-ip-address&gt;:&lt;port-number&gt;</code>.  E.g., on my phone, it was <code>http://10.0.0.126:9876</code>, because I run my Lute on port 9876.</li>
 </ul>
@@ -1702,7 +1702,7 @@ services:
   nginx-proxy:
     image: nginx
     ports:
-      - "5000:80"
+      - "5001:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - .htpasswd:/etc/nginx/.htpasswd
@@ -1713,7 +1713,7 @@ services:
 <ul>
 <li>This uses the same <code>lute3</code> image, but doesn't expose the port</li>
 <li>The <code>nginx.conf</code> and <code>.htpasswd</code> files will exist in the same folder as this compose file; they're created below</li>
-<li>This maps host port 5000 to the nginx port 80, so the message <code>http://localhost:5000</code> when you run <code>docker compose up</code> is still valid :-P</li>
+<li>This maps host port 5001 to the nginx port 80, so the message <code>http://localhost:5001</code> when you run <code>docker compose up</code> is still valid :-P</li>
 </ul>
 <h2 id="nginxconf"><a class="header" href="#nginxconf">nginx.conf</a></h2>
 <p>Content:</p>
@@ -1744,7 +1744,7 @@ http {
         location / {
             # This nginx server is running in a docker compose environment,
             # so the name "lute" is resolved using compose's dns resolution.
-            proxy_pass http://lute:5000;
+            proxy_pass http://lute:5001;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

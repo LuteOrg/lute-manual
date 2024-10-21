@@ -234,7 +234,7 @@ pip install --upgrade lute3
 python -m lute.main
 </code></pre>
 </div>
-<p>Now open your web browser to <code>http://localhost:5000</code>.  <strong>Leave the terminal window open while you're using Lute.</strong> When you're done, hit <code>Ctl-C</code> to stop Lute.</p>
+<p>Now open your web browser to <code>http://localhost:5001</code>.  <strong>Leave the terminal window open while you're using Lute.</strong> When you're done, hit <code>Ctl-C</code> to stop Lute.</p>
 <p>You can start lute on a different port if needed:</p>
 <pre><code>python -m lute.main --port 9876
 </code></pre>
@@ -263,7 +263,7 @@ services:
   lute:
     image: jzohrab/lute3:latest
     ports:
-      - 5000:5000
+      - 5001:5001
     volumes:
       - ./data:/lute_data
       - ./backups:/lute_backup
@@ -288,7 +288,7 @@ services:
   lute:
     image: jzohrab/lute3:latest
     ports:
-      - 5000:5000
+      - 5001:5001
     volumes:
       - ./data:/lute_data
       - ./backups:/lute_backup
@@ -298,10 +298,10 @@ EOF
 docker compose up
 </code></pre>
 </div>
-<p>As with the <code>pip</code> installation, you can change the port if your machine is already using port 5000, e.g.:</p>
+<p>As with the <code>pip</code> installation, you can change the port if your machine is already using port 5001, e.g.:</p>
 <pre><code>...
     ports:
-      - 9876:5000
+      - 9876:5001
 ...
 </code></pre>
 <h2 id="from-source"><a class="header" href="#from-source">From source</a></h2>
