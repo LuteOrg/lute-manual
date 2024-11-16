@@ -833,8 +833,8 @@ start cmd /k python -m lute.main
 <p>You can test a dictionary by clicking the small "out arrow" icon next to the dictionary.  For example, here I've tried to set DeepL.com as an embedded dictionary, which they don't allow:</p>
 <img width="100%" alt="image" src="usage/languages/../../assets/usage/languages/dicts_02.png">
 <h2 id="the-dictionary-url"><a class="header" href="#the-dictionary-url">The dictionary URL</a></h2>
-<p>The dictionary link entry on the form must contain "###".  Lute substitutes that with the actual term you're looking up.</p>
-<p>Some dictionaries don't take parameters at all.  For example, <code>https://www.cherokeedictionary.net/###</code> gives an error.  In these cases, add a fake parameter, e.g. <code>https://www.cherokeedictionary.net?lute=###</code>.[^linkhack]</p>
+<p>The dictionary link entry on the form can contain <code>[LUTE]</code> (or <code>###</code>, though the former is preferred).  Lute substitutes that with the actual term you're looking up.</p>
+<p>Some dictionaries don't take parameters at all, so the placeholder is optional.  For example, <code>https://www.cherokeedictionary.net/###</code> gives an error.  In these cases, don't use a parameter, e.g. <code>https://www.cherokeedictionary.net</code>.</p>
 <h2 id="misc-notes"><a class="header" href="#misc-notes">Misc notes</a></h2>
 <ul>
 <li>Reorder the dictionaries by dragging the drag handle on the left hand side up and down.</li>
@@ -842,8 +842,6 @@ start cmd /k python -m lute.main
 <li>Delete dictionaries with the delete button, and add a new one with the green plus.</li>
 <li>Save the Language to save your dictionary changes.</li>
 </ul>
-<hr />
-<p>[^linkhack] This is a hack.  There's an issue to remove the requirement for a ### parameter.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="word-characters"><a class="header" href="#word-characters">Word characters</a></h1>
 <p>The "Word characters" field in the language form tells Lute how to find words in your texts.  In most cases<sup class="footnote-reference"><a href="#other_cases">1</a></sup>, Lute uses "regular expressions", or pattern matchers, to find words in a text.</p>
 <p>The default value, "a-zA-ZÀ-ÖØ-öø-ȳáéíóúÁÉÍÓÚñÑ", covers most romance languages such as English, French, Spanish, etc.</p>
