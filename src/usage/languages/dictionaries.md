@@ -20,9 +20,9 @@ You can test a dictionary by clicking the small "out arrow" icon next to the dic
 
 ## The dictionary URL
 
-The dictionary link entry on the form must contain "###".  Lute substitutes that with the actual term you're looking up.
+The dictionary link entry on the form can contain `[LUTE]` (or `###`, though the former is preferred).  Lute substitutes that with the actual term you're looking up.
 
-Some dictionaries don't take parameters at all.  For example, `https://www.cherokeedictionary.net/###` gives an error.  In these cases, add a fake parameter, e.g. `https://www.cherokeedictionary.net?lute=###`.[^linkhack]
+Some dictionaries don't take parameters at all, so the placeholder is optional.  For example, `https://www.cherokeedictionary.net/###` gives an error.  In these cases, don't use a parameter, e.g. `https://www.cherokeedictionary.net`.
 
 
 ## Misc notes
@@ -31,7 +31,3 @@ Some dictionaries don't take parameters at all.  For example, `https://www.chero
 * Some dictionary sites may occasionally be unavailable, so you can deactivate them in your language by un-checking the checkbox.
 * Delete dictionaries with the delete button, and add a new one with the green plus.
 * Save the Language to save your dictionary changes.
-
----
-
-[^linkhack] This is a hack.  There's an issue to remove the requirement for a ### parameter.
