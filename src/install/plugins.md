@@ -10,6 +10,7 @@ Since adding support for all languages would lead to code bloat, Lute adds suppo
 | --- | --- | --- |
 | Mandarin Chinese | `lute3-mandarin` | [README](https://pypi.org/project/lute3-mandarin/) |
 | Thai | `lute3-thai` | [README](https://pypi.org/project/lute3-thai/) |
+| Khmer | `lute3-khmer` | [README](https://pypi.org/project/lute3-khmer/) |
 
 If you add a plugin, see the linked README in the above table for any configuration notes.
 
