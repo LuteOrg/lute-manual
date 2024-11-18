@@ -22,11 +22,11 @@ If you hover over the word, the information is shown in a pop-up:
 
 ![image](../../assets/usage/reading/reading_04.png)
 
-When you are done reading a page, you can mark any remaining terms as "well known" using the checkmark buttons at the bottom of the page:
+When you are done reading a page, mark it as "done" and go to the next page using either of the links at the bottom of the page:
 
-![image](../../assets/usage/reading/reading_05.png)
+<img width="285" alt="image" src="../../assets/usage/reading/reading_05.png">
 
-The green checkmark sets any blue items to "well known", the checkmark with the ">" sets all to well-known and moves to the next page.
+The green checkmark sets any remaining blue items to "well known".
 
 Here's what the page looks like after the green checkmark is clicked:
 
