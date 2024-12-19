@@ -55,27 +55,3 @@ I can then edit and save that parent term normally.
 # Multiple parents
 
 Sometimes, a word might have multiple parents.  For example, in Czech, "hoře" is a declension of "hora", the regular form of "hoře", and a conjugation of "hořet".  In Spanish, "se sienta" could be a conjugation of "sentarse" or "sentirse".  Each parent is entered as a separate tag.  You can add multiple parents by typing them and hitting space or return.
-
-# Bulk assigning parents
-
-You can bulk assign terms to a *pre-defined* parent from the Terms screen (Home > Terms).  Below shows how it's done:
-
-![image](../../assets/usage/terms/parent_10.png)
-
-I had several terms which should be mapped to the *pre-defined* parent term "to have" (the infinitive).
-
-## 1. Search for the terms you want
-
-Filter for terms with the Search box in the top right.
-
-In that box, I entered "^ha".  "^" is a special search character that says "the start of a word", so "^ha" means "show every term that starts with "ha".  If I had entered just "ha", terms such as "chat", "that", and "shorthair" would have been included.
-
-## 2. Check the boxes next to the terms you want to assign
-
-I clicked "has", "had", etc.
-
-## 2. Set the parent
-
-In the "Set parent" box, I typed "to" and Lute showed "to have".  When I click "go", those terms will be assigned to the parent:
-
-![image](../../assets/usage/terms/parent_11.png)

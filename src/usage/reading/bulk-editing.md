@@ -6,7 +6,7 @@ While reading, you can hold down the Shift key and and click multiple words to a
 
 <img width="60%" alt="image" src="../../assets/usage/reading/bulk_01_shift_click.png">
 
-You can hit [hotkeys](bulk-editing.md) to quickly change the status.  For example, after hitting "1" to set the status:
+You can hit [hotkeys](keyboard-bindings.md) to quickly change the status.  For example, after hitting "1" to set the status:
 
 <img width="60%" alt="image" src="../../assets/usage/reading/bulk_02_post_hotkey.png">
 

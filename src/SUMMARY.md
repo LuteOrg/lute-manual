@@ -37,6 +37,7 @@
 - [Terms]()
   - [Terms](./usage/terms/terms.md)
   - [Parent terms](./usage/terms/parent-terms.md)
+  - [Bulk editing](./usage/terms/bulk-editing.md)
   - [Linking parent-child statuses](./usage/terms/link-parent-child-statuses.md)
   - [Bulk term import](./usage/terms/bulk-term-import.md)
 - [Themes]()
