@@ -27,7 +27,7 @@
   - [The stats calculation](./usage/books/stats.md)
 - [Reading]()
   - [Reading](./usage/reading/reading.md)
-  - [Key bindings](./usage/keyboard-bindings.md)
+  - [Key bindings](./usage/reading/keyboard-bindings.md)
   - [Copying text](./usage/reading/copying-text.md)
   - [Bookmarks](./usage/reading/bookmarks.md)
   - [Reading on mobile](./usage/reading-on-mobile.md)
