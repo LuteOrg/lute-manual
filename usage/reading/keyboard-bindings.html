@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Parent terms - Lute manual</title>
+        <title>Key bindings - Lute manual</title>
 
 
         <!-- Custom HTML head -->
@@ -156,49 +156,50 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="parent-terms"><a class="header" href="#parent-terms">Parent terms</a></h1>
-<p>Lute lets you define "Parent Terms", which is helpful for things like verb infinites, adjectives, etc.  For example, "to have" could be the parent term for "has".  This is useful because you only need to define things like root term meanings at the root level.</p>
-<p>Here's the popup for a term with a parent term:</p>
-<p><img src="../../assets/usage/terms/parent_01.png" alt="image" /></p>
-<h1 id="setting-an-existing-term-as-a-parent"><a class="header" href="#setting-an-existing-term-as-a-parent">Setting an existing term as a parent</a></h1>
-<p>In the example below, you've already defined the term "have", and you're now creating a new term for "has".  In the "parent term" text box, if you type "ha", Lute then suggests the predefined term "have" as the parent:</p>
-<p><img src="../../assets/usage/terms/parent_02.png" alt="image" /></p>
-<h1 id="defining-a-term-and-a-new-parent"><a class="header" href="#defining-a-term-and-a-new-parent">Defining a term and a new parent</a></h1>
+                        <h1 id="key-bindings"><a class="header" href="#key-bindings">Key bindings</a></h1>
+<p>Lute comes with some default key bindings.</p>
+<p>You can change these and other shortcuts from the Settings &gt; Keyboard Shortcuts menu.</p>
 <blockquote>
-<p>Note the UI has changed slightly since this was written, but the idea is still the same.</p>
+<p>Note: Before using the keyboard you must set the focus within the frame by clicking once on the frame.</p>
 </blockquote>
-<p>In the example below, you're defining the term "dogs", and creating the parent term "dog" at the same time ("dog" wasn't defined previously):</p>
-<p><img src="../../assets/usage/terms/parent_03.png" alt="image" /></p>
-<p>Here's the popup for the "dogs" term:</p>
-<p><img src="../../assets/usage/terms/parent_04.png" alt="image" /></p>
-<p>And for "dog":</p>
-<p><img src="../../assets/usage/terms/parent_05.png" alt="image" /></p>
-<p>Note that the new parent term ("dog") gets the exact same information as the new term ("dogs"):</p>
-<div class="table-wrapper"><table><thead><tr><th>term</th><th>details</th></tr></thead><tbody>
-<tr><td>dogs</td><td><img src="../../assets/usage/terms/parent_06.png" alt="image" /></td></tr>
-<tr><td>dog</td><td><img src="../../assets/usage/terms/parent_07.png" alt="image" /></td></tr>
+<p>Some of these actions refer to the "current word" - that's either the word you're hovering over, or have clicked.</p>
+<h2 id="navigation"><a class="header" href="#navigation">Navigation</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Action</th></tr></thead><tbody>
+<tr><td><code>Right</code></td><td>Move to next word</td></tr>
+<tr><td><code>Left</code></td><td>Move to previous word</td></tr>
+<tr><td><code>Esc</code></td><td>Reset marked term(s)</td></tr>
 </tbody></table>
 </div>
-<p>While this might feel counter-intuitive, I've found that it provides the fastest input and term definition for Lute as I'm reading.  If I need, I can go back to the parent term later and clean things up.</p>
-<h1 id="click-a-parent-tag-to-edit-the-parent-term"><a class="header" href="#click-a-parent-tag-to-edit-the-parent-term">Click a Parent tag to edit the parent Term</a></h1>
-<p>When you click on a Term with parents, the parent tags are clickable, so you can quickly move to the parent Term.</p>
-<p>For example, I've clicked on the term "existing" to show its form:</p>
-<p><img src="../../assets/usage/terms/parent_08.png" alt="image" /></p>
-<p>If I click on the parent tag "exist", the form moves to that Term:</p>
-<p><img src="../../assets/usage/terms/parent_09.png" alt="image" /></p>
-<p>I can then edit and save that parent term normally.</p>
-<h1 id="multiple-parents"><a class="header" href="#multiple-parents">Multiple parents</a></h1>
-<p>Sometimes, a word might have multiple parents.  For example, in Czech, "hoře" is a declension of "hora", the regular form of "hoře", and a conjugation of "hořet".  In Spanish, "se sienta" could be a conjugation of "sentarse" or "sentirse".  Each parent is entered as a separate tag.  You can add multiple parents by typing them and hitting space or return.</p>
+<h2 id="misc-actions"><a class="header" href="#misc-actions">Misc actions</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Action</th></tr></thead><tbody>
+<tr><td><code>t</code></td><td>Translate the sentence of the current word.  If you have multiple "sentence" dictionaries, hit <code>t</code> repeatedly to cycle through them for the current word.</td></tr>
+<tr><td><code>Shift</code> + <code>t</code></td><td>Translate the paragraph of the current word.  If you have multiple "sentence" dictionaries, hit <code>Shift</code> + <code>t</code> repeatedly to cycle through them for the current word.</td></tr>
+<tr><td><code>c</code></td><td>Copy the sentence of the current word to the clipboard</td></tr>
+<tr><td><code>Shift</code> + <code>c</code></td><td>Copy the paragraph of the current word to the clipboard</td></tr>
+<tr><td><code>m</code></td><td>Change to the next theme</td></tr>
+<tr><td><code>h</code></td><td>Toggle highlights</td></tr>
+<tr><td><code>f</code></td><td>Toggle focus mode</td></tr>
+</tbody></table>
+</div>
+<h2 id="updating-status"><a class="header" href="#updating-status">Updating status</a></h2>
+<p>You can edit the status of the current word with a keystroke:</p>
+<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Set status of marked term(s) to</th></tr></thead><tbody>
+<tr><td><code>1</code> - <code>5</code></td><td>1 (Learning) to 5 (Learned)</td></tr>
+<tr><td><code>i</code></td><td>"Ignored"</td></tr>
+<tr><td><code>w</code></td><td>"Well Known"</td></tr>
+</tbody></table>
+</div>
+<p>You can also "bulk update" statuses by holding down Shift and clicking with the mouse.  All of the underlined terms will then be affected when you hit 1, 2, etc.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../usage/terms/terms.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../usage/reading/reading.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../usage/terms/bulk-editing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../usage/reading/bulk-editing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -208,11 +209,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../usage/terms/terms.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../usage/reading/reading.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../usage/terms/bulk-editing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../usage/reading/bulk-editing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

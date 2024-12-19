@@ -967,6 +967,26 @@ start cmd /k python -m lute.main
 </tbody></table>
 </div>
 <p>You can also "bulk update" statuses by holding down Shift and clicking with the mouse.  All of the underlined terms will then be affected when you hit 1, 2, etc.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bulk-editing"><a class="header" href="#bulk-editing">Bulk editing</a></h1>
+<blockquote>
+<p>To be released in Lute 3.6.2, currently in beta 3.6.2b1</p>
+</blockquote>
+<p>While reading, you can hold down the Shift key and and click multiple words to act on them.  For example, here I've held Shift while clicking "Welcome", "This", and "guide":</p>
+<img width="60%" alt="image" src="usage/reading/../../assets/usage/reading/bulk_01_shift_click.png">
+<p>You can hit <a href="usage/reading/keyboard-bindings.html">hotkeys</a> to quickly change the status.  For example, after hitting "1" to set the status:</p>
+<img width="60%" alt="image" src="usage/reading/../../assets/usage/reading/bulk_02_post_hotkey.png">
+<p>You edit a few more properties using the bulk edit form:</p>
+<img width="60%" src="usage/reading/../../assets/usage/reading/bulk_03_form.png">
+<p>For example, if I wanted to remove any existing parents for these terms, set the parent "newparent", set the status to 3, and tag the terms as "directions", I would enter the following:</p>
+<img width="60%" src="usage/reading/../../assets/usage/reading/bulk_04_fill_form.png">
+<p>Then on clicking Save both terms are updated:</p>
+<img width="40%" src="usage/reading/../../assets/usage/reading/bulk_05_updated.png">
+<p>Notes:</p>
+<ul>
+<li>Use the "Remove parents" checkbox to remove any existing parents, without setting any other parents.</li>
+<li>Setting the parent replaces any existing parents.</li>
+<li>You can only set a max of one parent using the bulk edit.  For multiple parents, you'll need to edit each term.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="copying-text"><a class="header" href="#copying-text">Copying text</a></h1>
 <p>Lute has various things like word clicks, hovers, and keyboard actions for interactions with the text.  Unfortunately, that means that you can't select and copy text from the reading screen in the way that you might normally do.  Here are a few options for copying text:</p>
 <h2 id="keyboard-shortcuts"><a class="header" href="#keyboard-shortcuts">Keyboard shortcuts</a></h2>
@@ -1102,18 +1122,15 @@ span.overlapped:before {
 <p>I can then edit and save that parent term normally.</p>
 <h1 id="multiple-parents"><a class="header" href="#multiple-parents">Multiple parents</a></h1>
 <p>Sometimes, a word might have multiple parents.  For example, in Czech, "hoře" is a declension of "hora", the regular form of "hoře", and a conjugation of "hořet".  In Spanish, "se sienta" could be a conjugation of "sentarse" or "sentirse".  Each parent is entered as a separate tag.  You can add multiple parents by typing them and hitting space or return.</p>
-<h1 id="bulk-assigning-parents"><a class="header" href="#bulk-assigning-parents">Bulk assigning parents</a></h1>
-<p>You can bulk assign terms to a <em>pre-defined</em> parent from the Terms screen (Home &gt; Terms).  Below shows how it's done:</p>
-<p><img src="usage/terms/../../assets/usage/terms/parent_10.png" alt="image" /></p>
-<p>I had several terms which should be mapped to the <em>pre-defined</em> parent term "to have" (the infinitive).</p>
-<h2 id="1-search-for-the-terms-you-want"><a class="header" href="#1-search-for-the-terms-you-want">1. Search for the terms you want</a></h2>
-<p>Filter for terms with the Search box in the top right.</p>
-<p>In that box, I entered "^ha".  "^" is a special search character that says "the start of a word", so "^ha" means "show every term that starts with "ha".  If I had entered just "ha", terms such as "chat", "that", and "shorthair" would have been included.</p>
-<h2 id="2-check-the-boxes-next-to-the-terms-you-want-to-assign"><a class="header" href="#2-check-the-boxes-next-to-the-terms-you-want-to-assign">2. Check the boxes next to the terms you want to assign</a></h2>
-<p>I clicked "has", "had", etc.</p>
-<h2 id="2-set-the-parent"><a class="header" href="#2-set-the-parent">2. Set the parent</a></h2>
-<p>In the "Set parent" box, I typed "to" and Lute showed "to have".  When I click "go", those terms will be assigned to the parent:</p>
-<p><img src="usage/terms/../../assets/usage/terms/parent_11.png" alt="image" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bulk-editing-1"><a class="header" href="#bulk-editing-1">Bulk editing</a></h1>
+<blockquote>
+<p>To be released in Lute 3.6.2, currently in beta 3.6.2b1</p>
+</blockquote>
+<p>Terms can be bulk edited from the Terms screen (Home &gt; Terms).  Click the checkbox the Terms you wish to update, perhaps filtering the list first, and then from the Action button choose "Bulk edit":</p>
+<p><img src="usage/terms/../../assets/usage/terms/bulk_01_action.png" alt="image" /></p>
+<p><strong>Note: all Terms must belong to the same Language!</strong></p>
+<p>For some notes about the form, see <a href="usage/terms/../reading/bulk-editing.html">bulk edits while reading</a>.</p>
+<p>In addition to the fields shown in the reading form, you can also downcase selected terms if needed.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linking-parent-child-statuses"><a class="header" href="#linking-parent-child-statuses">Linking parent-child statuses</a></h1>
 <blockquote>
 <p>Feature introduced in Lute 3.1.0.</p>
