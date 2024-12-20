@@ -1,6 +1,6 @@
 # Bulk editing
 
-> To be released in Lute 3.6.2, currently in beta 3.6.2b1
+> Released in Lute 3.7.0.
 
 While reading, you can hold down the Shift key and and click multiple words to act on them.  For example, here I've held Shift while clicking "Welcome", "This", and "guide":
 
