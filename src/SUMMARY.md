@@ -10,6 +10,7 @@
 - [Installing on Windows](./install/windows/index.md)
   - [Windows 10 (32 bit) using Python and pip](./install/windows/windows-10-32-bit-using-python.md)
   - [Windows using Docker](./install/windows/windows-using-docker.md)
+- [Installing on Android using Termux](./install/android-using-termux.md)
 - [MeCab for Japanese](./install/mecab.md)
 - [Language parser plugins](./install/plugins.md)
 - [Troubleshooting](./install/troubleshooting.md)
