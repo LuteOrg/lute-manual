@@ -20,7 +20,7 @@ Update some libraries to install Lute:
 pkg update && pkg upgrade
 ```
 
-<img width="50%" alt="image" src="../../assets/install/termux_01_initial.jpg">
+<img width="50%" alt="image" src="../assets/install/termux_01_initial.jpg">
 
 (always hit "Y" to continue)
 
@@ -32,17 +32,17 @@ pip install --upgrade lute3
 python -m lute.main
 ```
 
-<img width="50%" alt="image" src="../../assets/install/termux_02_running.jpg">
+<img width="50%" alt="image" src="../assets/install/termux_02_running.jpg">
 
 The message shows `Lute vX.Y.Z is running on 0.0.0.0:5001`.  Open your browser and go to `http://localhost:5001/`, and you should see it:
 
-<img width="50%" alt="image" src="../../assets/install/termux_03_running.jpg">
+<img width="50%" alt="image" src="../assets/install/termux_03_running.jpg">
 
 ## Stopping Lute
 
 To stop Lute from running, open your keyboard and tap CTRL + C:
 
-<img width="50%" alt="image" src="../../assets/install/termux_04_stop.jpg">
+<img width="50%" alt="image" src="../assets/install/termux_04_stop.jpg">
 
 ## Uninstalling Lute
 
