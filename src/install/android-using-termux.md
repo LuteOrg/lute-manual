@@ -50,4 +50,4 @@ To uninstall Lute, uninstall the Termux app
 
 ---
 
-[^1] Per https://termux.dev/en/: "Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager."
+[^1]: Per https://termux.dev/en/: "Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager."
