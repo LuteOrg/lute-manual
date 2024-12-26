@@ -569,6 +569,36 @@ Directory of C:\My Documents\my_lute
 <li>The error "error during connect: this error may indicate that the docker daemon is not running" is most commonly caused by the Docker daemon (the service) not running.  So be sure you've started your Docker Desktop.</li>
 <li>Per the StackOverflow post <a href="https://stackoverflow.com/questions/40459280/docker-cannot-start-on-windows">"Docker cannot start on Windows"</a>, you may need to relaunch your command prompt as "administrator"</li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installing-on-android-using-termux"><a class="header" href="#installing-on-android-using-termux">Installing on Android using Termux</a></h1>
+<p>(Thanks <strong>very much</strong> to Discord user <code>@axmanalex</code>!)</p>
+<blockquote>
+<p>Note: these instructions are to install a standalone Lute running on your phone.  If you want to use your phone to connect to a version of Lute running on your computer, you may need to try a different setup ... see <a href="install/../faq/setup/mobile-support.html">the faq</a>.</p>
+</blockquote>
+<p>Termux[^1] is a Linux command line emulator app for Android.  Using Termux, you can run Python (and Lute) on your Android phone.</p>
+<p>First, install the Termux app on your phone following the instructions on the official Termux GitHub repository, <a href="https://github.com/termux/termux-app">https://github.com/termux/termux-app</a>.</p>
+<p>At the command prompt, enter the following command to grant storage permissions.</p>
+<pre><code>termux-setup-storage
+</code></pre>
+<p>Update some libraries to install Lute:</p>
+<pre><code>pkg update &amp;&amp; pkg upgrade
+</code></pre>
+<img width="50%" alt="image" src="install/../../assets/install/termux_01_initial.jpg">
+<p>(always hit "Y" to continue)</p>
+<p>Then enter the following commands as shown to install python and Lute, and then to start Lute itself:</p>
+<pre><code>pkg install python3
+pip install --upgrade lute3
+python -m lute.main
+</code></pre>
+<img width="50%" alt="image" src="install/../../assets/install/termux_02_running.jpg">
+<p>The message shows <code>Lute vX.Y.Z is running on 0.0.0.0:5001</code>.  Open your browser and go to <code>http://localhost:5001/</code>, and you should see it:</p>
+<img width="50%" alt="image" src="install/../../assets/install/termux_03_running.jpg">
+<h2 id="stopping-lute-1"><a class="header" href="#stopping-lute-1">Stopping Lute</a></h2>
+<p>To stop Lute from running, open your keyboard and tap CTRL + C:</p>
+<img width="50%" alt="image" src="install/../../assets/install/termux_04_stop.jpg">
+<h2 id="uninstalling-lute"><a class="header" href="#uninstalling-lute">Uninstalling Lute</a></h2>
+<p>To uninstall Lute, uninstall the Termux app</p>
+<hr />
+<p>[^1] Per https://termux.dev/en/: "Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager."</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p>Note: this is for non-Docker users studying Japanese only (or devs who are working on Lute)</p>
 </blockquote>
