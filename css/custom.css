@@ -46,3 +46,8 @@ li.chapter-item > div {
   font-style: italic;
   color: rgb(200, 201, 219);
 }
+
+div#dictionary_examples td, th {
+  font-size: 0.8em;
+  padding: 5px;
+}
