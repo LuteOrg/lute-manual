@@ -2,8 +2,6 @@
 
 [Introduction](intro.md)
 
-- [Background](background.md)
-
 # Installation
 
 - [Installation](./install/install.md)
@@ -81,6 +79,8 @@
 
 # Misc
 
+- [Frequently asked questions (FAQs)](./misc/faqs.md)
+- [Background](background.md)
 - [Changelog](./misc/changelog.md)
 - [Backlog](./misc/backlog.md)
 - [Documentation feedback](./misc/doc-feedback.md)
