@@ -177,55 +177,6 @@ src="https://www.youtube.com/embed/7X3OkcljoCk">
 </iframe>
 <p>Lute has many other features, see the sidebar and browse around.</p>
 <p>Lute is a work in progress, as is all software, but it works.  I've been using it to learn Spanish, and it's super.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="background"><a class="header" href="#background">Background</a></h1>
-<p>Lute -- Learning Using Texts -- is software for learning foreign languages by reading.</p>
-<p>In summary, you import foreign language texts into Lute, and read through them, creating saved definitions and associations for words as you read.  As you read more, you continue to build your personal dictionary.</p>
-<p>I am currently using Lute to read texts in Spanish, and it works great.  It should work very well for other left-to-right languages like French, German, English, Italian, Classical Chinese, etc.  Lute can also handle right-to-left languages like Persion, and with some extra tools installed, Japanese.</p>
-<p>Lute has a few features which I feel are critical:</p>
-<ul>
-<li><strong>Parent terms.</strong>  For example, in Spanish, "hablo" is a conjugation of "hablar".  With Lute, you can specify these links, and see how different forms are used in the texts you read.</li>
-<li><strong>Images.</strong>  Lute lets you add an image to words.  It's much more fun and intuitive to attach a picture of a cat to a Spanish term "gato".</li>
-</ul>
-<p>In addition, the spirit of Lute is full open-source software:</p>
-<ul>
-<li><strong>Installed locally.</strong>  I am leery of sending an data to a company that may change their direction or disappear, or change their pricing.</li>
-<li><strong>Data control.</strong>  Lute runs on your machine.  You own the data, you can do what you want with it.  Ultimately, I hope for Lute to interoperate seamlessly with other tools, rather than become yet another closed garden.</li>
-<li><strong>Free, no limits.</strong>  I've benefitted hugely from free tools such as Anki -- my hope is that Lute, or a successor, makes an impact.</li>
-</ul>
-<h2 id="lute-alternatives"><a class="header" href="#lute-alternatives">Lute alternatives</a></h2>
-<p>There are other projects out that Lute took inspiration from:</p>
-<ul>
-<li><a href="https://www.lingq.com/">LingQ</a> - a commercial product</li>
-<li><a href="https://github.com/HugoFara/lwt">LWT</a></li>
-<li><a href="https://readlang.com/">Readlang</a></li>
-</ul>
-<blockquote>
-<p>Lute v1 and v2 started in late 2022 as a rewrite of <a href="https://github.com/HugoFara/lwt">LWT (Learning With Texts)</a>, overhauling the architecture, data structure, and algorithms, and adding critical features.  Lute v3 (this project) is a full Python rewrite to address installation and maintenance/sustainability issues.  Lute would never exist without LWT and Hugo's LWT fork, so <strong>a big thanks to those projects.</strong></p>
-</blockquote>
-<h2 id="should-i-use-lute-lwt-hugos-fork-or-something-else"><a class="header" href="#should-i-use-lute-lwt-hugos-fork-or-something-else">Should I use Lute, LWT, Hugo's fork, or something else?</a></h2>
-<p>Sensible question, so here's my take:</p>
-<p>If you <em>just want to use something</em>, I'd recommend <a href="https://www.lingq.com/en/">Lingq</a>!  It's a paid solution, they deal with the software and the headaches, you just pay for it and use it.  They have pre-selected texts and a wide customer base.  With any other software, you're going to pay in <em>time</em>.  I've tried to simplify and streamline Lute to reduce that time investment, but it will always be there.</p>
-<p>If you want to run your own thing on your machine, the options I can see are:</p>
-<ul>
-<li>The <a href="https://sourceforge.net/projects/learning-with-texts/">original LWT project</a> is, as far as I can tell, still <em>massively popular.</em>  Even if the code is old, and it might have bugs or be slow, it has the advantage of being tried-and-tested, and you might find people who can help you with issues.</li>
-<li><a href="https://sourceforge.net/projects/foreign-language-text-reader/">FLTR</a>, a Java project by the same author of LWT.</li>
-<li><a href="https://github.com/HugoFara/lwt">Hugo Fara's LWT fork</a> has taken the original project and refined the code, but has kept the same features and overall design/architecture.</li>
-</ul>
-<h2 id="so-why-even-consider-lute"><a class="header" href="#so-why-even-consider-lute">So why even consider Lute?</a></h2>
-<p>At present (late 2023), the main features differentiating Lute v3 are parent terms and images.  The installation has been drastically simplified -- with the right tools (Python or Docker), you can be up and running in a few minutes.</p>
-<p>Secondary reasons: Lute feels faster and lighter than LWT, and it has just enough features to be useful.  The UI's a bit leaner, if that matters to you.</p>
-<p>More geeky reasons, yet still important (to me): Lute is a full redesign of the original LWT idea using modern code and architecture.  It accomplishes almost the same feature set as LWT at a fraction of the code size and complexity.  It also has a full set of automated tests for project stability.  This might not mean much to regular peeps who just want to learn languages, but from the perspective of project maintainability and growth, it's paramount.</p>
-<p>(Also, if you are into software, like the idea of LWT, and want to contribute to an open-source project, I believe that Lute is a compelling place to start.  It uses Python and Flask, which are good things to know, and has good test coverage so you can hack at things without fear.)</p>
-<h2 id="why-might-you-not-use-lute"><a class="header" href="#why-might-you-not-use-lute">Why might you NOT use Lute?</a></h2>
-<p>As good as Lute is, it might not be for you.  Below are some things that may lead you to decide to postpone using Lute for now:</p>
-<div class="table-wrapper"><table><thead><tr><th>Item</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Single-word audio</td><td>Lute has an audio player for books, but you can't click a single word to hear its audio.</td></tr>
-<tr><td>Support "non-consecutive multiword terms"</td><td>Some languages, like German and Dutch, have terms that that split apart.  For example, in German, the verb "einladen" can be split into "laden ... ein": "Ich lade dich zu meiner Party ein."  I don't think any tool currently solves this well.  See the notes at on <a href="https://github.com/luteorg/lute-v3/issues/9">this GitHub issue</a>.</td></tr>
-<tr><td>Flashcards/testing</td><td>Lute is designed for reading only, there is no testing.</td></tr>
-<tr><td>Automated or bulk translation</td><td>Lute isn't designed to automatically create bidirectional readers, or to auto-create translations.  You can use Lute's Term CSV import feature, along with something like Google Sheets, to imitate that.</td></tr>
-</tbody></table>
-</div>
-<p>There are other smaller features that Lute doesn't have yet, but the above are the biggest ones that may be dealbreakers for you at the moment.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
 <p>There are currently three different methods to install Lute v3 on your system, with different system requirements:</p>
 <ul>
@@ -2272,338 +2223,57 @@ git log HEAD..upstream/develop --oneline
 git merge upstream/develop
 </code></pre>
 <p>Lute source code could change at any time, and I <strong>almost certainly will not</strong> be able to help you resolve code conflicts.  With that said, I'm certainly interested in any changes that would be beneficial to the health/clarity of the code or would be useful for others, so if you make changes that you think would be good, let me know!</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="where-can-i-get-help"><a class="header" href="#where-can-i-get-help">Where can I get help?</a></h1>
-<p>If you need help with Python, pip, or Docker, the first and best place to look is Google!</p>
-<p>But if it's a Lute issue or question, the best places to ask for help are:</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="frequestly-asked-questions-faqs"><a class="header" href="#frequestly-asked-questions-faqs">Frequestly Asked Questions (FAQs)</a></h1>
+<p>FAQs are at <a href="https://luteorg.github.io/lute-faqs/">https://luteorg.github.io/lute-faqs/</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="background"><a class="header" href="#background">Background</a></h1>
+<p>Lute -- Learning Using Texts -- is software for learning foreign languages by reading.</p>
+<p>In summary, you import foreign language texts into Lute, and read through them, creating saved definitions and associations for words as you read.  As you read more, you continue to build your personal dictionary.</p>
+<p>I am currently using Lute to read texts in Spanish, and it works great.  It should work very well for other left-to-right languages like French, German, English, Italian, Classical Chinese, etc.  Lute can also handle right-to-left languages like Persion, and with some extra tools installed, Japanese.</p>
+<p>Lute has a few features which I feel are critical:</p>
 <ul>
-<li>the <a href="https://discord.gg/CzFUQP5m8u">Lute Discord</a> "issues and bugs" channel.</li>
-<li>Lute v3 <a href="https://github.com/luteorg/lute-v3/issues">GitHub Issues</a></li>
+<li><strong>Parent terms.</strong>  For example, in Spanish, "hablo" is a conjugation of "hablar".  With Lute, you can specify these links, and see how different forms are used in the texts you read.</li>
+<li><strong>Images.</strong>  Lute lets you add an image to words.  It's much more fun and intuitive to attach a picture of a cat to a Spanish term "gato".</li>
 </ul>
-<p>When coming in with a question, please be as specific with your details as possible.</p>
-<p>Good luck!</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-run-lute-on-a-private-web-server"><a class="header" href="#can-i-run-lute-on-a-private-web-server">Can I run Lute on a private web server?</a></h1>
-<p>Lute can be run anywhere that has the necessary requirements (Python, etc).  For a server installation, Docker would probably be the easiest.</p>
-<p>It's outside of the scope of this manual to show how to set up your server in AWS, Digital Ocean, or wherever, but it's totally possible.</p>
-<p>The biggest thing you probably have to worry about is your backup and disaster recovery plan.  Lute writes disk for the database and images, so make sure you're backing up and exporting to some secure, reliable location.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-run-lute-on-my-phone-or-pad"><a class="header" href="#can-i-run-lute-on-my-phone-or-pad">Can I run Lute on my phone or pad?</a></h1>
-<p>Lute doesn't have a dedicated mobile offline client.  It needs a server to run the backend python code.</p>
-<p>You can still use Lute on your iPhone/iPad/whatever, though.</p>
-<p>One option is to set up a <a href="faq/setup/./web-server.html">web server</a> somewhere in the cloud, and access that.  (That might be tricky, I won't be able to help with that.)</p>
-<p>If your computer is running Lute, and it's on a Wifi network, you should be able to access it if your phone is on that same network:</p>
+<p>In addition, the spirit of Lute is full open-source software:</p>
 <ul>
-<li>start Lute.  It will say something like <code>Lute is running.  Open a web browser, and go to: http://localhost:5001</code>.  The last 4 digits are the port number.</li>
-<li>make a note of your computer's IP address (somewhere in your computer settings ... it might be something like <code>192.168.1.10</code>, or <code>10.0.0.126</code>.</li>
-<li>in your phone/tablet/whatever, connect to the same Wifi network, start up the browser, and go to <code>http://&lt;the-ip-address&gt;:&lt;port-number&gt;</code>.  E.g., on my phone, it was <code>http://10.0.0.126:9876</code>, because I run my Lute on port 9876.</li>
+<li><strong>Installed locally.</strong>  I am leery of sending an data to a company that may change their direction or disappear, or change their pricing.</li>
+<li><strong>Data control.</strong>  Lute runs on your machine.  You own the data, you can do what you want with it.  Ultimately, I hope for Lute to interoperate seamlessly with other tools, rather than become yet another closed garden.</li>
+<li><strong>Free, no limits.</strong>  I've benefitted hugely from free tools such as Anki -- my hope is that Lute, or a successor, makes an impact.</li>
 </ul>
-<p>Note that your computer has to be running (not asleep), and Lute has to be running!  :-P</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-store-lute-data-on-a-usb-key"><a class="header" href="#can-i-store-lute-data-on-a-usb-key">Can I store Lute data on a USB key?</a></h1>
-<p>If you regularly switch between computers, one option for setup (which sounds dicey to me :-) ) is to store your data in a USB key.</p>
-<h2 id="pip"><a class="header" href="#pip">Pip</a></h2>
-<p>For pip users, you could custom config.yml file, and put it in the root folder where you run Lute, with something like the following:</p>
-<pre><code># File config.yml
-ENV: prod
-DBNAME: lute.db
-DATAPATH: /full/path/to/your/usb/lute/folder
-BACKUP_PATH: /full/path/to/backup/folder
-</code></pre>
-<p>When Lute runs, it uses this config file, and will write all of its data in the folder specified in the DATAPATH.</p>
-<h2 id="docker"><a class="header" href="#docker">Docker</a></h2>
-<p>Docker users should change their docker-compose.yml to map the USB key folder to the mounted /lute/data directory.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-make-lute-secure"><a class="header" href="#can-i-make-lute-secure">Can I make Lute secure?</a></h1>
-<p>Lute doesn't come with authentication, so if you want to add security, the easiest way to do that is with a server that acts as a gatekeeper to the app (a reverse proxy).  The easiest way to do this is with Docker compose.</p>
+<h2 id="lute-alternatives"><a class="header" href="#lute-alternatives">Lute alternatives</a></h2>
+<p>There are other projects out that Lute took inspiration from:</p>
+<ul>
+<li><a href="https://www.lingq.com/">LingQ</a> - a commercial product</li>
+<li><a href="https://github.com/HugoFara/lwt">LWT</a></li>
+<li><a href="https://readlang.com/">Readlang</a></li>
+</ul>
 <blockquote>
-<p>Below is a working example using an nginx reverse proxy that may be useful as a starting point.  One caveat which I haven't bothered investigating further: the session doesn't expire (quickly?), so once you log in, anyone using your same browser will have access.</p>
+<p>Lute v1 and v2 started in late 2022 as a rewrite of <a href="https://github.com/HugoFara/lwt">LWT (Learning With Texts)</a>, overhauling the architecture, data structure, and algorithms, and adding critical features.  Lute v3 (this project) is a full Python rewrite to address installation and maintenance/sustainability issues.  Lute would never exist without LWT and Hugo's LWT fork, so <strong>a big thanks to those projects.</strong></p>
 </blockquote>
-<h2 id="docker-composeyml"><a class="header" href="#docker-composeyml">docker-compose.yml</a></h2>
-<pre><code>version: '3.9'
-services:
-  lute:
-    image: jzohrab/lute3:latest
-    volumes:
-      - ./data:/lute_data
-      - ./backups:/lute_backup
-
-  nginx-proxy:
-    image: nginx
-    ports:
-      - "5001:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - .htpasswd:/etc/nginx/.htpasswd
-    depends_on:
-      - lute
-</code></pre>
-<p>Notes:</p>
+<h2 id="should-i-use-lute-lwt-hugos-fork-or-something-else"><a class="header" href="#should-i-use-lute-lwt-hugos-fork-or-something-else">Should I use Lute, LWT, Hugo's fork, or something else?</a></h2>
+<p>Sensible question, so here's my take:</p>
+<p>If you <em>just want to use something</em>, I'd recommend <a href="https://www.lingq.com/en/">Lingq</a>!  It's a paid solution, they deal with the software and the headaches, you just pay for it and use it.  They have pre-selected texts and a wide customer base.  With any other software, you're going to pay in <em>time</em>.  I've tried to simplify and streamline Lute to reduce that time investment, but it will always be there.</p>
+<p>If you want to run your own thing on your machine, the options I can see are:</p>
 <ul>
-<li>This uses the same <code>lute3</code> image, but doesn't expose the port</li>
-<li>The <code>nginx.conf</code> and <code>.htpasswd</code> files will exist in the same folder as this compose file; they're created below</li>
-<li>This maps host port 5001 to the nginx port 80, so the message <code>http://localhost:5001</code> when you run <code>docker compose up</code> is still valid :-P</li>
+<li>The <a href="https://sourceforge.net/projects/learning-with-texts/">original LWT project</a> is, as far as I can tell, still <em>massively popular.</em>  Even if the code is old, and it might have bugs or be slow, it has the advantage of being tried-and-tested, and you might find people who can help you with issues.</li>
+<li><a href="https://sourceforge.net/projects/foreign-language-text-reader/">FLTR</a>, a Java project by the same author of LWT.</li>
+<li><a href="https://github.com/HugoFara/lwt">Hugo Fara's LWT fork</a> has taken the original project and refined the code, but has kept the same features and overall design/architecture.</li>
 </ul>
-<h2 id="nginxconf"><a class="header" href="#nginxconf">nginx.conf</a></h2>
-<p>Content:</p>
-<pre><code>user  nginx;
-worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
-    keepalive_timeout 65;
-    types_hash_max_size 2048;
-
-    # Allow large audio files.  Increase this if your files are large.
-    client_max_body_size 100M;
-
-    include /etc/nginx/mime.types;
-    default_type application/octet-stream;
-
-    server {
-        listen 80;
-        server_name localhost;
-
-        location / {
-            # This nginx server is running in a docker compose environment,
-            # so the name "lute" is resolved using compose's dns resolution.
-            proxy_pass http://lute:5001;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-        }
-
-        # Basic Authentication
-        auth_basic "Restricted Access";
-        auth_basic_user_file /etc/nginx/.htpasswd;
-    }
-}
-</code></pre>
-<h2 id="htpasswd"><a class="header" href="#htpasswd">.htpasswd</a></h2>
-<p>Use the <code>htpasswd</code> command to generate a new <code>.htpasswd</code> file.  With username = "username" and password = "password":</p>
-<pre><code>htpasswd -c ./.htpasswd username
-</code></pre>
-<p>generates the following <code>.htpasswd</code> file</p>
-<pre><code>username:$apr1$MNsKt1Ie$vuho4oeZV78PSLApjZ3vm.
-</code></pre>
-<h1 id="start-it-up"><a class="header" href="#start-it-up">Start it up</a></h1>
-<p>With the three files in place in the same directory (and the data and backup folders created), you can start it up:</p>
-<pre><code>docker compose up
-</code></pre>
-<p>nginx will ask for username/password authentication, and then everything works as before.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="is-there-an-online-version-of-lute"><a class="header" href="#is-there-an-online-version-of-lute">Is there an online version of Lute?</a></h1>
-<p>It's called <a href="https://www.lingq.com/">LingQ</a>. :-)</p>
-<p>LingQ is great.  Pay a nominal fee and you get tons of content and a big community of users.  LingQ is also a business, so they have staff, and (hopefully) proper tech support.</p>
-<p>Lute will never be online in the way that LingQ is.  While it's possible to build an online company with various cloud providers (AWS, Google, Digital Ocean, etc), running a <em>proper</em> company with <em>unbreakable confidence</em> requires a great deal of ongoing work:</p>
-<ul>
-<li>scalability</li>
-<li>monitoring and alerting</li>
-<li>security</li>
-<li>backup and restore</li>
-<li>disaster recovery</li>
-<li>... etc.</li>
-</ul>
-<p>Rather than try to go online and compete with existing solutions, Lute opts to emulate the Anki desktop approach: individual user app installs.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="migrating-from-v2-to-v3"><a class="header" href="#migrating-from-v2-to-v3">Migrating from v2 to v3</a></h1>
-<h2 id="database-and-images"><a class="header" href="#database-and-images">Database and images</a></h2>
-<p>If you're already using Lute v2 (written in PHP), and want to migrate to v3, it's pretty straightforward: you just have to move some files around.</p>
-<p>Step 1. <a href="faq/setup/../install/install.html">install Lute v3</a>, and start it up.  Then:</p>
-<h3 id="for-non-docker-users"><a class="header" href="#for-non-docker-users">For non-Docker users</a></h3>
-<ol start="2">
-<li>In the top right corner of the home screen, click About &gt; Version and software info</li>
-<li>The "Data path" folder is where you should put your database and images, replacing the files that Lute v3 automatically put there.</li>
-<li><strong>Stop Lute v3</strong></li>
-<li>Replace the files that Lute created in the "Data path" folder with your files.</li>
-<li>Start Lute up again.</li>
-</ol>
-<h3 id="for-docker-users"><a class="header" href="#for-docker-users">For Docker users</a></h3>
-<p>It's even easier: when you started Lute v3, you had to mount some directories to the container.</p>
-<ol start="2">
-<li>Shut down Lute v3!</li>
-<li>Put your database and image folder in the folder that you mounted to the <code>/lute_data</code> directory, replacing the files that Lute created there.</li>
-<li>Start Lute up again.</li>
-</ol>
-<h2 id="backup-settings"><a class="header" href="#backup-settings">Backup settings</a></h2>
-<p>Lute v2 has backup settings stored in the <code>.env</code> file.  v3 uses a Settings screen. The mapping of values from the <code>.env</code> file is obvious.</p>
-<h2 id="custom-styles-1"><a class="header" href="#custom-styles-1">Custom styles</a></h2>
-<p>Lute v2 uses a "custom_styles.css" file in the data folder.  v3 uses a Setting text box, so copy any content from your custom_styles.css file into Lute v3 Settings.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="can-you-add-language-x"><a class="header" href="#can-you-add-language-x">Can you add language X?</a></h1>
-<p>Yes, but you'll need to <strong>get it working in your own Lute first</strong>.</p>
-<p>Once you've figured out good language settings, please open an "Add language" <a href="https://github.com/luteorg/lute-v3/issues/new/choose">GitHub issue</a>.  Thank you!</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="where-can-i-find-books-to-import"><a class="header" href="#where-can-i-find-books-to-import">Where can I find books to import?</a></h1>
-<p>On the internet!</p>
-<p>But, since you asked, some of my favorites:</p>
-<ul>
-<li>Google :-) -- search for "<language name> download ebooks" or "<language> online stories" or similar.</li>
-<li><a href="https://www.gutenberg.org/">Project Gutenberg</a></li>
-<li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="why-wont-my-epub-import-correctly"><a class="header" href="#why-wont-my-epub-import-correctly">Why won't my epub import correctly?</a></h1>
-<p>Lute uses an open source epub parser named <code>openepub</code> kindly created by a Lute user to avoid licensing issues with currently available epub parsers.</p>
-<p>The parser project is on GitHub at <a href="https://github.com/sakolkar/openepub">https://github.com/sakolkar/openepub</a>.<sup class="footnote-reference"><a href="#1">1</a></sup></p>
-<p>Parsing is always a challenge, and some epubs may contain strange formatting that the library can't handle.  If your epub doesn't parse correctly, please open a GitHub issue in the <code>openepub</code> repo.</p>
-<p>In the meantime, use any of the tools available to convert your epub to a text file for import, such as <a href="https://calibre-ebook.com/">Calibre</a>.</p>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>as at Dec 28, 2023!</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="why-wont-my-pdf-import-correctly"><a class="header" href="#why-wont-my-pdf-import-correctly">Why won't my pdf import correctly?</a></h1>
-<p>Lute uses the <a href="https://pypi.org/project/PyPDF2/">PyPDF2</a> library for PDF imports.</p>
-<p>PDF imports sometimes add extra unwanted spaces: for example, the word "happiness" in your PDF may be imported as "happi ness".  For this reason, when you import your PDF, Lute will give you a warning that it may be inaccurate.</p>
-<p>This issue is not a problem with Lute, or even with the PyPDF2 library ... correctly parsing PDFs is actually <em>extremely</em> tough.  Per the authors of PyPDF2:</p>
-<blockquote>
-<p>Getting whitespaces right is notoriously hard. @pubpub-zz is the expert in that topic; I'll leave it to him to decide if we should leave this issue open. The issue is that PDF does not (necessarily) represent the words as words internally. In the worst case, it just gives the absolute position of each character in the document.</p>
-</blockquote>
-<p>References:</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/76546531/why-does-pypdf-stuff-text-with-extra-spaces-when-extracting-text">StackOverflow - pypdf extra spaces</a></li>
-<li><a href="https://github.com/py-pdf/pypdf/issues/1507">Random whitespaces are inserted when using page.extract_text()</a></li>
-</ul>
-<p>In summary, the best that we can do is say that PDF imports are not perfect, and you should be aware of that while reading.  You can edit each page as you come across problems, or just ignore the incorrect words.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="my-text-file-import-is-giving-a-utf-8-encoding-error-message"><a class="header" href="#my-text-file-import-is-giving-a-utf-8-encoding-error-message">My text file import is giving a "utf-8 encoding" error message</a></h1>
-<p>Lute can only import utf-8 encoded text files.<sup class="footnote-reference"><a href="#1">1</a></sup></p>
-<p>Your file may already be in utf-8 encoding, but if not, you'll need to first convert it.</p>
-<p>I don't know of all of the options available, but here are some suggestions:</p>
-<ul>
-<li><a href="https://subtitletools.com/convert-text-files-to-utf8-online">https://subtitletools.com/convert-text-files-to-utf8-online</a></li>
-<li>if using Microsoft Word, you can export your file, but you have to choose "other encoding" and then unicode (utf-8).  See e.g. <a href="https://support.3playmedia.com/hc/en-us/articles/227730088-Exporting-a-UTF-8-txt-file-from-Word">https://support.3playmedia.com/hc/en-us/articles/227730088-Exporting-a-UTF-8-txt-file-from-Word</a></li>
-</ul>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p><a href="https://en.wikipedia.org/wiki/UTF-8">https://en.wikipedia.org/wiki/UTF-8</a>: "UTF-8 is a variable-length character encoding standard used for electronic communication."  It defines how characters are actually written to disk, essentially.</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="i-cant-click-on-words-in-the-reading-screen"><a class="header" href="#i-cant-click-on-words-in-the-reading-screen">I can't click on words in the reading screen</a></h1>
-<p>Though Lute was developed primarily for desktop use, some users connect to Lute on their mobile devices (see <a href="faq/reading/../setup/mobile-support.html">Mobile support</a> and <a href="http://localhost:3000/usage/reading-on-mobile.html">Reading on mobile</a>).  Lute tries to set up a desktop or mobile environment automatically, but sometimes it's hard to determine if you're on mobile or not[^1].  Sometimes it's not even possible: for example, you may have a regular laptop with an additional external touchscreen ...</p>
-<p>If your reading screen isn't responding to clicks or touches, you may need to tell Lute what kinds of screen interactions you need.  In the slideout menu of the reading menu, you can do that:</p>
-<img width="285" alt="image" src="faq/reading/../../assets/faq/reading/screen_interactions.png">
-<p>[^1] See <a href="https://stackoverflow.com/questions/72502079/how-can-i-check-if-the-device-which-is-using-my-website-is-a-mobile-user-or-no">StackOverflow</a> for the definition of futility.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="why-cant-i-change-a-term"><a class="header" href="#why-cant-i-change-a-term">Why can't I change a Term?</a></h1>
-<p>Lute won't let you change a Term's actual text once it has been created and saved, you can only change the case of existing characters.  For example, you could change "CAT" to "Cat" or "cat", but not to "dog".</p>
-<p>Allowing Terms themselves to be changed once created creates potential problems, so (for now) Lute just disables that.</p>
-<blockquote>
-<p><em>As I get more experience with this feature of Lute, I may do away with this restriction.</em></p>
-</blockquote>
-<p>Reasons for this restriction:</p>
-<ul>
-<li>
-<p>a typo or other mistake would cause previously entered information to get accidentally overwritten.  For example, if you'd created a Spanish Term and translation "chico / boy", and then accidentally edited another existing term "CHICA / girl" to "chic<strong>o</strong> / girl" (accidentally hitting "o" instead of "a") and saved it, the existing "chico / boy" term would be updated instead.</p>
-</li>
-<li>
-<p>During reading, if you click on an unknown word, and decide to change the term's capitalization, Lute won't let you mis-type the word.  For example, if you're reading a shocking Spanish newspaper article about "GATOS SALVAJES" (wild cats!), you might want to save the term "GATOS", but as lowercase "gatos".  Lute stops you from typing "gattos" during the fix, so the new term is created correctly.</p>
-</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="where-are-my-new-terms-sentences"><a class="header" href="#where-are-my-new-terms-sentences">Where are my new Term's sentences?</a></h1>
-<p>Lute shows sentences for a Term and its siblings when you click the Sentences link on the Term form, but it only includes sentences for pages marked as "read".  Pages are marked as "read" when you click either of the links at the bottom of the reading page:</p>
-<img width="285" alt="image" src="faq/terms/../../assets/faq/terms/sentences_marked_read.png">
-<p>(The green checkmark also changes all unknown terms to well-known.)</p>
-<p>Lute only includes sentences from pages marked "read" for a few reasons:</p>
-<ul>
-<li>Only sentences you've seen before are included, so you'll have had some exposure to the vocabulary already.  Including unread sentences would possibly show you new, confusing, or distracting vocabulary or ideas.</li>
-<li>Showing unread sentences can spoil books!  (I was reading a book and when I looked up a sentence I found out that a character died ...)</li>
-</ul>
-<p>In summary, when you first create a new term, the Sentences link won't show any sentences right away, but once you mark the page as "read" the sentences will be shown in the future.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="how-should-i-use-statuses"><a class="header" href="#how-should-i-use-statuses">How should I use statuses?</a></h1>
-<p>Lute has statuses 1 through 5, plus Well-Known, and Ignored.  For some people, including me sometimes, that's a lot of statuses!  Your usage of these values is totally up to you, so pick your own rating scheme and stick with it.</p>
-<p>For me personally, as a longtime user of Lute, I'll say that beyond a certain point, statuses don't really matter much, except perhaps to filter later in the Term listing screen.  I use the following levels:</p>
-<ul>
-<li>1 for brand new or tricky things</li>
-<li>3 for stuff I've seen before</li>
-<li>5 for stuff I know well</li>
-<li>Well-Known for things that occur so frequently that I don't need to look them up</li>
-<li>Ignore for things like names, locations, or really specialized terms that I'm certain I'll never see again, like chemical compounds</li>
-</ul>
-<p>Others have more nuanced levels:</p>
-<ul>
-<li>1: Defined and seen at least once before, but unlikely to understand and no attempt has been made at truly understanding/memorizing</li>
-<li>2: At some point I have somewhat memorized this or understood it within context. 50% chance I will remember it if I sit and think about it for a bit, but its somewhat straining.</li>
-<li>3: I can recognize this word fairly quickly and understand it. Every now and again I will have to stop and think about it for a a moment.</li>
-<li>4: I recognize it and I'm comfortable with it. I've seen it semi-frequently and I'd probably remember it even if I didn't see it for a while.</li>
-<li>5: Instant recall, and there's almost no chance that I'll forget this word any time soon. It should probably be WKn but I like the way green looks and makes me feel.</li>
-</ul>
-<p>Still others just use status 1-3.</p>
-<p>So, pick whatever you feel is best, don't sweat it too much, and just start reading.  You can always revise term statuses as you go.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="can-i-import-data-from-other-systems"><a class="header" href="#can-i-import-data-from-other-systems">Can I import data from other systems?</a></h1>
-<p>You can import data into Lute via <a href="faq/../usage/terms/bulk-term-import.html">bulk term import</a>, you just have to get your data into .csv file format.</p>
-<h2 id="importing-data-from-lwt"><a class="header" href="#importing-data-from-lwt">Importing data from LWT</a></h2>
-<p>LWT has an "export" feature:</p>
-<p><img src="faq/../assets/faq/import_from_lwt.png" alt="image" /></p>
-<p>Use "Export ALL Terms (TSV)" to export a tab-separated value file.  The file may get downloaded as a ".txt" file, in which case, rename it to ".tsv".</p>
-<p>A sample row of data exported from LWT looks like this:</p>
-<pre><code>gato	cat	Tengo un {gato}		1	Spanish	20
-</code></pre>
-<p>You can then import that file into something like <a href="https://docs.google.com/spreadsheets/u/0/">Google Sheets</a>, and prepare it for import.</p>
-<p>As the <a href="faq/../usage/terms/bulk-term-import.html">bulk term import</a> page says:</p>
-<ul>
-<li>The first line of the CSV file must have the field headings: language, term</li>
-<li>The first line of the CSV file may also have any of these headings: translation, parent, status, tags, pronunciation</li>
-</ul>
-<p>Add a blank line, and then place Lute headings in the appropriate columns.  Continuing with the above example, the data becomes:</p>
-<div class="table-wrapper"><table><thead><tr><th>term</th><th>translation</th><th>n/a</th><th>n/a</th><th>status</th><th>language</th><th>n/a</th><th>tags</th></tr></thead><tbody>
-<tr><td>gato</td><td>cat</td><td>Tengo un {gato}</td><td></td><td>1</td><td>Spanish</td><td>20</td><td></td></tr>
+<h2 id="so-why-even-consider-lute"><a class="header" href="#so-why-even-consider-lute">So why even consider Lute?</a></h2>
+<p>At present (late 2023), the main features differentiating Lute v3 are parent terms and images.  The installation has been drastically simplified -- with the right tools (Python or Docker), you can be up and running in a few minutes.</p>
+<p>Secondary reasons: Lute feels faster and lighter than LWT, and it has just enough features to be useful.  The UI's a bit leaner, if that matters to you.</p>
+<p>More geeky reasons, yet still important (to me): Lute is a full redesign of the original LWT idea using modern code and architecture.  It accomplishes almost the same feature set as LWT at a fraction of the code size and complexity.  It also has a full set of automated tests for project stability.  This might not mean much to regular peeps who just want to learn languages, but from the perspective of project maintainability and growth, it's paramount.</p>
+<p>(Also, if you are into software, like the idea of LWT, and want to contribute to an open-source project, I believe that Lute is a compelling place to start.  It uses Python and Flask, which are good things to know, and has good test coverage so you can hack at things without fear.)</p>
+<h2 id="why-might-you-not-use-lute"><a class="header" href="#why-might-you-not-use-lute">Why might you NOT use Lute?</a></h2>
+<p>As good as Lute is, it might not be for you.  Below are some things that may lead you to decide to postpone using Lute for now:</p>
+<div class="table-wrapper"><table><thead><tr><th>Item</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Single-word audio</td><td>Lute has an audio player for books, but you can't click a single word to hear its audio.</td></tr>
+<tr><td>Support "non-consecutive multiword terms"</td><td>Some languages, like German and Dutch, have terms that that split apart.  For example, in German, the verb "einladen" can be split into "laden ... ein": "Ich lade dich zu meiner Party ein."  I don't think any tool currently solves this well.  See the notes at on <a href="https://github.com/luteorg/lute-v3/issues/9">this GitHub issue</a>.</td></tr>
+<tr><td>Flashcards/testing</td><td>Lute is designed for reading only, there is no testing.</td></tr>
+<tr><td>Automated or bulk translation</td><td>Lute isn't designed to automatically create bidirectional readers, or to auto-create translations.  You can use Lute's Term CSV import feature, along with something like Google Sheets, to imitate that.</td></tr>
 </tbody></table>
 </div>
-<p>Removing the unmapped columns (with "n/a" in the heading) gives:</p>
-<div class="table-wrapper"><table><thead><tr><th>term</th><th>translation</th><th>status</th><th>language</th><th>tags</th></tr></thead><tbody>
-<tr><td>gato</td><td>cat</td><td>1</td><td>Spanish</td><td></td></tr>
-</tbody></table>
-</div>
-<p>Export this to a .csv file, and import it into Lute.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="why-doesnt-lute-have-flashcards-or-an-srs"><a class="header" href="#why-doesnt-lute-have-flashcards-or-an-srs">Why doesn't Lute have flashcards, or an SRS?</a></h1>
-<p>I do feel that SRS<sup class="footnote-reference"><a href="#1">1</a></sup> plays an important role in language learning (if you like using SRS!).</p>
-<p>Lute currently doesn't have a "testing" mode or SRS for a few reasons:</p>
-<ul>
-<li>The core feature of Lute is reading, so I have been focused on making reading and parsing the most pleasant experience.  To me, testing is sort of outside of this.</li>
-<li>Adding a satisfying testing experience is tricky, and could explode into a ton of work.  Anything else feels half-baked.  Here are some things I'd want to see in testing:
-<ul>
-<li>Efficiently testing terms and parent terms (there's no need to test each instance of every word, in my opinion) -- how to manage this best?</li>
-<li>Testing for recall by image</li>
-<li>Selecting terms to test</li>
-<li>Testing by "category"</li>
-<li>... etc</li>
-</ul>
-</li>
-</ul>
-<p>I would rather keep Lute focused on reading, and delegate testing to something that is dedicated to that -- like Anki.  There is an issue for <a href="https://github.com/luteorg/lute-v3/issues/3">Anki export</a>.  Then there would need to be a feedback loop for statuses to get updated, etc.</p>
-<p>Lute is open-sourced software, though, so if someone feels a burning need to implement an SRS in Lute, they are welcome to do it.  For it to be included in the main Lute package, the code would need to pass the various quality checks, and would also need to have sufficient testing and documentation (user docs and technical docs).  It could also be written as a standalone app that interfaces with the Lute database, or perhaps via an API.</p>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>Spaced Repetition Software</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="how-is-development-work-prioritized"><a class="header" href="#how-is-development-work-prioritized">How is development work prioritized?</a></h1>
-<p><em>Variations on this:</em></p>
-<ul>
-<li>where's the roadmap?</li>
-<li>what's the long-term plan?</li>
-<li>can you add feature X?</li>
-<li>why was feature Y added before feature Z?</li>
-</ul>
-<p>These are all great questions, and at the moment there's really not a good answer in the normal "product" sense.</p>
-<p>The goal is for Lute, or something a lot like it, to become a default viable tool for a large user base.  At the moment, the steps for getting there are not planned or roadmapped like a regular product would be: good planning takes a lot of time and energy.  Lute's free and open source, so I and others work on it as we can<sup class="footnote-reference"><a href="#testing">1</a></sup>.</p>
-<p>Lute's got a big backlog of issues and ideas.  You may be wondering why your small request has been sitting in the queue since like <em>forever</em>.  There are some criteria I use to pick what to work on:</p>
-<ul>
-<li><strong>Relative size of work:</strong> how fast/easy it is to design, code, test, and document.  Sometimes small-seeming things aren't feasible.  E.g., "Couldn't you just query the database and tell me how many unknown words are in my book?"  No, unfortunately, because of the way that Lute stores data.  (It seems like it would be easy, right?  But it's not.)  Some requests are intertwined with others, or fundamentally don't follow Lute's technical design.  All good, but big changes take time.</li>
-<li><strong>User impact:</strong> when I was coding just for me, this was easy.  But now with many users, I try to take that into account.</li>
-<li><strong>Fun and usefulness for me personally:</strong> This keeps me motivated, and ensures that Lute doesn't have any obvious jankiness.</li>
-<li><strong>Code and architecture quality:</strong> Since Lute should be open source and hackable, it should be clear.  Though I've tried to keep things sane, in some places it's tough.  So this kind of work (refactoring: improving the quality of existing code) is important.</li>
-<li><strong>Differentiators:</strong> there are a few things that could make a big difference to learning.  With Lute, term images and parent terms were two of the initial things that drove me to write it in the first place.  I think that there are others as well: "word families", "sentence notes", and of course AI integration ... all of these might just be personal projects and thoughts though, I'm not sure!</li>
-</ul>
-<p>Lute's open source, so anyone is welcome to make forks and tweak it for their own learning and fun.  But most of us want to just <em>get on with it</em>.</p>
-<div class="footnote-definition" id="testing"><sup class="footnote-definition-label">1</sup>
-<p>"Work on it as we can" sounds chaotic.  To counteract this chaos, Lute has a decent set of automated tests and checks to ensure that the code is viable.</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="why-is-this-free"><a class="header" href="#why-is-this-free">Why is this free?</a></h1>
-<p>Lute is and will always remain free for a few reasons.</p>
-<ol>
-<li>
-<p>Reciprocity.  When I've studied languages, I've had the great benefit of finding top-notch free technology and content from many, many people and organizations.</p>
-</li>
-<li>
-<p>Freedom from accountability!  Yep, I said that.  While I would appreciate any kind of voluntary donation you might wish to give me for making Lute, I can't ask for payment.  Lute is open source software, and as such will always be a work-in-progress, no matter how great it is.  Requiring payment for use would create an additional burden of responsibility towards each user, and potentially cause frustration for users who buy something that doesn't quite work for them.</p>
-</li>
-<li>
-<p>Anki does it, why can't Lute?  Anki is miraculously free.  They have a great system, central server syncing, a massive community ... it's something to aspire to.</p>
-</li>
-</ol>
-<p>Who knows, maybe at some point Lute will become financially rewarding.  That would be a happy accident, but that's not the main goal.</p>
+<p>There are other smaller features that Lute doesn't have yet, but the above are the biggest ones that may be dealbreakers for you at the moment.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelog"><a class="header" href="#changelog">Changelog</a></h1>
 <p>Lute's changelog is on <a href="https://github.com/luteorg/lute-v3/blob/master/docs/CHANGELOG.md">GitHub</a>.</p>
 <h2 id="notes-about-the-version-numbers"><a class="header" href="#notes-about-the-version-numbers">Notes about the version numbers</a></h2>
