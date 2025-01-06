@@ -49,34 +49,6 @@
 - [Command line jobs](./usage/command-line-jobs.md)
 - [Updating Lute](./usage/updating.md)
 
-# FAQs
-
-- [Where can I get help?](./faq/help.md)
-- [Setup]()
-  - [Can I run Lute on a private web server?](./faq/setup/web-server.md)
-  - [Can I run Lute on my phone or pad?](./faq/setup/mobile-support.md)
-  - [Can I store Lute data on a USB key?](./faq/setup/usb.md)
-  - [Can I make Lute secure?](./faq/setup/adding-basic-auth.md)
-  - [Is there an online version of Lute?](./faq/setup/online-lute.md)
-  - [How can I migrate from Lute v2 to v3?](./faq/setup/v2-to-v3.md)
-- [Languages]()
-  - [Can you add language X?](./faq/language/add-a-language.md)
-- [Books]()
-  - [Where can I find books to import?](./faq/books/finding-stuff.md)
-  - [Why won't my epub import correctly?](./faq/books/epub-import.md)
-  - [Why won't my pdf import correctly?](./faq/books/pdf-import.md)
-  - [My text file import is giving a "utf-8 encoding" error message](./faq/books/utf-8.md)
-- [Reading]()
-  - [I can't click on words in the reading screen](./faq/reading/click-not-working.md)
-- [Terms]()
-  - [Why can't I change a Term?](./faq/terms/terms-cannot-be-changed-once-created.md)
-  - [Where are my new Term's sentences?](./faq/terms/sentences-only-shown-when-page-is-read.md)
-  - [How should I use statuses?](./faq/terms/term-statuses.md)
-- [Can I import data from other systems?](./faq/import-from-other-systems.md)
-- [Why doesn't Lute have flashcards, or an SRS?](./faq/why-no-flashcards.md)
-- [How is development work prioritized?](./faq/prioritizing-dev-work.md)
-- [Why is this free?](./faq/free.md)
-
 # Misc
 
 - [Frequently asked questions (FAQs)](./misc/faqs.md)
