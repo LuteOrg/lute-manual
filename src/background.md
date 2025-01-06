@@ -37,7 +37,7 @@ If you want to run your own thing on your machine, the options I can see are:
 
 * The [original LWT project](https://sourceforge.net/projects/learning-with-texts/) is, as far as I can tell, still *massively popular.*  Even if the code is old, and it might have bugs or be slow, it has the advantage of being tried-and-tested, and you might find people who can help you with issues.
 * [FLTR](https://sourceforge.net/projects/foreign-language-text-reader/), a Java project by the same author of LWT.
-* [Hugo Fara's LWT fork](https://github.com/HugoFara/lwt) has taken the original project and refined the code, but has kept the same features and overall design/architecture.
+* [Hugo Fara's LWT fork](https://github.com/HugoFara/lwt) has recently been retired, and the developer recommends using Lute.
 
 ## So why even consider Lute?
 
