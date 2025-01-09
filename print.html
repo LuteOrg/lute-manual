@@ -1455,6 +1455,30 @@ start cmd /k python -m lute.main
 <p>Lute throws the whole page content into a new Book import screen:</p>
 <img width="70%" src="usage/books/../../assets/usage/books/creating_03.png">
 <p>You <strong>will</strong> want to edit the Text box content, because the import pulls in pretty much everything.  It's not perfect, but it lets you quickly get new content loaded.</p>
+<h2 id="split-by-and-words-per-page"><a class="header" href="#split-by-and-words-per-page">"Split by" and "Words per page"</a></h2>
+<p>These options tell Lute how to split up your book into separate pages.</p>
+<p>Lute will keep adding groups of words (sentences or paragraphs) until the "words per page" threshold is exceeded.</p>
+<p>For example, given the below text:</p>
+<pre><code>Para one sentence one.  Para one sentence two.  Para one sentence three.
+Para two sentence one.  Para two sentence two.  Para two sentence three.
+</code></pre>
+<p>Different split settings will return different pages:</p>
+<p><em>By Sentences, threshold 7 words per page:</em></p>
+<pre><code>Para one sentence one. Para one sentence two.
+</code></pre>
+<pre><code>Para one sentence three.
+Para two sentence one.
+</code></pre>
+<pre><code>Para two sentence two. Para two sentence three.
+</code></pre>
+<p><em>By Paragraphs, threshold 7 words per page:</em></p>
+<pre><code>Para one sentence one. Para one sentence two. Para one sentence three.
+</code></pre>
+<pre><code>Para two sentence one. Para two sentence two. Para two sentence three.
+</code></pre>
+<h3 id="which-to-use"><a class="header" href="#which-to-use">Which to use?</a></h3>
+<p>Once you get past the very beginning stages of reading, splitting by paragraphs makes the most sense, as standalone sentences usually don't contain much interesting content.</p>
+<p>If your book contains <em>very</em> long paragraphs, Lute won't try to break them up further.  This isn't easy to do reasonably and consistently, and shouldn't occur very often.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-stats-calculation"><a class="header" href="#the-stats-calculation">The stats calculation</a></h1>
 <p>In your Book listing, Lute shows the word count for each book, and a small chart of the statuses for five pages of the book text, showing how tough the next few pages will be to work through.</p>
 <p>For example, after reading the first page of the Tutorial and marking various terms as statuses 1 through 5, the listing looks like this (the first row is the Tutorial, the second is the Tutorial follow-up):</p>
