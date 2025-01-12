@@ -304,6 +304,23 @@ docker compose up
       - 9876:5001
 ...
 </code></pre>
+<p>If during the startup error messages appear like the following:</p>
+<blockquote>
+<p>Type: &lt;class 'PermissionError'&gt;<br/>
+[Errno 13] Permission denied: '/lute_data/README.md'</p>
+</blockquote>
+<p>The host system may have set some permissions preventing Lute from creation additional files and folders in the container mounted folders.</p>
+<p>Add the following lines at the end of the <code>docker-compose.yml</code> file to bypass some of those restrictions:</p>
+<pre><code>...
+    security_opt:
+      - label:disable
+...
+</code></pre>
+<blockquote>
+<p><strong>Note</strong>: Disabling permissions or restrictions may increase the security risk of the host system a bit.
+However, as the change above only applies while the Docker container is running, the additional risk can be considered minimal. Nonetheless, it is good to keep this in mind when applying this modification
+to the <code>docker-compose.yml</code> file.</p>
+</blockquote>
 <h2 id="from-source"><a class="header" href="#from-source">From source</a></h2>
 <p>Developers and gearheads can install Lute from source: see the <a href="https://github.com/luteorg/lute-v3/wiki/Development">Lute repository</a>.</p>
 <p>If you want to develop Lute, you'll also need to <a href="install/./mecab.html">install MeCab</a>.</p>
