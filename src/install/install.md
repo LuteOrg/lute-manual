@@ -179,6 +179,26 @@ As with the `pip` installation, you can change the port if your machine is alrea
 ...
 ```
 
+If during the startup error messages appear like the following:
+
+> Type: <class 'PermissionError'><br/>
+> [Errno 13] Permission denied: '/lute_data/README.md'
+
+The host system may have set some permissions preventing Lute from creation additional files and folders in the container mounted folders.
+
+Add the following lines at the end of the `docker-compose.yml` file to bypass some of those restrictions:
+
+```
+...
+    security_opt:
+      - label:disable
+...
+```
+
+> **Note**: Disabling permissions or restrictions may increase the security risk of the host system a bit.
+> However, as the change above only applies while the Docker container is running, the additional risk can be considered minimal. Nonetheless, it is good to keep this in mind when applying this modification
+> to the `docker-compose.yml` file.
+
 ## From source
 
 Developers and gearheads can install Lute from source: see the [Lute repository](https://github.com/luteorg/lute-v3/wiki/Development).
