@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Linking parent-child statuses - Lute manual</title>
+        <title>Editing in the Term list - Lute manual</title>
 
 
         <!-- Custom HTML head -->
@@ -156,61 +156,26 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="linking-parent-child-statuses"><a class="header" href="#linking-parent-child-statuses">Linking parent-child statuses</a></h1>
-<blockquote>
-<p>Feature introduced in Lute 3.1.0.</p>
-</blockquote>
-<p>With "linked parent-child statuses", so that you can update whole families of terms at once.</p>
-<p>For example, if you're studying Spanish, you have the verb "comer" and all of its conjugations: como, comes, come, ... (comí, comías, comíamos, ... (comiera, comieras, comiéramos ... etc!!)).  At a certain point in your learning, these all merge into a single unit in your mind, perhaps with one or two exceptions, so you can link statuses to simplify updates and help organize your knowledge.</p>
-<h2 id="linking-statuses"><a class="header" href="#linking-statuses">Linking statuses</a></h2>
-<p>The Term form has a "Link to parent" checkbox.  It is disabled for Terms that have zero or multiple parents:</p>
-<img width="70%" alt="image" src="../../assets/usage/terms/link_pc_status_01.png">
-<p>If you add a single parent to a Term, the "Link to parent" checkbox is enabled and checked by default.  If the parent exists and has a status, the child inherits the status of its parent:</p>
-<img width="70%" alt="image" src="../../assets/usage/terms/link_pc_status_02.png">
-<p>Note: the parent term does <em>not</em> have a "link children" checkbox, the linking is all handled by the children.</p>
-<h2 id="updating-the-status-while-reading"><a class="header" href="#updating-the-status-while-reading">Updating the status while reading</a></h2>
-<p>Once the Term with linked status is saved, updating the child status propagates to the parent, and vice-versa.  For example, during reading, if I hit the "4" hotkey to update the status of "como", the parent "comer" is also updated:</p>
-<img width="225" alt="image" src="../../assets/usage/terms/link_pc_status_03.png">
-<p>If other terms also had their statuses linked to that same parent, they would get updated as well.  Everything is tracked together, as a single unit.</p>
-<h2 id="dont-link-difficult-forms"><a class="header" href="#dont-link-difficult-forms">Don't link difficult forms</a></h2>
-<p>You don't have to link all children to their parent, of course.  Some verb forms may be more difficult than others.  For example, in Spanish, the present tense is usually learned quite early -- "yo como" (I eat) is the present tense of "comer" (to eat) -- but different tenses might be more difficult -- "comiera" is a more advanced form of "comer" (it's the subjunctive).  So you might choose to <em>not</em> link the "comiera" term's status to its parent:</p>
-<img width="70%" alt="image" src="../../assets/usage/terms/link_pc_status_04.png">
-<p>Then updates to the parent term would only propagate to child terms that have linked statuses:</p>
-<img width="380" alt="image" src="../../assets/usage/terms/link_pc_status_05.png">
-<h2 id="status-can-only-be-linked-for-single-parent-terms"><a class="header" href="#status-can-only-be-linked-for-single-parent-terms">Status can only be linked for single-parent Terms</a></h2>
-<p>If you add more than one parent, the "link status" checkbox is unchecked and deactivated, because Lute can't tell which parent this term should follow:</p>
-<img width="70%" alt="image" src="../../assets/usage/terms/link_pc_status_06.png">
-<h2 id="bulk-linking-of-parents-and-children"><a class="header" href="#bulk-linking-of-parents-and-children">Bulk linking of parents and children</a></h2>
-<p>If you've been using Lute prior to v3.1.0, you might have a bunch of terms and parents, and may want to do a bulk update.  Lute currently doesn't have a "web only" form to bulk update your existing data, but you can achieve the same effect with the CSV export and import as a workaround.</p>
-<p>First, from the home screen menu, choose "Terms" to see a listing of terms.  Set the filters as you wish, such as a Language filter, and then click "Export CSV":</p>
-<img width="100%" alt="image" src="../../assets/usage/terms/link_pc_status_07.png">
-<p>Edit that CSV file (for example using Google sheets), putting "y" the "link_status" column for the terms that you want to link to their parents:</p>
-<img width="100%" alt="image" src="../../assets/usage/terms/link_pc_status_08.png">
-<p>Save that CSV file, and import it into Lute using "Import Terms" from the menu.  Select "Update existing terms" so that your terms will be updated:</p>
-<img width="70%" alt="image" src="../../assets/usage/terms/link_pc_status_09.png">
-<p>You may have to adjust the statuses again as you read, but when you do the entire "term family" will be updated.</p>
-<!--
-Sample story for demo and images.
-=================================
-
-Link statuses
-
-A ella le gusta comer.
-
-Yo como una manzana.
-
-Ayer, le dije a ella que comiera la manzana.
--->
+                        <h1 id="editing-in-the-term-list"><a class="header" href="#editing-in-the-term-list">Editing in the Term list</a></h1>
+<p>You can edit a few fields directly in the Term listing screen: Parents, Translation, Tags, and Status.</p>
+<p>When reading, click on the "Term list" menu item:</p>
+<img width="80%" alt="image" src="../../assets/usage/terms/term_listing_edits_01_menu.png">
+<p>This will open up a Term listing with all of the terms on that page, and any of their parents if you've already assigned them:</p>
+<img width="80%" alt="image" src="../../assets/usage/terms/term_listing_edits_02_list.png">
+<p>You can use the filters at the top of the page to further limit that list as needed.  Then, to update one of the editable fields, just click on it and start editing:</p>
+<img width="50%" alt="image" src="../../assets/usage/terms/term_listing_edits_03_update.png">
+<p>Then <strong>click outside of the field</strong> when done editing so that Lute updates the data.  You'll see a green checkmark when the record is updated.</p>
+<p>When you're done your updates, return to the reading screen and refresh it.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../usage/terms/edit-using-term-listing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../usage/terms/bulk-editing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../usage/terms/bulk-term-import.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../usage/terms/link-parent-child-statuses.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -220,11 +185,11 @@ Ayer, le dije a ella que comiera la manzana.
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../usage/terms/edit-using-term-listing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../usage/terms/bulk-editing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../usage/terms/bulk-term-import.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../usage/terms/link-parent-child-statuses.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
