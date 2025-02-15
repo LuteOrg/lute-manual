@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Bulk term import - Lute manual</title>
+        <title>Overview - Lute manual</title>
 
 
         <!-- Custom HTML head -->
@@ -156,98 +156,43 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="bulk-term-import"><a class="header" href="#bulk-term-import">Bulk term import</a></h1>
-<p>If you have existing vocabulary lists, you can bulk import new Terms, or update existing Terms, with a properly-formatted CSV file.</p>
-<p>From the menu, click Terms &gt; Import Terms.  Choose the CSV file, and indicate if you want to import new Terms, update existing ones, or both.</p>
-<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
-<ul>
-<li><a href="#csv-file-format">CSV File Format</a>
-<ul>
-<li><a href="#field-notes">Field notes</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#ex-1---single-record">ex. 1 - single record</a></li>
-<li><a href="#ex-2---carriage-return-in-field">ex. 2 - carriage return in field</a></li>
-<li><a href="#ex-3---parent-record">ex. 3 - parent record</a></li>
-<li><a href="#ex-4---translation-only">ex. 4 - translation only</a></li>
-<li><a href="#ex-5---multiple-parents">ex. 5 - multiple parents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#creating-csv-files">Creating CSV files</a></li>
-<li><a href="#importing-new-terms-as-unknown">Importing new terms as "Unknown"</a></li>
-</ul>
-<!-- TOC end -->
-<h2 id="csv-file-format"><a class="header" href="#csv-file-format">CSV File Format</a></h2>
-<ul>
-<li>The CSV file should be properly formatted; i.e., carriage returns in fields are allowed, but the field should be enclosed in quotes.</li>
-<li>The first line of the CSV file <strong>must</strong> have the field headings: <code>language, term</code></li>
-<li>The first line of the CSV file <strong>may</strong> also have any of these headings: <code>translation, parent, status, tags, pronunciation, link_status</code></li>
-<li>These field names are <strong>ignored</strong>: <code>added</code></li>
-<li>Fields can be in any order.</li>
-<li>An error is raised if the file contains other headings.</li>
-</ul>
-<h3 id="field-notes"><a class="header" href="#field-notes">Field notes</a></h3>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Required</th><th>Notes</th></tr></thead><tbody>
-<tr><td>language</td><td>Yes</td><td>Must be the name of one of the languages you have saved in Lute</td></tr>
-<tr><td>term</td><td>Yes</td><td>The new Term</td></tr>
-<tr><td>translation</td><td></td><td></td></tr>
-<tr><td>parent</td><td></td><td>The "parent" of this term (e.g., an infinitive form of a verb, etc.).  This will automatically create the parent term if it doesn't exist already, or if it's not created in the same import file.  If a term has multiple parents, you can enclose the list in quotes, and comma-separate the parents (e.g., the term <code>se sienta</code> could have parents <code>"sentirse, sentarse"</code>.</td></tr>
-<tr><td>status</td><td></td><td>One of 1, 2, 3, 4, 5, W (for Well-Known), or I (for Ignored).  If missing, it's set to 1</td></tr>
-<tr><td>link_status</td><td></td><td>Y or blank.  If Y and this term has a single parent, its status is linked to the parent status</td></tr>
-<tr><td>tags</td><td></td><td>A comma-delimited list of tags to add to the Term</td></tr>
-<tr><td>pronunciation</td><td></td><td></td></tr>
-</tbody></table>
+                        <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
+<div class="warning">
+<blockquote>
+<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
+<p>The current beta release for Anki exports is <em>TBD</em>.</p>
+</blockquote>
 </div>
-<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
-<h4 id="ex-1---single-record"><a class="header" href="#ex-1---single-record">ex. 1 - single record</a></h4>
-<p>The simplest example.  Note that the tags <code>animal, noun</code> must be enclosed in quotes.</p>
-<pre><code>language, term, translation, parent, status, tags, pronunciation
-Spanish,gato,cat,,W,"animal, noun",GA-toh
-</code></pre>
-<h4 id="ex-2---carriage-return-in-field"><a class="header" href="#ex-2---carriage-return-in-field">ex. 2 - carriage return in field</a></h4>
-<pre><code>language,term,translation,parent,status,tags,pronunciation
-Spanish,gato,"A cat.
-A house cat.",,1,"animal, noun",GA-toh
-</code></pre>
-<p>This would create a term "gato" with the translation "A cat (carriage return) A house cat".</p>
-<h4 id="ex-3---parent-record"><a class="header" href="#ex-3---parent-record">ex. 3 - parent record</a></h4>
-<pre><code>language,term,translation,parent,status,tags,pronunciation
-Spanish,gatos,cat,gato,W,,
-</code></pre>
-<p>This would create the term "gatos" (status = Well Known), and also the term "gato", setting "gato" as the parent for "gatos" (the plural form).</p>
-<p>Parent records may be useful, for example, if you're learning conjugations of irregular verbs.</p>
-<h4 id="ex-4---translation-only"><a class="header" href="#ex-4---translation-only">ex. 4 - translation only</a></h4>
-<pre><code>language,term,translation
-Spanish,gato,cat
-</code></pre>
-<h4 id="ex-5---multiple-parents"><a class="header" href="#ex-5---multiple-parents">ex. 5 - multiple parents</a></h4>
-<pre><code>language,term,parent
-Spanish,se sienta,"sentirse, sentarse"
-</code></pre>
-<h2 id="creating-csv-files"><a class="header" href="#creating-csv-files">Creating CSV files</a></h2>
-<p>The easiest way to create <strong>properly-formatted</strong> CSV files is probably through something like Excel or Google Sheets.  Create a sheet with the correct headings.  You can enter carriage returns into a given cell using something like Shift-Return, or Ctrl-Return ... depending on your system.  Then export that as a CSV using File &gt; Download &gt; Comma Separated Values.</p>
-<p>Using Google Sheets, you might also be able to get some <em>basic</em> translations.  For example, if I have "colima" in cell B2, the formula <code>=GOOGLETRANSLATE(B2,"es", "en")</code> in cell B3 would give "hill".</p>
-<h2 id="importing-new-terms-as-unknown"><a class="header" href="#importing-new-terms-as-unknown">Importing new terms as "Unknown"</a></h2>
-<p>You can import terms to act as "placeholders" for when you encounter them.  This may be useful for sharing vocabulary lists or prepopulating your term database without impacting your reading stats.</p>
-<p>For example, suppose I had the following import file:</p>
-<pre><code>term,language,translation
-guide,English,blah
-</code></pre>
-<p>I can import this file and specify that I want any new terms to be "Unknown" as follows:</p>
-<img width="80%" alt="image" src="../../assets/usage/terms/bulk_import_01.png">
-<p>When I do so, the term still shows up as "unknown" when reading, but it will be pre-populated with the imported data:</p>
-<img width="30%" alt="image" src="../../assets/usage/terms/bulk_import_02.png">
+<p>Lute doesn’t have built-in flashcards for various reasons<sup class="footnote-reference"><a href="#1">1</a></sup>, so it provides a way to export terms to <a href="https://apps.ankiweb.net/">Anki</a>, a popular and free flashcard program.</p>
+<p>In summary:</p>
+<ol>
+<li>You install Anki desktop and the AnkiConnect add-on (see LINK HERE)</li>
+<li>You define how Lute should export terms</li>
+<li>You export selected terms from the term listing or while reading.</li>
+</ol>
+<p>Anki exports will only work on a machine that has Anki desktop and AnkiConnect installed. It doesn’t work from a mobile device.</p>
+<p><strong>Warning: Anki exports might be hard to understand at first. :-)</strong></p>
+<p>Anki exports are tricky to handle it a general way:</p>
+<ul>
+<li>Usually, language data is fairly unstructured.</li>
+<li>Many users will have different needs.</li>
+<li>Different kinds of terms will require different kinds of Anki cards (for example, cards to test gender, verb tenses, etc.)</li>
+</ul>
+<p>Unfortunately, I could not find a simple way to meet the general requirement of exporting data to Anki.  I've done the best I can to meet my own personal needs, while keeping the code general and the user experience reasonable.  I'll do my best to adapt the code to user feedback, but some things might not be possible.  <strong>I personally will not be able to support many questions on setting up your Anki exports,</strong> but will try to provide many examples here that should provide guidance.</p>
+<p><strong>I also cannot offer any real support or guidance regarding Anki,</strong> simply because I don't have the time.  See the <a href="ttps://docs.ankiweb.net">Anki manual</a>, or check out the pile of videos on YouTube, etc.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>these reasons are given in the <a href="https://luteorg.github.io/lute-faqs/why-no-flashcards.html">FAQ</a> -- basically, it's a ton of work!</p>
+</div>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../usage/terms/link-parent-child-statuses.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../usage/terms/bulk-term-import.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../usage/ankiexport/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../usage/ankiexport/getting-started.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -257,11 +202,11 @@ guide,English,blah
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../usage/terms/link-parent-child-statuses.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../usage/terms/bulk-term-import.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../usage/ankiexport/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../usage/ankiexport/getting-started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

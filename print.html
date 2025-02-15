@@ -1873,7 +1873,161 @@ guide,English,blah
 <p>I can import this file and specify that I want any new terms to be "Unknown" as follows:</p>
 <img width="80%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_01.png">
 <p>When I do so, the term still shows up as "unknown" when reading, but it will be pre-populated with the imported data:</p>
-<img width="30%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_02.png"><div style="break-before: page; page-break-before: always;"></div><h1 id="themes"><a class="header" href="#themes">Themes</a></h1>
+<img width="30%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_02.png"><div style="break-before: page; page-break-before: always;"></div><h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
+<div class="warning">
+<blockquote>
+<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
+<p>The current beta release for Anki exports is <em>TBD</em>.</p>
+</blockquote>
+</div>
+<p>Lute doesn’t have built-in flashcards for various reasons<sup class="footnote-reference"><a href="#1">1</a></sup>, so it provides a way to export terms to <a href="https://apps.ankiweb.net/">Anki</a>, a popular and free flashcard program.</p>
+<p>In summary:</p>
+<ol>
+<li>You install Anki desktop and the AnkiConnect add-on (see LINK HERE)</li>
+<li>You define how Lute should export terms</li>
+<li>You export selected terms from the term listing or while reading.</li>
+</ol>
+<p>Anki exports will only work on a machine that has Anki desktop and AnkiConnect installed. It doesn’t work from a mobile device.</p>
+<p><strong>Warning: Anki exports might be hard to understand at first. :-)</strong></p>
+<p>Anki exports are tricky to handle it a general way:</p>
+<ul>
+<li>Usually, language data is fairly unstructured.</li>
+<li>Many users will have different needs.</li>
+<li>Different kinds of terms will require different kinds of Anki cards (for example, cards to test gender, verb tenses, etc.)</li>
+</ul>
+<p>Unfortunately, I could not find a simple way to meet the general requirement of exporting data to Anki.  I've done the best I can to meet my own personal needs, while keeping the code general and the user experience reasonable.  I'll do my best to adapt the code to user feedback, but some things might not be possible.  <strong>I personally will not be able to support many questions on setting up your Anki exports,</strong> but will try to provide many examples here that should provide guidance.</p>
+<p><strong>I also cannot offer any real support or guidance regarding Anki,</strong> simply because I don't have the time.  See the <a href="ttps://docs.ankiweb.net">Anki manual</a>, or check out the pile of videos on YouTube, etc.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>these reasons are given in the <a href="https://luteorg.github.io/lute-faqs/why-no-flashcards.html">FAQ</a> -- basically, it's a ton of work!</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
+<div class="warning">
+<blockquote>
+<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
+<p>The current beta release for Anki exports is <em>TBD</em>.</p>
+</blockquote>
+</div>
+<blockquote>
+<p>TODO these notes are very rough, fix them up.</p>
+</blockquote>
+<p>Install Anki desktop (if you don’t have it already).</p>
+<p>Install and configure the AnkiConnect add-on.</p>
+<p>Setting up export is the following steps:</p>
+<p>Loot, enable an export, and set the AnkiConnect URL</p>
+<p>Test the connect connection</p>
+<p>Define an export.</p>
+<p>The simplest export possible would be to justify the field mapping, leaving the criteria blank.</p>
+<p>Click new mapping, specify, the deck, name, and note type. Usually Anki comes with a simple note type or a basic note type, so choose that, and then choose the front and back field and map some data.</p>
+<p>Then go to the term listing, check a term, and click "xxx"  You'll get a message.  Go to Anki, and the card is there.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="anki-and-ankiconnect"><a class="header" href="#anki-and-ankiconnect">Anki and AnkiConnect</a></h1>
+<div class="warning">
+<blockquote>
+<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
+<p>The current beta release for Anki exports is <em>TBD</em>.</p>
+</blockquote>
+</div>
+<h2 id="anki"><a class="header" href="#anki">Anki</a></h2>
+<p>In a nutshell, Anki is flashcard software.  There's a lot more to it than that, of course.  There is a lot of documentation out there about Anki, it's worth becoming familiar with.  Searching "Anki introduction" in YouTube returns a pile of videos, like <a href="https://www.youtube.com/watch?v=ixD9RWpFuk4">this one</a>.</p>
+<p><a href="https://docs.ankiweb.net/">The Anki user manual</a> is very good.</p>
+<p>For usage with Lute, you only need to be familiar with a few terms, all covered in the "Key Concepts" of the <a href="https://docs.ankiweb.net/getting-started.html">Anki manual</a>:</p>
+<ul>
+<li><a href="https://docs.ankiweb.net/getting-started.html#decks">Decks</a>: "A deck is a group of cards"</li>
+<li><a href="https://docs.ankiweb.net/getting-started.html#note-types">Note types</a>: "Anki allows you to create different types of notes for different material. Each type of note has its own set of fields and card types."</li>
+</ul>
+<p>You export your Lute terms to different "Note types", and you can define multiple "cards types" for each note type.</p>
+<h2 id="ankiconnect---installing-and-configuring"><a class="header" href="#ankiconnect---installing-and-configuring">AnkiConnect - installing and configuring</a></h2>
+<p><a href="https://ankiweb.net/shared/info/2055492159">AnkiConnect</a> is an Anki add-on that lets Lute communicate with Anki.  You have to configure it once installed.</p>
+<p><strong>Installation:</strong> Ref <a href="https://docs.ankiweb.net/addons.html">the Anki user manual</a>, but here is a quick guide:</p>
+<p>TODO record quick video</p>
+<p><strong>Configuration:</strong> From the Anki menu, choose "Tools &gt; Add-ons", then click on AnkiConnect and Config:</p>
+<p><img src="usage/ankiexport/../../assets/usage/ankiexport/ankiconnect_config_1.png" alt="image" /></p>
+<p>In the AnkiConnect configuration, you have to specify your Lute URL and port in the "webCorsOriginList".  For example, for my Lute instance running on <code>http://localhost:5001/</code>, I have the following:</p>
+<p><img src="usage/ankiexport/../../assets/usage/ankiexport/ankiconnect_config_2.png" alt="image" /></p>
+<p><strong>You <em>must</em> restart Anki for the configuration change to take effect!</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="defining-exports"><a class="header" href="#defining-exports">Defining exports</a></h1>
+<div class="warning">
+<blockquote>
+<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
+<p>The current beta release for Anki exports is <em>TBD</em>.</p>
+</blockquote>
+</div>
+<p>Once Anki and AnkiConnect are setup, and the connection verified, you can create export specifications from Settings &gt; Anki exports, "create new".</p>
+<p>An export needs a few pieces of information:</p>
+<ul>
+<li>the target deck where new notes will be added</li>
+<li>the Anki "note type" that terms will be exported to</li>
+<li>the field mappings, that is, how Lute should export terms to Anki</li>
+<li>if needed, you can also specify criteria that a term must meet for it to be exported</li>
+</ul>
+<h2 id="deck-name"><a class="header" href="#deck-name">Deck name</a></h2>
+<p>The deck name must already exist in your Anki collection.</p>
+<h2 id="note-type"><a class="header" href="#note-type">Note type</a></h2>
+<p>The note type must already be defined in your Anki collection.</p>
+<h2 id="field-mappings"><a class="header" href="#field-mappings">Field mappings</a></h2>
+<p>Once you have selected an export Note type, you can then specify how data should be mapped to each field in the given note.  Allowable options are given in the value drop-down menu.</p>
+<div class="table-wrapper"><table><thead><tr><th>Mapping</th><th>Description</th><th>Example</th></tr></thead><tbody>
+<tr><td><code>{ id }</code></td><td>The term ID in Lute (may be useful for creating links back to Lute from your Anki card)</td><td>42</td></tr>
+<tr><td><code>{ term }</code></td><td>The term text</td><td>Bücher</td></tr>
+<tr><td><code>{ language }</code></td><td>The term language</td><td>German</td></tr>
+<tr><td><code>{ parents }</code></td><td>All term parents</td><td>Buch</td></tr>
+<tr><td><code>{ tags }</code></td><td>All tags</td><td>plural</td></tr>
+<tr><td><code>{ translation }</code></td><td>the translation of the parent term, if any, and the term itself</td><td>Book</td></tr>
+<tr><td><code>{ tags:["val1", "val2"] }</code></td><td>A filtered list of tags matching the given values</td><td></td></tr>
+<tr><td><code>{ image }</code></td><td>The term image, if available</td><td></td></tr>
+<tr><td><code>{ sentence }</code></td><td>The latest sentence associated with the term. This may not be the sentence shown on the reading page, if you are reviewing old material.</td><td>Ich habe die Bücher.</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>The values in the curly braces (e.g., <code>id</code>, <code>term</code>, etc`) are fixed, you can't make up your own mappings.</li>
+<li>You can add extra text in the mapping if you want, for example, you could export "___ { term }" to get "___ Buch".</li>
+</ul>
+<h3 id="filtered-tags-eg--tags-der-die-das-"><a class="header" href="#filtered-tags-eg--tags-der-die-das-">Filtered tags (e.g. <code>{ tags: ["der", "die", "das"] }</code>)</a></h3>
+<p>Filtering the tags can be useful if your terms have many tags.  For example, in my German terms, the term "Baum" is tagged with "der" (because it's masculine), and "Pflanze" (because it's a type of plant).  With the field mapping <code>{ tags: ["der", "die", "das"] }</code> Lute will only output "der", and not include "Pflanze", which is useful for creating an Anki card to test Genders.</p>
+<p><strong>Important notes</strong></p>
+<ul>
+<li>In Anki, <strong>the first field of your note must not be blank, and must be unique.</strong>  If you define multiple exports to the same deck with the same first field value, they will be rejected.</li>
+<li>If you change the name of your Anki decks or field names, you'll need to update your export definitions in Lute.  Exports will fail with descriptive messages.  You can validate your SRS export from the export listing.</li>
+</ul>
+<h2 id="criteria"><a class="header" href="#criteria">Criteria</a></h2>
+<p>Sometimes, notes should only be created for particular terms.  E.g., you might only want to create a note to test a German term's noun gender if a term is tagged with "der", "die", or "das".  That's what the criteria field is for.  If criteria are set, only terms meeting the criteria are exported to that particular note type.</p>
+<p>If you leave the criteria blank, every term that you ask to export will be exported using that mapping.</p>
+<p>Available criteria (replace the values in the angle brackets with your values):</p>
+<div class="table-wrapper"><table><thead><tr><th>Criteria</th><th>Notes</th></tr></thead><tbody>
+<tr><td><code>language:"&lt;language name&gt;"</code></td><td></td></tr>
+<tr><td><code>tags:"&lt;val&gt;"</code></td><td>True if the term has this particular tag</td></tr>
+<tr><td><code>tags:["&lt;val1&gt;", "&lt;val2&gt;" ...]</code></td><td>True if the term has any of the given tags</td></tr>
+<tr><td><code>parents.tags:"&lt;val&gt;"</code></td><td>True if any parent of the term has this particular tag</td></tr>
+<tr><td><code>parents.tags:["&lt;val1&gt;", "&lt;val2&gt;" ...]</code></td><td>True if any parent of the term has any of the given tags</td></tr>
+<tr><td><code>all.tags:"&lt;val&gt;"</code></td><td>True if the term or any parent has this particular tag</td></tr>
+<tr><td><code>all.tags:["&lt;val1&gt;", "&lt;val2&gt;" ...]</code></td><td>True if the term or any parent has any of the given tags</td></tr>
+<tr><td><code>has:image</code></td><td></td></tr>
+<tr><td><code>parents.count OPERATOR INT</code></td><td><code>OPERATOR</code> is one of <code>&lt; &lt;= &gt; &gt;= != = == &lt;&gt;</code></td></tr>
+<tr><td><code>status OPERATOR INT</code></td><td></td></tr>
+</tbody></table>
+</div>
+<p>These can be combined using <code>and</code>, <code>or</code>, and <code>(</code> <code>)</code>.  For example:</p>
+<ul>
+<li><code>language:"Spanish" and parents.count&gt;=1</code></li>
+<li><code>tags:"plural"</code></li>
+<li><code>language:"German" and tags:["der", "die", "das"]</code></li>
+<li><code>parents.count=1 and tags:["fem", "other"] and has:image and status&lt;=3</code></li>
+</ul>
+<h2 id="active"><a class="header" href="#active">Active?</a></h2>
+<p>If true, this mapping will be used; if false, it will be skipped.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exporting-terms"><a class="header" href="#exporting-terms">Exporting terms</a></h1>
+<div class="warning">
+<blockquote>
+<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
+<p>The current beta release for Anki exports is <em>TBD</em>.</p>
+</blockquote>
+</div>
+<p>Once Anki and AnkiConnect are set up, and your exports configured, you can export terms from Lute:</p>
+<ul>
+<li>From the reading page, you can click on a word, or shift click multiple words, and then export them using the reading menu.  You can also define a keyboard shortcut for the Anki export if you want.  When the words are exported, you’ll get a message showing which cards have been created.</li>
+<li>From the term listing, click the checkmarks for the terms you want to export, and in the actions menu click export to Anki. You’ll get a message.</li>
+</ul>
+<p>(Anki and Anki connect must be running for the export to work, of course :-P)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="themes"><a class="header" href="#themes">Themes</a></h1>
 <p>You can apply one of the predefined themes in the Settings.  Select the theme from the dropdown.</p>
 <h2 id="built-in-themes"><a class="header" href="#built-in-themes">Built-in themes</a></h2>
 <h3 id="default"><a class="header" href="#default">Default</a></h3>
