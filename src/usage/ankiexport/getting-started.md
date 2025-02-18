@@ -8,8 +8,6 @@
 
 [Enable exports](./enabling.md)
 
-Test the connect connection
-
 Define an export.
 
 The simplest export possible would be to justify the field mapping, leaving the criteria blank.

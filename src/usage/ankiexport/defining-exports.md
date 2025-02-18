@@ -2,24 +2,23 @@
 
 {{#include note.md}}
 
-Once Anki and AnkiConnect are setup, and the connection verified, you can create export specifications from Settings > Anki exports, "create new".
+Once Anki and AnkiConnect are setup, and the connection verified, you can create export specifications from Settings > Anki exports:
 
-An export needs a few pieces of information:
+<img width="25%" src="../../assets/usage/ankiexport/defining_exports_1_menu.png">
 
-- the target deck where new notes will be added
-- the Anki "note type" that terms will be exported to
-- the field mappings, that is, how Lute should export terms to Anki
-- if needed, you can also specify criteria that a term must meet for it to be exported
+Then click the "Create new export specification" at the bottom of the listing.
 
-## The input form
+<img width="75%" src="../../assets/usage/ankiexport/defining_exports_2_new_form.png" style="margin-bottom: 10px">
 
-### Deck name
 
-The deck name must already exist in your Anki collection.
+| Field | Notes |
+| --- | --- |
+| Export name | Whatever you want to call this export |
+| Deck Name | The target deck where new notes will be added.  You need to create the deck first. |
+| Note Type | The Anki "note type" that terms will be exported to.  The note type must already exist in Anki.  You can use Anki's built-in note types or create your own. |
+| Field Mapping | How to map data from Lute to the Anki note.  See below for more details. |
+| Criteria | (Optional) Criteria that a Lute term must satisfy for it to be exported. |
 
-### Note type
-
-The note type must already be defined in your Anki collection.
 
 ### Field mappings
 
