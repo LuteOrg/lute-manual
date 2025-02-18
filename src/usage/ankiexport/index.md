@@ -12,7 +12,7 @@ In summary:
 
 Anki exports will only work on a machine that has Anki desktop and AnkiConnect installed. It doesn’t work from a mobile device.
 
-**Warning: Anki exports might be hard to understand at first. :-)**
+## A disclaimer :-)
 
 Anki exports are tricky to handle it a general way:
 
@@ -20,8 +20,8 @@ Anki exports are tricky to handle it a general way:
 - Many users will have different needs.
 - Different kinds of terms will require different kinds of Anki cards (for example, cards to test gender, verb tenses, etc.)
 
-Unfortunately, I could not find a simple way to meet the general requirement of exporting data to Anki.  I've done the best I can to meet my own personal needs, while keeping the code general and the user experience reasonable.  I'll do my best to adapt the code to user feedback, but some things might not be possible.  **I personally will not be able to support many questions on setting up your Anki exports,** but will try to provide many examples here that should provide guidance.
+There's no simple way to do _perfect_ exports in a general way, and some things might not be possible at all, without custom code!
 
-**I also cannot offer any real support or guidance regarding Anki,** simply because I don't have the time.  See the [Anki manual](ttps://docs.ankiweb.net), or check out the pile of videos on YouTube, etc.
+Given the above, it might be best to look at Lute's Anki exports as a "first draft" for some Anki cards, which you can further refine, suspend, or delete as needed.  From my experience, the cards are usually just fine, and I can make any other cards outside of Lute as usual.
 
 [^1]: these reasons are given in the [FAQ](https://luteorg.github.io/lute-faqs/why-no-flashcards.html) -- basically, it's a ton of work!
