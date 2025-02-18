@@ -46,6 +46,8 @@
   - [Anki and AnkiConnect](./usage/ankiexport/anki-and-anki-connect.md)
   - [Enabling exports](./usage/ankiexport/enabling.md)
   - [Defining exports](./usage/ankiexport/defining-exports.md)
+    - [Field mappings](./usage/ankiexport/field-mappings.md)
+    - [Criteria](./usage/ankiexport/criteria.md)
   - [Exporting terms](./usage/ankiexport/exporting-terms.md)
 - [Themes]()
   - [Themes](./usage/themes/themes.md)
