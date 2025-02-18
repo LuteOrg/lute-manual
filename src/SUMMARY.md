@@ -44,6 +44,7 @@
   - [Overview](./usage/ankiexport/index.md)
   - [Getting started](./usage/ankiexport/getting-started.md)
   - [Anki and AnkiConnect](./usage/ankiexport/anki-and-anki-connect.md)
+  - [Enabling exports](./usage/ankiexport/enabling.md)
   - [Defining exports](./usage/ankiexport/defining-exports.md)
   - [Exporting terms](./usage/ankiexport/exporting-terms.md)
 - [Themes]()

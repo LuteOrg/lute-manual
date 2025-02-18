@@ -4,13 +4,9 @@
 
 > TODO these notes are very rough, fix them up.
 
-Install Anki desktop (if you don’t have it already).
+[Install Anki desktop and AnkiConnect](./anki-and-anki-connect.md)
 
-Install and configure the AnkiConnect add-on.
-
-Setting up export is the following steps:
-
-Loot, enable an export, and set the AnkiConnect URL
+[Enable exports](./enabling.md)
 
 Test the connect connection
 
