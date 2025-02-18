@@ -29,6 +29,8 @@ TODO record quick video
 
 ![image](../../assets/usage/ankiexport/ankiconnect_config_1.png)
 
+![image](../../assets/usage/ankiexport/ankiconnect_config_1_bottom.png)
+
 In the AnkiConnect configuration, you have to specify your Lute URL and port in the "webCorsOriginList".  For example, for my Lute instance running on `http://localhost:5001/`, I have the following:
 
 ![image](../../assets/usage/ankiexport/ankiconnect_config_2.png)
