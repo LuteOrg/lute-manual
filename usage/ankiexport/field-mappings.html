@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Defining exports - Lute manual</title>
+        <title>Field mappings - Lute manual</title>
 
 
         <!-- Custom HTML head -->
@@ -156,42 +156,46 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="defining-exports"><a class="header" href="#defining-exports">Defining exports</a></h1>
-<div class="warning">
-<blockquote>
-<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
-<p>The current beta release for Anki exports is 3.10.0b2 - but check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
-</blockquote>
-</div>
-<p>Once Anki and AnkiConnect are setup, and the connection verified, you can create export specifications from Settings &gt; Anki exports:</p>
-<img width="25%" src="../../assets/usage/ankiexport/defining_exports_1_menu.png">
-<p>Then click the "Create new export specification" at the bottom of the listing.</p>
-<img width="75%" src="../../assets/usage/ankiexport/defining_exports_2_new_form.png" style="margin-bottom: 10px">
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Export name</td><td>Whatever you want to call this export</td></tr>
-<tr><td>Deck Name</td><td>The target deck where new notes will be added.  You need to create the deck first.</td></tr>
-<tr><td>Note Type</td><td>The Anki "note type" that terms will be exported to.  The note type must already exist in Anki.  You can use Anki's built-in note types or create your own.</td></tr>
-<tr><td>Field Mapping</td><td>How to map data from Lute to the Anki note.  See <a href="./field-mappings.html">Field mappings</a></td></tr>
-<tr><td>Criteria</td><td>(Optional) Criteria that a Lute term must satisfy for it to be exported.  See <a href="./criteria.html">Criteria</a></td></tr>
-<tr><td>Active?</td><td>True if this export should be used.</td></tr>
+                        <h1 id="field-mappings"><a class="header" href="#field-mappings">Field mappings</a></h1>
+<p>Once you have selected an export Note type, you can then specify how data should be exported from Lute to Anki.</p>
+<p>For example, here I'm defining an export to an Anki "Basic" note, one of Anki's built-in note types:</p>
+<img width="75%" src="../../assets/usage/ankiexport/defining_exports_field_mapping.png" style="margin-bottom: 10px">
+<p>As shown, the term will be mapped to the Front field using <code>{ term }</code>, and I'm selecting another value for the Back field.</p>
+<h2 id="allowed-options"><a class="header" href="#allowed-options">Allowed options</a></h2>
+<p>Allowable options are given in the value drop-down menu.</p>
+<div class="table-wrapper"><table><thead><tr><th>Mapping</th><th>Description</th><th>Example</th></tr></thead><tbody>
+<tr><td><code>{ id }</code></td><td>The term ID in Lute (may be useful for creating links back to Lute from your Anki card)</td><td>42</td></tr>
+<tr><td><code>{ term }</code></td><td>The term text</td><td>Bücher</td></tr>
+<tr><td><code>{ language }</code></td><td>The term language</td><td>German</td></tr>
+<tr><td><code>{ parents }</code></td><td>All term parents</td><td>Buch</td></tr>
+<tr><td><code>{ tags }</code></td><td>All tags</td><td>plural</td></tr>
+<tr><td><code>{ translation }</code></td><td>the translation of the parent term, if any, and the term itself</td><td>Book</td></tr>
+<tr><td><code>{ tags:["val1", "val2"] }</code></td><td>A filtered list of tags matching the given values</td><td></td></tr>
+<tr><td><code>{ image }</code></td><td>The term image, if available</td><td></td></tr>
+<tr><td><code>{ sentence }</code></td><td>If exporting the term from the reading screen, this is the sentence that the term was in.  If exporting from the term listing, this is the latest reference associated with the term (as shown in the Sentences tab on the term form).</td><td>Ich habe die Bücher.</td></tr>
 </tbody></table>
 </div>
-<h2 id="suggestions"><a class="header" href="#suggestions">Suggestions</a></h2>
-<p>Exports can take some time and thought to define!  Some suggestions from my experience:</p>
 <ul>
-<li>when you're first testing exports, perhaps create a deck like "testing_exports", and use that as the destination deck in your exports.  You can delete the cards in this test deck as go, until you have the mappings you want.</li>
-<li>you might want to create separate "Lute decks" for your exports, to keep Lute export data separate from your other data.</li>
+<li>The values in the curly braces (e.g., <code>id</code>, <code>term</code>, etc`) are fixed, you can't make up your own mappings.</li>
+<li>You can add extra text in the mapping if you want, for example, you could export "___ { term }" to get "___ Buch".</li>
+</ul>
+<h2 id="filtered-tags-eg--tags-der-die-das-"><a class="header" href="#filtered-tags-eg--tags-der-die-das-">Filtered tags (e.g. <code>{ tags: ["der", "die", "das"] }</code>)</a></h2>
+<p>Filtering the tags can be useful if your terms have many tags.  For example, in my German terms, the term "Baum" is tagged with "der" (because it's masculine), and "Pflanze" (because it's a type of plant).  With the field mapping <code>{ tags: ["der", "die", "das"] }</code> Lute will only output "der", and not include "Pflanze", which is useful for creating an Anki card to test Genders.</p>
+<p><strong>Important notes</strong></p>
+<ul>
+<li>In Anki, <strong>the first field of your note must not be blank, and must be unique.</strong>  If you define multiple exports to the same deck with the same first field value, they will be rejected.</li>
+<li>If you change the name of your Anki decks or field names, you'll need to update your export definitions in Lute.  Exports will fail with descriptive messages.</li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../usage/ankiexport/enabling.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../usage/ankiexport/defining-exports.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../usage/ankiexport/field-mappings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../usage/ankiexport/criteria.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -201,11 +205,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../usage/ankiexport/enabling.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../usage/ankiexport/defining-exports.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../usage/ankiexport/field-mappings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../usage/ankiexport/criteria.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

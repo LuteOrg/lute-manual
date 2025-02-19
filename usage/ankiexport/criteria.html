@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Defining exports - Lute manual</title>
+        <title>Criteria - Lute manual</title>
 
 
         <!-- Custom HTML head -->
@@ -156,42 +156,40 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="defining-exports"><a class="header" href="#defining-exports">Defining exports</a></h1>
-<div class="warning">
-<blockquote>
-<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
-<p>The current beta release for Anki exports is 3.10.0b2 - but check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
-</blockquote>
-</div>
-<p>Once Anki and AnkiConnect are setup, and the connection verified, you can create export specifications from Settings &gt; Anki exports:</p>
-<img width="25%" src="../../assets/usage/ankiexport/defining_exports_1_menu.png">
-<p>Then click the "Create new export specification" at the bottom of the listing.</p>
-<img width="75%" src="../../assets/usage/ankiexport/defining_exports_2_new_form.png" style="margin-bottom: 10px">
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Export name</td><td>Whatever you want to call this export</td></tr>
-<tr><td>Deck Name</td><td>The target deck where new notes will be added.  You need to create the deck first.</td></tr>
-<tr><td>Note Type</td><td>The Anki "note type" that terms will be exported to.  The note type must already exist in Anki.  You can use Anki's built-in note types or create your own.</td></tr>
-<tr><td>Field Mapping</td><td>How to map data from Lute to the Anki note.  See <a href="./field-mappings.html">Field mappings</a></td></tr>
-<tr><td>Criteria</td><td>(Optional) Criteria that a Lute term must satisfy for it to be exported.  See <a href="./criteria.html">Criteria</a></td></tr>
-<tr><td>Active?</td><td>True if this export should be used.</td></tr>
+                        <h1 id="criteria"><a class="header" href="#criteria">Criteria</a></h1>
+<p>Sometimes, notes should only be created for particular terms.  For example, you might only want to create a note to test a German term's noun gender if a term is tagged with "der", "die", or "das".  If criteria are set, only terms meeting the criteria are exported with the given export specification.</p>
+<p>If you leave the criteria blank, every term that you ask to export will be exported using that mapping.</p>
+<p>Available criteria (replace the values in the angle brackets with your values):</p>
+<div class="table-wrapper"><table><thead><tr><th>Criteria</th><th>Notes</th></tr></thead><tbody>
+<tr><td><code>language:"&lt;language name&gt;"</code></td><td></td></tr>
+<tr><td><code>tags:"&lt;val&gt;"</code></td><td>True if the term has this particular tag</td></tr>
+<tr><td><code>tags:["&lt;val1&gt;", "&lt;val2&gt;" ...]</code></td><td>True if the term has any of the given tags</td></tr>
+<tr><td><code>parents.tags:"&lt;val&gt;"</code></td><td>True if any parent of the term has this particular tag</td></tr>
+<tr><td><code>parents.tags:["&lt;val1&gt;", "&lt;val2&gt;" ...]</code></td><td>True if any parent of the term has any of the given tags</td></tr>
+<tr><td><code>all.tags:"&lt;val&gt;"</code></td><td>True if the term or any parent has this particular tag</td></tr>
+<tr><td><code>all.tags:["&lt;val1&gt;", "&lt;val2&gt;" ...]</code></td><td>True if the term or any parent has any of the given tags</td></tr>
+<tr><td><code>has:image</code></td><td></td></tr>
+<tr><td><code>parents.count OPERATOR INT</code></td><td><code>OPERATOR</code> is one of <code>&lt; &lt;= &gt; &gt;= != = == &lt;&gt;</code></td></tr>
+<tr><td><code>status OPERATOR INT</code></td><td></td></tr>
 </tbody></table>
 </div>
-<h2 id="suggestions"><a class="header" href="#suggestions">Suggestions</a></h2>
-<p>Exports can take some time and thought to define!  Some suggestions from my experience:</p>
+<p>These can be combined using <code>and</code>, <code>or</code>, and <code>(</code> <code>)</code>.  For example:</p>
 <ul>
-<li>when you're first testing exports, perhaps create a deck like "testing_exports", and use that as the destination deck in your exports.  You can delete the cards in this test deck as go, until you have the mappings you want.</li>
-<li>you might want to create separate "Lute decks" for your exports, to keep Lute export data separate from your other data.</li>
+<li><code>language:"Spanish" and parents.count&gt;=1</code></li>
+<li><code>tags:"plural"</code></li>
+<li><code>language:"German" and tags:["der", "die", "das"]</code></li>
+<li><code>parents.count=1 and tags:["fem", "other"] and has:image and status&lt;=3</code></li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../usage/ankiexport/enabling.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../usage/ankiexport/field-mappings.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../usage/ankiexport/field-mappings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../usage/ankiexport/exporting-terms.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -201,11 +199,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../usage/ankiexport/enabling.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../usage/ankiexport/field-mappings.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../usage/ankiexport/field-mappings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../usage/ankiexport/exporting-terms.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
