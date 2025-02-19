@@ -170,12 +170,15 @@
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody>
 <tr><td>Export name</td><td>Whatever you want to call this export</td></tr>
 <tr><td>Deck Name</td><td>The target deck where new notes will be added.  You need to create the deck first.</td></tr>
-<tr><td>Note Type</td><td>The Anki "note type" that terms will be exported to.  The note type must already exist in Anki.  You can use Anki's built-in note types or create your own.</td></tr>
+<tr><td>Note Type</td><td>The Anki "note type" that terms will be exported to.  The note type must already exist in Anki.  You can use Anki's built-in note types or create your own.  When you select the Note Type, all of the fields on the note are added to the Field Mapping, with blank values.</td></tr>
 <tr><td>Field Mapping</td><td>How to map data from Lute to the Anki note.  See <a href="./field-mappings.html">Field mappings</a></td></tr>
 <tr><td>Criteria</td><td>(Optional) Criteria that a Lute term must satisfy for it to be exported.  See <a href="./criteria.html">Criteria</a></td></tr>
 <tr><td>Active?</td><td>True if this export should be used.</td></tr>
 </tbody></table>
 </div>
+<h2 id="the-simplest-export-possible"><a class="header" href="#the-simplest-export-possible">The simplest export possible</a></h2>
+<p>The simplest export would be one to any deck, using the Basic card, with some simple mappings and no criteria:</p>
+<img width="75%" src="../../assets/usage/ankiexport/defining_exports_simple.png">
 <h2 id="suggestions"><a class="header" href="#suggestions">Suggestions</a></h2>
 <p>Exports can take some time and thought to define!  Some suggestions from my experience:</p>
 <ul>

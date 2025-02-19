@@ -1887,7 +1887,21 @@ guide,English,blah
 <li>You define how Lute should export terms</li>
 <li>You export selected terms from the term listing or while reading.</li>
 </ol>
+<blockquote>
 <p>Anki exports will only work on a machine that has Anki desktop and AnkiConnect installed. It doesn’t work from a mobile device.</p>
+</blockquote>
+<h2 id="a-quick-sample"><a class="header" href="#a-quick-sample">A quick sample</a></h2>
+<p>After telling Lute how to export data, from the reading screen, you can hover over a term:</p>
+<img width="35%" src="usage/ankiexport/../../assets/usage/ankiexport/export_reading_1_hovering.png" style="margin-bottom: 10px">
+<p>and hit a hotkey you define:</p>
+<img width="35%" src="usage/ankiexport/../../assets/usage/ankiexport/export_reading_2_popup.png" style="margin-bottom: 10px">
+<p>The data is exported to Anki per your export specification (deck and field mappings):</p>
+<img width="75%" src="usage/ankiexport/../../assets/usage/ankiexport/export_reading_3_anki.png" style="margin-bottom: 10px">
+<p>and Anki handles the flashcard generation and scheduling, according to how you've set it up, e.g.:</p>
+<div class="table-wrapper"><table><thead><tr><th>Front</th><th>Back</th></tr></thead><tbody>
+<tr><td><img width="100%" src="usage/ankiexport/../../assets/usage/ankiexport/sample_card_front.png" style="margin-bottom: 10px"></td><td><img width="100%" src="usage/ankiexport/../../assets/usage/ankiexport/sample_card_back.png" style="margin-bottom: 10px"></td></tr>
+</tbody></table>
+</div>
 <h2 id="a-disclaimer--"><a class="header" href="#a-disclaimer--">A disclaimer :-)</a></h2>
 <p>Anki exports are tricky to handle it a general way:</p>
 <ul>
@@ -1907,15 +1921,20 @@ guide,English,blah
 <p>The current beta release for Anki exports is 3.10.0b2 - but check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
 </blockquote>
 </div>
-<blockquote>
-<p>TODO these notes are very rough, fix them up.</p>
-</blockquote>
+<ol>
+<li>
 <p><a href="usage/ankiexport/./anki-and-anki-connect.html">Install Anki desktop and AnkiConnect</a></p>
+</li>
+<li>
 <p><a href="usage/ankiexport/./enabling.html">Enable exports</a></p>
-<p>Define an export.</p>
-<p>The simplest export possible would be to justify the field mapping, leaving the criteria blank.</p>
-<p>Click new mapping, specify, the deck, name, and note type. Usually Anki comes with a simple note type or a basic note type, so choose that, and then choose the front and back field and map some data.</p>
-<p>Then go to the term listing, check a term, and click "xxx"  You'll get a message.  Go to Anki, and the card is there.</p>
+</li>
+<li>
+<p><a href="usage/ankiexport/./defining-exports.html">Define an export</a> - keep it simple when first trying out exports.</p>
+</li>
+<li>
+<p><a href="usage/ankiexport/./exporting-terms.html">Export terms</a> - either from the term listing or reading screen.</p>
+</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="anki-and-ankiconnect"><a class="header" href="#anki-and-ankiconnect">Anki and AnkiConnect</a></h1>
 <div class="warning">
 <blockquote>
@@ -1962,12 +1981,15 @@ guide,English,blah
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody>
 <tr><td>Export name</td><td>Whatever you want to call this export</td></tr>
 <tr><td>Deck Name</td><td>The target deck where new notes will be added.  You need to create the deck first.</td></tr>
-<tr><td>Note Type</td><td>The Anki "note type" that terms will be exported to.  The note type must already exist in Anki.  You can use Anki's built-in note types or create your own.</td></tr>
+<tr><td>Note Type</td><td>The Anki "note type" that terms will be exported to.  The note type must already exist in Anki.  You can use Anki's built-in note types or create your own.  When you select the Note Type, all of the fields on the note are added to the Field Mapping, with blank values.</td></tr>
 <tr><td>Field Mapping</td><td>How to map data from Lute to the Anki note.  See <a href="usage/ankiexport/./field-mappings.html">Field mappings</a></td></tr>
 <tr><td>Criteria</td><td>(Optional) Criteria that a Lute term must satisfy for it to be exported.  See <a href="usage/ankiexport/./criteria.html">Criteria</a></td></tr>
 <tr><td>Active?</td><td>True if this export should be used.</td></tr>
 </tbody></table>
 </div>
+<h2 id="the-simplest-export-possible"><a class="header" href="#the-simplest-export-possible">The simplest export possible</a></h2>
+<p>The simplest export would be one to any deck, using the Basic card, with some simple mappings and no criteria:</p>
+<img width="75%" src="usage/ankiexport/../../assets/usage/ankiexport/defining_exports_simple.png">
 <h2 id="suggestions"><a class="header" href="#suggestions">Suggestions</a></h2>
 <p>Exports can take some time and thought to define!  Some suggestions from my experience:</p>
 <ul>
@@ -2035,12 +2057,17 @@ guide,English,blah
 <p>The current beta release for Anki exports is 3.10.0b2 - but check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
 </blockquote>
 </div>
-<p>Once Anki and AnkiConnect are set up, and your exports configured, you can export terms from Lute:</p>
-<ul>
-<li>From the reading page, you can click on a word, or shift click multiple words, and then export them using the reading menu.  You can also define a keyboard shortcut for the Anki export if you want.  When the words are exported, you’ll get a message showing which cards have been created.</li>
-<li>From the term listing, click the checkmarks for the terms you want to export, and in the actions menu click export to Anki. You’ll get a message.</li>
-</ul>
+<p>Once Anki and AnkiConnect are set up, and your exports configured, you can export terms from Lute.</p>
 <p>(Anki and Anki connect must be running for the export to work, of course :-P)</p>
+<h2 id="from-the-reading-screen"><a class="header" href="#from-the-reading-screen">From the reading screen</a></h2>
+<p>When reading, you can hover over a word, or shift click multiple words ...</p>
+<img width="35%" src="usage/ankiexport/../../assets/usage/ankiexport/export_reading_1_hovering.png" style="margin-bottom: 10px">
+<p>... and then export them using the reading menu.  You can also define a keyboard shortcut for the Anki export if you want.</p>
+<img width="35%" src="usage/ankiexport/../../assets/usage/ankiexport/export_reading_2_popup.png" style="margin-bottom: 10px">
+<p>You can hover over these messages to remove them, or hit Escape or reload the page.</p>
+<p>When you export from the reading screen, the <code>{ sentence }</code> field mapping value is the sentence the term is found in on the reading screen.</p>
+<h2 id="from-the-term-listing"><a class="header" href="#from-the-term-listing">From the term listing</a></h2>
+<p>From the listing, click the checkmarks for the terms you want to export, and in the actions menu click export to Anki.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="themes"><a class="header" href="#themes">Themes</a></h1>
 <p>You can apply one of the predefined themes in the Settings.  Select the theme from the dropdown.</p>
 <h2 id="built-in-themes"><a class="header" href="#built-in-themes">Built-in themes</a></h2>
