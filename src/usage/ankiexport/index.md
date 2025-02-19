@@ -10,7 +10,27 @@ In summary:
 2. You define how Lute should export terms
 3. You export selected terms from the term listing or while reading.
 
-Anki exports will only work on a machine that has Anki desktop and AnkiConnect installed. It doesn’t work from a mobile device.
+> Anki exports will only work on a machine that has Anki desktop and AnkiConnect installed. It doesn’t work from a mobile device.
+
+## A quick sample
+
+After telling Lute how to export data, from the reading screen, you can hover over a term:
+
+<img width="35%" src="../../assets/usage/ankiexport/export_reading_1_hovering.png" style="margin-bottom: 10px">
+
+and hit a hotkey you define:
+
+<img width="35%" src="../../assets/usage/ankiexport/export_reading_2_popup.png" style="margin-bottom: 10px">
+
+The data is exported to Anki per your export specification (deck and field mappings):
+
+<img width="75%" src="../../assets/usage/ankiexport/export_reading_3_anki.png" style="margin-bottom: 10px">
+
+and Anki handles the flashcard generation and scheduling, according to how you've set it up, e.g.:
+
+| Front | Back |
+| --- | --- |
+| <img width="100%" src="../../assets/usage/ankiexport/sample_card_front.png" style="margin-bottom: 10px"> | <img width="100%" src="../../assets/usage/ankiexport/sample_card_back.png" style="margin-bottom: 10px"> |
 
 ## A disclaimer :-)
 
