@@ -19,13 +19,12 @@ You export your Lute terms to different "Note types", and you can define multipl
 
 ## AnkiConnect - installing and configuring
 
-[AnkiConnect](https://ankiweb.net/shared/info/2055492159) is an Anki add-on that lets Lute communicate with Anki.  You have to configure it once installed.
+[AnkiConnect](https://ankiweb.net/shared/info/2055492159) is an Anki add-on that lets Lute communicate with Anki.  You have to configure it once installed.  Here's a quick guide:
 
-**Installation:** Ref [the Anki user manual](https://docs.ankiweb.net/addons.html), but here is a quick guide:
-
-TODO record quick video
-
-**Configuration:** From the Anki menu, choose "Tools > Add-ons", then click on AnkiConnect and Config:
+1. Open Anki desktop.  In the menu, click "Tools > Add-ons", then click "Get Add-ons".
+2. Paste the AnkiConnect add-on code from the [AnkiConnect add-on page](https://ankiweb.net/shared/info/2055492159).
+3. Restart Anki
+4. To configure AnkiConnect, in the menu, click "Tools > Add-ons", then click on AnkiConnect and Config:
 
 ![image](../../assets/usage/ankiexport/ankiconnect_config_1.png)
 
