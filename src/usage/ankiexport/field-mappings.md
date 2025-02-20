@@ -19,7 +19,8 @@ Allowable options are given in the value drop-down menu.
 | `{ language }` | The term language | German |
 | `{ parents }` | All term parents | Buch |
 | `{ tags }` | All tags | plural |
-| `{ translation }` | the translation of the parent term, if any, and the term itself | Book |
+| `{ translation }` | The translation of the parent term, if any, and the term itself | Book |
+| `{ pronunciation }` | The pronunciation | Boo-cher |
 | `{ tags:["val1", "val2"] }` | A filtered list of tags matching the given values | |
 | `{ image }` | The term image, if available | |
 | `{ sentence }` | If exporting the term from the reading screen, this is the sentence that the term was in.  If exporting from the term listing, this is the latest reference associated with the term (as shown in the Sentences tab on the term form). | Ich habe die Bücher. |
