@@ -2009,8 +2009,9 @@ guide,English,blah
 <tr><td><code>{ language }</code></td><td>The term language</td><td>German</td></tr>
 <tr><td><code>{ parents }</code></td><td>All term parents</td><td>Buch</td></tr>
 <tr><td><code>{ tags }</code></td><td>All tags</td><td>plural</td></tr>
-<tr><td><code>{ translation }</code></td><td>the translation of the parent term, if any, and the term itself</td><td>Book</td></tr>
-<tr><td><code>{ tags:["val1", "val2"] }</code></td><td>A filtered list of tags matching the given values</td><td></td></tr>
+<tr><td><code>{ translation }</code></td><td>The translation of the parent term, if any, and the term itself</td><td>Book</td></tr>
+<tr><td><code>{ pronunciation }</code></td><td>The pronunciation</td><td>Boo-cher</td></tr>
+<tr><td><code>{ tags:["val1", "val2"] }</code></td><td>A filtered list of tags in the term and its parents matching the given values</td><td></td></tr>
 <tr><td><code>{ image }</code></td><td>The term image, if available</td><td></td></tr>
 <tr><td><code>{ sentence }</code></td><td>If exporting the term from the reading screen, this is the sentence that the term was in.  If exporting from the term listing, this is the latest reference associated with the term (as shown in the Sentences tab on the term form).</td><td>Ich habe die Bücher.</td></tr>
 </tbody></table>
@@ -2068,6 +2069,47 @@ guide,English,blah
 <p>When you export from the reading screen, the <code>{ sentence }</code> field mapping value is the sentence the term is found in on the reading screen.</p>
 <h2 id="from-the-term-listing"><a class="header" href="#from-the-term-listing">From the term listing</a></h2>
 <p>From the listing, click the checkmarks for the terms you want to export, and in the actions menu click export to Anki.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="examples-1"><a class="header" href="#examples-1">Examples</a></h1>
+<p>A few examples that might help get you started, and some notes.  These are all my (current) German exports.</p>
+<p>I'm still refining my approach (as of Feb 2025), so nothing's yet solid or perfect!</p>
+<p>Notes about my German term data management:</p>
+<ul>
+<li>I tag words as "der", "die", or "das" if they're singular nouns</li>
+<li>I tag plural forms as "plural" if they're the plural form, and the singular form is the term parent</li>
+<li>I have other tags for verb conjugations, but I'm still sorting that out :-P</li>
+</ul>
+<p>For Anki, I created a "Basic_vocab" note type with a few different cards.  You can
+<a href="usage/ankiexport/../../assets/usage/ankiexport/Lute_Basic_vocab_note_type.apkg">download a copy of that</a>
+and open it in Anki to see if it's useful for you.</p>
+<h2 id="basic-export"><a class="header" href="#basic-export">Basic export</a></h2>
+<p>Criteria: <code>language:"German"</code></p>
+<p>Mapping:</p>
+<pre><code>Word = { term }
+Article = { tags:["der", "die", "das"] }
+Sentence = { sentence }
+Picture = { image }
+Definition = { translation }
+Lute_TermID = { id }
+</code></pre>
+<p>With the above, if a word has the "der/die/das" tag, that's put in the "Article" field of the Anki note; otherwise, the Article is left blank.</p>
+<h2 id="pluralization"><a class="header" href="#pluralization">Pluralization</a></h2>
+<p>Criteria: <code>language:"German" and tags:["plural", "plural and sing"] and parents.count &gt; 0</code></p>
+<p>Mapping:</p>
+<pre><code>Word = { parents }
+Article = { tags:["der", "die", "das"] }
+Plural = { term }
+Sentence = { sentence }
+Picture = { image }
+Definition = { translation }
+Lute_TermID = { id }
+</code></pre>
+<p>I put German plurals as terms, with the singular form as the parent.  For example, the word "Bücher" has "Buch" as the parent.</p>
+<p>The above mapping:</p>
+<ul>
+<li>sets the "Word" field to "Buch", the parent of "Bücher"</li>
+<li>sets the "Article" field to "das".  The field mapping <code>{ tags:["der", "die", "das"] }</code> finds any tags in the term or its parent that matches "der/die/das".  "Buch" is tagged as "das", so that's put in the "Article" field.</li>
+<li>sets the "Plural" field to "Bucher"</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="themes"><a class="header" href="#themes">Themes</a></h1>
 <p>You can apply one of the predefined themes in the Settings.  Select the theme from the dropdown.</p>
 <h2 id="built-in-themes"><a class="header" href="#built-in-themes">Built-in themes</a></h2>
