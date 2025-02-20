@@ -49,6 +49,7 @@
     - [Field mappings](./usage/ankiexport/field-mappings.md)
     - [Criteria](./usage/ankiexport/criteria.md)
   - [Exporting terms](./usage/ankiexport/exporting-terms.md)
+  - [Examples](./usage/ankiexport/examples.md)
 - [Themes]()
   - [Themes](./usage/themes/themes.md)
   - [Toggling highlights](./usage/themes/toggling-highlights.md)
