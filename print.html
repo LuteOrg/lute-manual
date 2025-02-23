@@ -1946,12 +1946,6 @@ guide,English,blah
 <img width="80%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_01.png">
 <p>When I do so, the term still shows up as "unknown" when reading, but it will be pre-populated with the imported data:</p>
 <img width="30%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_02.png"><div style="break-before: page; page-break-before: always;"></div><h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
-<div class="warning">
-<blockquote>
-<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
-<p>The current beta release for Anki exports is 3.10.0b5 - double-check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
-</blockquote>
-</div>
 <p>Lute doesn’t have built-in flashcards for various reasons<sup class="footnote-reference"><a href="#1">1</a></sup>, so it provides a way to export terms to <a href="https://apps.ankiweb.net/">Anki</a>, a popular and free flashcard program.</p>
 <p>In summary:</p>
 <ol>
@@ -1987,12 +1981,6 @@ guide,English,blah
 <p>these reasons are given in the <a href="https://luteorg.github.io/lute-faqs/why-no-flashcards.html">FAQ</a> -- basically, it's a ton of work!</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
-<div class="warning">
-<blockquote>
-<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
-<p>The current beta release for Anki exports is 3.10.0b5 - double-check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
-</blockquote>
-</div>
 <ol>
 <li>
 <p><a href="usage/ankiexport/./anki-and-anki-connect.html">Install Anki desktop and AnkiConnect</a></p>
@@ -2008,12 +1996,6 @@ guide,English,blah
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="anki-and-ankiconnect"><a class="header" href="#anki-and-ankiconnect">Anki and AnkiConnect</a></h1>
-<div class="warning">
-<blockquote>
-<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
-<p>The current beta release for Anki exports is 3.10.0b5 - double-check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
-</blockquote>
-</div>
 <h2 id="anki"><a class="header" href="#anki">Anki</a></h2>
 <p>In a nutshell, Anki is flashcard software.</p>
 <p>There's a lot more to it than that, of course.  There is a lot of documentation out there about Anki, it's worth becoming familiar with.  <a href="https://docs.ankiweb.net/">The Anki user manual</a> is very good, and a search like "Anki introduction" in YouTube returns many videos, like <a href="https://www.youtube.com/watch?v=ixD9RWpFuk4">this one</a>.</p>
@@ -2043,12 +2025,6 @@ guide,English,blah
 <p><strong>Test the connection!</strong>  If it fails, you'll get a message as shown below:</p>
 <p><img src="usage/ankiexport/../../assets/usage/ankiexport/enabling_failed.png" alt="image" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="defining-exports"><a class="header" href="#defining-exports">Defining exports</a></h1>
-<div class="warning">
-<blockquote>
-<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
-<p>The current beta release for Anki exports is 3.10.0b5 - double-check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
-</blockquote>
-</div>
 <p>Once Anki and AnkiConnect are setup, and the connection verified, you can create export specifications from Settings &gt; Anki exports:</p>
 <img width="25%" src="usage/ankiexport/../../assets/usage/ankiexport/defining_exports_1_menu.png">
 <p>Then click the "Create new export specification" at the bottom of the listing.</p>
@@ -2128,12 +2104,6 @@ guide,English,blah
 <li><code>parents.count=1 and tags:["fem", "other"] and has:image and status&lt;=3</code></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="exporting-terms"><a class="header" href="#exporting-terms">Exporting terms</a></h1>
-<div class="warning">
-<blockquote>
-<p><strong>Anki exports are still in alpha/beta, as is this documentation.</strong></p>
-<p>The current beta release for Anki exports is 3.10.0b5 - double-check <a href="https://pypi.org/project/lute3/#history">pypi</a> for the latest.</p>
-</blockquote>
-</div>
 <p>Once Anki and AnkiConnect are set up, and your exports configured, you can export terms from Lute.</p>
 <p>(Anki and Anki connect must be running for the export to work, of course :-P)</p>
 <h2 id="from-the-reading-screen"><a class="header" href="#from-the-reading-screen">From the reading screen</a></h2>
@@ -2633,7 +2603,7 @@ git merge upstream/develop
 <div class="table-wrapper"><table><thead><tr><th>Item</th><th>Notes</th></tr></thead><tbody>
 <tr><td>Single-word audio</td><td>Lute has an audio player for books, but you can't click a single word to hear its audio.</td></tr>
 <tr><td>Support "non-consecutive multiword terms"</td><td>Some languages, like German and Dutch, have terms that that split apart.  For example, in German, the verb "einladen" can be split into "laden ... ein": "Ich lade dich zu meiner Party ein."  I don't think any tool currently solves this well.  See the notes at on <a href="https://github.com/luteorg/lute-v3/issues/9">this GitHub issue</a>.</td></tr>
-<tr><td>Flashcards/testing</td><td>Lute is designed for reading only, there is no testing.</td></tr>
+<tr><td>Flashcards/testing</td><td>Lute is designed for reading only, there is no testing.  There are Anki exports though!</td></tr>
 <tr><td>Automated or bulk translation</td><td>Lute isn't designed to automatically create bidirectional readers, or to auto-create translations.  You can use Lute's Term CSV import feature, along with something like Google Sheets, to imitate that.</td></tr>
 </tbody></table>
 </div>
