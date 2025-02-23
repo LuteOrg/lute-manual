@@ -8,6 +8,80 @@ At the bottom of the page are two links:
 
 This link leads to a list of over 50 languages predefined in Lute, with sample stories and dictionaries pre-configured.  Click a language and it will be loaded so you can try it out.
 
+<details>
+<summary>Predefined languages:</summary>
+
+* Afrikaans
+* Ainu
+* Albanian
+* Amharic
+* Arabic
+* Armenian
+* Azerbaijani
+* Basque
+* Belarusian
+* Bengali
+* Bosnian
+* Breton
+* Bulgarian
+* Catalan
+* Classical Chinese
+* Croatian
+* Czech
+* Danish
+* Dutch
+* English
+* Esperanto
+* Estonian
+* Farsi
+* Finnish
+* French
+* Galician
+* Georgian
+* German
+* Gothic
+* Greek
+* Hebrew
+* Hindi
+* Hungarian
+* Icelandic
+* Indonesian
+* Italian
+* Japanese
+* Kazakh
+* Khmer
+* Latin
+* Latvian
+* Lithuanian
+* Macedonian
+* Mandarin Chinese
+* Nahuatl
+* Navajo
+* Norwegian
+* Okinawan
+* Polish
+* Portuguese
+* Punjabi
+* Romanian
+* Russian
+* Sanskrit
+* Serbian
+* Slovak
+* Slovene
+* Spanish
+* Swahili
+* Swedish
+* Thai
+* Tibetan
+* Turkish
+* Ukrainian
+* Vietnamese
+
+(This list was generated from `generate_language_listing.py` in the [Lute language defs repo](https://github.com/LuteOrg/lute-language-defs))
+</details>
+
+(Note: some of these languages require [plugins](../../install/plugins.html))
+
 If the language you're interested in is not present in the predefined languages, you can create a new language with the "Create new" link.
 
 ## "Create new"
