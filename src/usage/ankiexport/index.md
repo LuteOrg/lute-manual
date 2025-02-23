@@ -1,7 +1,5 @@
 # Overview
 
-{{#include note.md}}
-
 Lute doesn’t have built-in flashcards for various reasons[^1], so it provides a way to export terms to [Anki](https://apps.ankiweb.net/), a popular and free flashcard program.
 
 In summary:

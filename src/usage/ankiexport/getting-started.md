@@ -1,7 +1,5 @@
 # Getting started
 
-{{#include note.md}}
-
 1. [Install Anki desktop and AnkiConnect](./anki-and-anki-connect.md)
 
 2. [Enable exports](./enabling.md)

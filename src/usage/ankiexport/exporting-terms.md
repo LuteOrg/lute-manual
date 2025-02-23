@@ -1,7 +1,5 @@
 # Exporting terms
 
-{{#include note.md}}
-
 Once Anki and AnkiConnect are set up, and your exports configured, you can export terms from Lute.
 
 (Anki and Anki connect must be running for the export to work, of course :-P)

@@ -1,7 +1,5 @@
 # Anki and AnkiConnect
 
-{{#include note.md}}
-
 ## Anki
 
 In a nutshell, Anki is flashcard software.

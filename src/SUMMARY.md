@@ -40,7 +40,7 @@
   - [Editing in the Term list](./usage/terms/edit-using-term-listing.md)
   - [Linking parent-child statuses](./usage/terms/link-parent-child-statuses.md)
   - [Bulk term import](./usage/terms/bulk-term-import.md)
-- [Anki exports (still in development!)]()
+- [Anki exports]()
   - [Overview](./usage/ankiexport/index.md)
   - [Getting started](./usage/ankiexport/getting-started.md)
   - [Anki and AnkiConnect](./usage/ankiexport/anki-and-anki-connect.md)

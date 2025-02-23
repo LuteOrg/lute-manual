@@ -1,7 +1,5 @@
 # Defining exports
 
-{{#include note.md}}
-
 Once Anki and AnkiConnect are setup, and the connection verified, you can create export specifications from Settings > Anki exports:
 
 <img width="25%" src="../../assets/usage/ankiexport/defining_exports_1_menu.png">
