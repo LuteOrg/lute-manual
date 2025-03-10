@@ -21,6 +21,7 @@ Allowable options are given in the value drop-down menu.
 | `{ tags }` | All tags | plural |
 | `{ translation }` | The translation of the parent term, if any, and the term itself | Book |
 | `{ pronunciation }` | The pronunciation | Boo-cher |
+| `{ parents.pronunciation }` | The pronunciation of the parents | Booch |
 | `{ tags:["val1", "val2"] }` | A filtered list of tags in the term matching the given values | |
 | `{ parents.tags:["val1", "val2"] }` | A filtered list of tags in the parents matching the given values | |
 | `{ image }` | The term image, if available | |
