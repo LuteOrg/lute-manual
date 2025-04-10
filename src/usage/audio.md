@@ -26,7 +26,7 @@ When you start the player, it plays until you stop it, or until you open the Ter
 
 You can add and remove bookmarks to your book's audio, and jump back and forth along the timeline to your bookmarks.
 
-Lute's audio playback is **not** syncronized with the text or pages in any way, so for multi-page books with audio, you'll likely want to use bookmarks to note the start of each page.  If you move back and forth between pages, the player doesn't follow you.
+Lute's audio playback is **not** synchronized with the text or pages in any way, so for multi-page books with audio, you'll likely want to use bookmarks to note the start of each page.  If you move back and forth between pages, the player doesn't follow you.
 
 ## Suggestions for using audio
 
