@@ -32,10 +32,11 @@
         <link rel="stylesheet" href="../../css/custom.css">
 
 
-        <!-- Provide site root to javascript -->
+        <!-- Provide site root and default themes to javascript -->
         <script>
-            var path_to_root = "../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+            const path_to_root = "../../";
+            const default_light_theme = "rust";
+            const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc.js"></script>
@@ -45,8 +46,8 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -60,7 +61,8 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
@@ -73,8 +75,8 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -110,6 +112,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
@@ -157,7 +160,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="word-characters"><a class="header" href="#word-characters">Word characters</a></h1>
-<p>The "Word characters" field in the language form tells Lute how to find words in your texts.  In most cases<sup class="footnote-reference"><a href="#other_cases">1</a></sup>, Lute uses "regular expressions", or pattern matchers, to find words in a text.</p>
+<p>The "Word characters" field in the language form tells Lute how to find words in your texts.  In most cases<sup class="footnote-reference" id="fr-other_cases-1"><a href="#footnote-other_cases">1</a></sup>, Lute uses "regular expressions", or pattern matchers, to find words in a text.</p>
 <p>The default value, "a-zA-ZÀ-ÖØ-öø-ȳáéíóúÁÉÍÓÚñÑ", covers most romance languages such as English, French, Spanish, etc.</p>
 <p>For other languages, like Russian (word characters = "А-Яа-яЁё"), you have to find the characters.  This can be tricky, so here are some thoughts:</p>
 <ul>
@@ -173,7 +176,7 @@
 </code></pre>
 <p>As you can see, the default value <code>a-zA-ZÀ-ÖØ-öø-ȳáéíóúÁÉÍÓÚñÑ</code> contains all lowercase a through z, all uppercase A through Z, and whatever the heck those other character ranges are ... plus some extra accented characters.</p>
 <h2 id="unicode-word-characters"><a class="header" href="#unicode-word-characters">Unicode word characters</a></h2>
-<p>Many languages use non-Latin characters.  These are stored as unicode<sup class="footnote-reference"><a href="#what_is_unicode">2</a></sup>.  For example, here's Sanskrit:</p>
+<p>Many languages use non-Latin characters.  These are stored as unicode<sup class="footnote-reference" id="fr-what_is_unicode-1"><a href="#footnote-what_is_unicode">2</a></sup>.  For example, here's Sanskrit:</p>
 <pre><code>a-zA-Z\u0900-\u0963\u0966-\u097F
 </code></pre>
 <p>The entries <code>\u0900</code>, <code>\u0963</code>, etc are all python equivalents for the actual Unicode character points <code>U+0900</code>, <code>U+0963</code>, etc.</p>
@@ -187,13 +190,14 @@
 </code></pre>
 <p>Which breaks down to: <code>U+12000</code> to <code>U+123FF</code> inclusive, plus <code>U+12400</code> to <code>U1247F</code> inclusive, plus <code>U+12480</code> to <code>U+1254F</code> inclusive.</p>
 <hr />
-<div class="footnote-definition" id="other_cases"><sup class="footnote-definition-label">1</sup>
-<p>Japanese uses MeCab for parsing.</p>
-</div>
-<div class="footnote-definition" id="what_is_unicode"><sup class="footnote-definition-label">2</sup>
-<p>From <a href="https://en.wikipedia.org/wiki/Unicode">Wikipedia</a>: "Unicode ... is a text encoding standard maintained by the Unicode Consortium designed to support the use of text written in all of the world's major writing systems."</p>
-</div>
-
+<hr>
+<ol class="footnote-definition"><li id="footnote-other_cases">
+<p>Japanese uses MeCab for parsing. <a href="#fr-other_cases-1">↩</a></p>
+</li>
+<li id="footnote-what_is_unicode">
+<p>From <a href="https://en.wikipedia.org/wiki/Unicode">Wikipedia</a>: "Unicode ... is a text encoding standard maintained by the Unicode Consortium designed to support the use of text written in all of the world's major writing systems." <a href="#fr-what_is_unicode-1">↩</a></p>
+</li>
+</ol>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

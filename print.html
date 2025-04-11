@@ -33,10 +33,11 @@
         <link rel="stylesheet" href="css/custom.css">
 
 
-        <!-- Provide site root to javascript -->
+        <!-- Provide site root and default themes to javascript -->
         <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+            const path_to_root = "";
+            const default_light_theme = "rust";
+            const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -46,8 +47,8 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -61,7 +62,8 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
@@ -74,8 +76,8 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -111,6 +113,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
@@ -239,7 +242,7 @@ python -m lute.main
 <pre><code>python -m lute.main --port 9876
 </code></pre>
 <h2 id="using-docker"><a class="header" href="#using-docker">Using Docker</a></h2>
-<p>System requirements: Docker<sup class="footnote-reference"><a href="#what-is-docker">1</a></sup></p>
+<p>System requirements: Docker<sup class="footnote-reference" id="fr-what-is-docker-1"><a href="#footnote-what-is-docker">1</a></sup></p>
 <p>Lute has a pre-built docker image at <a href="https://hub.docker.com/r/jzohrab/lute3">https://hub.docker.com/r/jzohrab/lute3</a>.  There are notes on that page about the image.</p>
 <p>Using a <code>docker-compose.yml</code> file:</p>
 <!-- Tab links -->
@@ -326,9 +329,6 @@ to the <code>docker-compose.yml</code> file.</p>
 <p>If you want to develop Lute, you'll also need to <a href="install/./mecab.html">install MeCab</a>.</p>
 <p>If you install from source and tinker with the code, make sure you can update later!  See <a href="install/../usage/updating.html#keeping-up-to-date-when-installing-from-source">Keeping up-to-date when installing from source</a>.</p>
 <hr />
-<div class="footnote-definition" id="what-is-docker"><sup class="footnote-definition-label">1</sup>
-<p>Docker is a containerization platform that allows you to run applications in a sandboxed environment (ref the <a href="https://docs.docker.com/">Docker documentation</a>).  <strong>Docker is not available or is problematic on some systems, particularly Windows.</strong></p>
-</div>
 <script>
 function openTab(evt, tabclass, tabName) {
   // Hide all tabs.
@@ -359,17 +359,22 @@ function openTab(evt, tabclass, tabName) {
 openTab(null, 'piptab', 'PipSteps');
 openTab(null, 'dockertab', 'DockerSteps');
 </script>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="windows"><a class="header" href="#windows">Windows</a></h1>
-<p>Windows sometimes makes installations more challenging due to OS variants and lack of support for som tech.  Some users have provided more detailed instructions for Windows:</p>
+<hr>
+<ol class="footnote-definition"><li id="footnote-what-is-docker">
+<p>Docker is a containerization platform that allows you to run applications in a sandboxed environment (ref the <a href="https://docs.docker.com/">Docker documentation</a>).  <strong>Docker is not available or is problematic on some systems, particularly Windows.</strong> <a href="#fr-what-is-docker-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="windows"><a class="header" href="#windows">Windows</a></h1>
+<p>Windows sometimes makes installations more challenging due to OS variants and lack of support for some tech.  Some users have provided more detailed instructions for Windows:</p>
 <ul>
-<li>The YouTube channel is4ndroide made a <strong>fantastic</strong> video on <a href="https://www.youtube.com/watch?v=qtClbRqBiEM">installing Lute for Windows</a>.<sup class="footnote-reference"><a href="#1">1</a></sup></li>
+<li>The YouTube channel is4ndroide made a <strong>fantastic</strong> video on <a href="https://www.youtube.com/watch?v=qtClbRqBiEM">installing Lute for Windows</a>.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></li>
 <li><a href="install/windows/./windows-10-32-bit-using-python.html">Windows 10 (32 bit) using Python and pip</a></li>
 <li><a href="install/windows/./windows-using-docker.html">Windows using Docker</a></li>
 </ul>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>Discord user Keruah noted that you may need to set the Execution Policy for the shell script: "... when you launch the environment script, your Windows may say that you don't have permissions ... open PowerShell, and type <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned</code> to define the policy." -- See <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4">about Execution Policies - PowerShell</a></p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="windows-10-32-bit-using-python"><a class="header" href="#windows-10-32-bit-using-python">Windows 10 (32 bit) using Python</a></h1>
+<hr>
+<ol class="footnote-definition"><li id="footnote-1">
+<p>Discord user Keruah noted that you may need to set the Execution Policy for the shell script: "... when you launch the environment script, your Windows may say that you don't have permissions ... open PowerShell, and type <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned</code> to define the policy." -- See <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4">about Execution Policies - PowerShell</a> <a href="#fr-1-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="windows-10-32-bit-using-python"><a class="header" href="#windows-10-32-bit-using-python">Windows 10 (32 bit) using Python</a></h1>
 <p><em>(Instructions courtesy of user <code>axmanalex</code>, so you'll see that username in these notes.)</em></p>
 <p>A summary of what you're doing:</p>
 <ol>
@@ -542,7 +547,7 @@ Directory of C:\My Documents\my_lute
 <blockquote>
 <p>Note: these instructions are to install a standalone Lute running on your phone.  If you want to use your phone to connect to a version of Lute running on your computer, you may need to try a different setup ... see <a href="install/../faq/setup/mobile-support.html">the faq</a>.</p>
 </blockquote>
-<p>Termux<sup class="footnote-reference"><a href="#1">1</a></sup> is a Linux command line emulator app for Android.  Using Termux, you can run Python (and Lute) on your Android phone.</p>
+<p>Termux<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> is a Linux command line emulator app for Android.  Using Termux, you can run Python (and Lute) on your Android phone.</p>
 <p>First, install the Termux app on your phone following the instructions on the official Termux GitHub repository, <a href="https://github.com/termux/termux-app">https://github.com/termux/termux-app</a>.</p>
 <p>At the command prompt, enter the following command to grant storage permissions.</p>
 <pre><code>termux-setup-storage
@@ -566,10 +571,11 @@ python -m lute.main
 <h2 id="uninstalling-lute"><a class="header" href="#uninstalling-lute">Uninstalling Lute</a></h2>
 <p>To uninstall Lute, uninstall the Termux app</p>
 <hr />
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>Per https://termux.dev/en/: "Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager."</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><blockquote>
+<hr>
+<ol class="footnote-definition"><li id="footnote-1">
+<p>Per https://termux.dev/en/: "Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager." <a href="#fr-1-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p>Note: this is for non-Docker users studying Japanese only (or devs who are working on Lute)</p>
 </blockquote>
 <p>Lute users who are studying Japanese will need to install MeCab and an appropriate dictionary for parsing Japanese text.  If MeCab is not installed or not on your PATH, you will not be able to parse Japanese texts.</p>
@@ -1496,7 +1502,7 @@ start cmd /k python -m lute.main
 <li>Save the Language to save your dictionary changes.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="word-characters"><a class="header" href="#word-characters">Word characters</a></h1>
-<p>The "Word characters" field in the language form tells Lute how to find words in your texts.  In most cases<sup class="footnote-reference"><a href="#other_cases">1</a></sup>, Lute uses "regular expressions", or pattern matchers, to find words in a text.</p>
+<p>The "Word characters" field in the language form tells Lute how to find words in your texts.  In most cases<sup class="footnote-reference" id="fr-other_cases-1"><a href="#footnote-other_cases">1</a></sup>, Lute uses "regular expressions", or pattern matchers, to find words in a text.</p>
 <p>The default value, "a-zA-ZÀ-ÖØ-öø-ȳáéíóúÁÉÍÓÚñÑ", covers most romance languages such as English, French, Spanish, etc.</p>
 <p>For other languages, like Russian (word characters = "А-Яа-яЁё"), you have to find the characters.  This can be tricky, so here are some thoughts:</p>
 <ul>
@@ -1512,7 +1518,7 @@ start cmd /k python -m lute.main
 </code></pre>
 <p>As you can see, the default value <code>a-zA-ZÀ-ÖØ-öø-ȳáéíóúÁÉÍÓÚñÑ</code> contains all lowercase a through z, all uppercase A through Z, and whatever the heck those other character ranges are ... plus some extra accented characters.</p>
 <h2 id="unicode-word-characters"><a class="header" href="#unicode-word-characters">Unicode word characters</a></h2>
-<p>Many languages use non-Latin characters.  These are stored as unicode<sup class="footnote-reference"><a href="#what_is_unicode">2</a></sup>.  For example, here's Sanskrit:</p>
+<p>Many languages use non-Latin characters.  These are stored as unicode<sup class="footnote-reference" id="fr-what_is_unicode-1"><a href="#footnote-what_is_unicode">2</a></sup>.  For example, here's Sanskrit:</p>
 <pre><code>a-zA-Z\u0900-\u0963\u0966-\u097F
 </code></pre>
 <p>The entries <code>\u0900</code>, <code>\u0963</code>, etc are all python equivalents for the actual Unicode character points <code>U+0900</code>, <code>U+0963</code>, etc.</p>
@@ -1526,13 +1532,14 @@ start cmd /k python -m lute.main
 </code></pre>
 <p>Which breaks down to: <code>U+12000</code> to <code>U+123FF</code> inclusive, plus <code>U+12400</code> to <code>U1247F</code> inclusive, plus <code>U+12480</code> to <code>U+1254F</code> inclusive.</p>
 <hr />
-<div class="footnote-definition" id="other_cases"><sup class="footnote-definition-label">1</sup>
-<p>Japanese uses MeCab for parsing.</p>
-</div>
-<div class="footnote-definition" id="what_is_unicode"><sup class="footnote-definition-label">2</sup>
-<p>From <a href="https://en.wikipedia.org/wiki/Unicode">Wikipedia</a>: "Unicode ... is a text encoding standard maintained by the Unicode Consortium designed to support the use of text written in all of the world's major writing systems."</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="creating-books"><a class="header" href="#creating-books">Creating books</a></h1>
+<hr>
+<ol class="footnote-definition"><li id="footnote-other_cases">
+<p>Japanese uses MeCab for parsing. <a href="#fr-other_cases-1">↩</a></p>
+</li>
+<li id="footnote-what_is_unicode">
+<p>From <a href="https://en.wikipedia.org/wiki/Unicode">Wikipedia</a>: "Unicode ... is a text encoding standard maintained by the Unicode Consortium designed to support the use of text written in all of the world's major writing systems." <a href="#fr-what_is_unicode-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="creating-books"><a class="header" href="#creating-books">Creating books</a></h1>
 <h2 id="from-input-or-files"><a class="header" href="#from-input-or-files">From input or files</a></h2>
 <p>You can create books by importing files (.txt or .epub) or just entering text into a text box.</p>
 <h2 id="importing-web-pages"><a class="header" href="#importing-web-pages">Importing web pages</a></h2>
@@ -1711,17 +1718,18 @@ From this page you have a few options:</p>
 </ul>
 <p><img src="usage/reading/../../assets/usage/reading/view_bookmark_02.png" alt="view-bookmark" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reading-on-mobile"><a class="header" href="#reading-on-mobile">Reading on mobile</a></h1>
-<p>Lute was designed for desktop/laptop usage, but in a pinch you can connect to a running instance<sup class="footnote-reference"><a href="#1">1</a></sup> on a mobile device.</p>
+<p>Lute was designed for desktop/laptop usage, but in a pinch you can connect to a running instance<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> on a mobile device.</p>
 <p>While reading, Lute supports the following interactions:</p>
 <ul>
 <li>Tap an unknown term to open the term edit form.</li>
 <li>Tap an existing term to open the term's hover.  Tap that term again to open its edit form.</li>
 <li>Long-tap (press and hold) a term to start a new multi-word term.  The term is highlighted when the long tap is recognized.  Then tap the term at the other end of the multi-word term.  The edit form opens for that new term.  For example, to create the multi-word term "fast as lightning", you'd press and hold "fast" until it highlights, and then you'd tap "lightning".</li>
 </ul>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>see <a href="usage/../faq/setup/mobile-support.html">mobile support</a> for notes.</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="overlapping-terms"><a class="header" href="#overlapping-terms">Overlapping terms</a></h1>
+<hr>
+<ol class="footnote-definition"><li id="footnote-1">
+<p>see <a href="usage/../faq/setup/mobile-support.html">mobile support</a> for notes. <a href="#fr-1-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="overlapping-terms"><a class="header" href="#overlapping-terms">Overlapping terms</a></h1>
 <p>Sometimes Terms you define may "overlap", so Lute displays those with an extra indicator.</p>
 <p>For example, suppose you're studying Spanish, and you have already defined two Terms: "tengo un gato", and "un gato bueno y gordo" (with different Statuses, one is new, the other is easy).  If you were reading a book with text "Tengo un gato bueno y gordo.", Lute displays that like this:</p>
 <img width="293" alt="image" src="usage/reading/../../assets/usage/reading/overlap_01.png">
@@ -1946,7 +1954,7 @@ guide,English,blah
 <img width="80%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_01.png">
 <p>When I do so, the term still shows up as "unknown" when reading, but it will be pre-populated with the imported data:</p>
 <img width="30%" alt="image" src="usage/terms/../../assets/usage/terms/bulk_import_02.png"><div style="break-before: page; page-break-before: always;"></div><h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
-<p>Lute doesn’t have built-in flashcards for various reasons<sup class="footnote-reference"><a href="#1">1</a></sup>, so it provides a way to export terms to <a href="https://apps.ankiweb.net/">Anki</a>, a popular and free flashcard program.</p>
+<p>Lute doesn’t have built-in flashcards for various reasons<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>, so it provides a way to export terms to <a href="https://apps.ankiweb.net/">Anki</a>, a popular and free flashcard program.</p>
 <p>In summary:</p>
 <ol>
 <li>You install Anki desktop and the AnkiConnect add-on (see LINK HERE)</li>
@@ -1977,10 +1985,11 @@ guide,English,blah
 </ul>
 <p>There's no simple way to do <em>perfect</em> exports in a general way, and some things might not be possible at all, without custom code!</p>
 <p>Given the above, it might be best to look at Lute's Anki exports as a "first draft" for some Anki cards, which you can further refine, suspend, or delete as needed.  From my experience, the cards are usually just fine, and I can make any other cards outside of Lute as usual.</p>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>these reasons are given in the <a href="https://luteorg.github.io/lute-faqs/why-no-flashcards.html">FAQ</a> -- basically, it's a ton of work!</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
+<hr>
+<ol class="footnote-definition"><li id="footnote-1">
+<p>these reasons are given in the <a href="https://luteorg.github.io/lute-faqs/why-no-flashcards.html">FAQ</a> -- basically, it's a ton of work! <a href="#fr-1-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
 <ol>
 <li>
 <p><a href="usage/ankiexport/./anki-and-anki-connect.html">Install Anki desktop and AnkiConnect</a></p>
@@ -2278,7 +2287,7 @@ span.textitem { font-size: 18px; }
 <p>When you start the player, it plays until you stop it, or until you open the Term form by clicking on a word or defining a new multi-word Term.  Once you've defined a term, click Play to restart the player from where it stopped.</p>
 <h2 id="bookmarks-1"><a class="header" href="#bookmarks-1">Bookmarks</a></h2>
 <p>You can add and remove bookmarks to your book's audio, and jump back and forth along the timeline to your bookmarks.</p>
-<p>Lute's audio playback is <strong>not</strong> syncronized with the text or pages in any way, so for multi-page books with audio, you'll likely want to use bookmarks to note the start of each page.  If you move back and forth between pages, the player doesn't follow you.</p>
+<p>Lute's audio playback is <strong>not</strong> synchronized with the text or pages in any way, so for multi-page books with audio, you'll likely want to use bookmarks to note the start of each page.  If you move back and forth between pages, the player doesn't follow you.</p>
 <h2 id="suggestions-for-using-audio"><a class="header" href="#suggestions-for-using-audio">Suggestions for using audio</a></h2>
 <p><em>A suggestion only, do how you see fit!</em></p>
 <ul>
@@ -2404,7 +2413,7 @@ drwxr-xr-x@ 1895 jeff  staff    59K 26 Sep 17:17 .
 <pre><code>source .venv/bin/activate    # Activate your virtual environment.
 flask --app lute.app_factory cli &lt;command_name&gt; [arg1] [arg2...]
 </code></pre>
-<p>The <code>--app lute.app_factory</code> part is <strong>required</strong><sup class="footnote-reference"><a href="#these-calls-are-ugly">1</a></sup>.  You might be able to <a href="https://flask.palletsprojects.com/en/2.3.x/cli/#environment-variables-from-dotenv">export environment variables</a> to simplify your calls.</p>
+<p>The <code>--app lute.app_factory</code> part is <strong>required</strong><sup class="footnote-reference" id="fr-these-calls-are-ugly-1"><a href="#footnote-these-calls-are-ugly">1</a></sup>.  You might be able to <a href="https://flask.palletsprojects.com/en/2.3.x/cli/#environment-variables-from-dotenv">export environment variables</a> to simplify your calls.</p>
 <h2 id="sample-calls"><a class="header" href="#sample-calls">Sample calls</a></h2>
 <h3 id="book_term_export"><a class="header" href="#book_term_export"><code>book_term_export</code></a></h3>
 <pre><code># Usage: flask --app lute.app_factory cli book_term_export [OPTIONS] BOOKID OUTPUT_PATH
@@ -2511,10 +2520,11 @@ README.md	MY_DATA.csv	lute.db		userimages
 <li>Run the commands as above.</li>
 </ul>
 <hr />
-<div class="footnote-definition" id="these-calls-are-ugly"><sup class="footnote-definition-label">1</sup>
-<p><em>Note from the dev (me!):</em> I recognize how ugly the "--app lute.app_factory" portion of the command is, but it is not trivial to get rid of.  The commands are built on part of the framework that Lute uses, and there is no easy way to avoid the "--app" flag, as far as I know.  I tried other design options, but they all had drawbacks.  In future, these jobs may be incorporated into Lute's UI.  For now, this is good enough.</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="updating-lute"><a class="header" href="#updating-lute">Updating Lute</a></h1>
+<hr>
+<ol class="footnote-definition"><li id="footnote-these-calls-are-ugly">
+<p><em>Note from the dev (me!):</em> I recognize how ugly the "--app lute.app_factory" portion of the command is, but it is not trivial to get rid of.  The commands are built on part of the framework that Lute uses, and there is no easy way to avoid the "--app" flag, as far as I know.  I tried other design options, but they all had drawbacks.  In future, these jobs may be incorporated into Lute's UI.  For now, this is good enough. <a href="#fr-these-calls-are-ugly-1">↩</a></p>
+</li>
+</ol><div style="break-before: page; page-break-before: always;"></div><h1 id="updating-lute"><a class="header" href="#updating-lute">Updating Lute</a></h1>
 <p>First, you <strong>must <a href="usage/./starting-and-stopping.html">stop Lute</a></strong>.</p>
 <p>(Lute or Python may lock certain files while running, shutting down ensures that things will update safely.)</p>
 <p>Then:</p>

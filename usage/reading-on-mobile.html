@@ -32,10 +32,11 @@
         <link rel="stylesheet" href="../css/custom.css">
 
 
-        <!-- Provide site root to javascript -->
+        <!-- Provide site root and default themes to javascript -->
         <script>
-            var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+            const path_to_root = "../";
+            const default_light_theme = "rust";
+            const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc.js"></script>
@@ -45,8 +46,8 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -60,7 +61,8 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
@@ -73,8 +75,8 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -110,6 +112,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
@@ -157,17 +160,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="reading-on-mobile"><a class="header" href="#reading-on-mobile">Reading on mobile</a></h1>
-<p>Lute was designed for desktop/laptop usage, but in a pinch you can connect to a running instance<sup class="footnote-reference"><a href="#1">1</a></sup> on a mobile device.</p>
+<p>Lute was designed for desktop/laptop usage, but in a pinch you can connect to a running instance<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> on a mobile device.</p>
 <p>While reading, Lute supports the following interactions:</p>
 <ul>
 <li>Tap an unknown term to open the term edit form.</li>
 <li>Tap an existing term to open the term's hover.  Tap that term again to open its edit form.</li>
 <li>Long-tap (press and hold) a term to start a new multi-word term.  The term is highlighted when the long tap is recognized.  Then tap the term at the other end of the multi-word term.  The edit form opens for that new term.  For example, to create the multi-word term "fast as lightning", you'd press and hold "fast" until it highlights, and then you'd tap "lightning".</li>
 </ul>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>see <a href="../faq/setup/mobile-support.html">mobile support</a> for notes.</p>
-</div>
-
+<hr>
+<ol class="footnote-definition"><li id="footnote-1">
+<p>see <a href="../faq/setup/mobile-support.html">mobile support</a> for notes. <a href="#fr-1-1">↩</a></p>
+</li>
+</ol>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
