@@ -22,7 +22,11 @@ You can apply one of the predefined themes in the Settings.  Select the theme fr
 
 ### LingQ
 
+<img width="100%" alt="image" src="../../assets/usage/themes/theme_lingq.png">
+
 ### LWT
+
+<img width="100%" alt="image" src="../../assets/usage/themes/theme_lwt.png">
 
 ## Custom themes
 
