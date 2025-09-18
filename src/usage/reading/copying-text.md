@@ -7,7 +7,7 @@ Lute has various things like word clicks, hovers, and keyboard actions for inter
 | Shortcut | Action |
 | --- | --- |
 | `c` | Copy the sentence of the currently selected word. |
-| `shift + c` | Copy the sentence of the currently selected word. |
+| `shift + c` | Copy the paragraph of the currently selected word. |
 | `<unassigned>` | Copy the whole page. |
 
 You can configure these shortcuts on via Settings > Keyboard Shortcuts.
