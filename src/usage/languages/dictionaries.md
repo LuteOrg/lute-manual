@@ -179,6 +179,16 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Estonian|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=4178&T1=[LUTE]`|
 |Estonian|terms|popup|`https://en.glosbe.com/et/en/[LUTE]`|
 |Estonian|terms|popup|`https://tatoeba.org/en/sentences/search?from=est&query=[LUTE]&to=eng`|
+|Faroese|sentences|embedded|`https://www.bing.com/translator/?from=fo&to=en&text=[LUTE]`|
+|Faroese|sentences|popup|`https://translate.google.com/?sl=fo&tl=en&text=[LUTE]&op=translate&hl=en`|
+|Faroese|terms|embedded|`https://cooljugator.com/fo/[LUTE]`|
+|Faroese|terms|embedded|`https://en.glosbe.com/fo/en/[LUTE]`|
+|Faroese|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Faroese`|
+|Faroese|terms|embedded|`https://is.wiktionary.org/wiki/hvar#F%C3%A6reyska`|
+|Faroese|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=1075&T1=[LUTE]`|
+|Faroese|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=75&T1=[LUTE]`|
+|Faroese|terms|popup|`https://tatoeba.org/en/sentences/search?from=fao&query=[LUTE]&to=eng`|
+|Faroese|terms|popup|`https://sprotin.fo/dictionaries?_SearchInflections=0&_SearchDescriptions=0&_DictionaryId=1&_DictionaryPage=1&_SearchFor=[LUTE]`
 |Farsi|sentences|popup|`https://translate.google.com/?sl=fa&tl=en&text=[LUTE]&op=translate`|
 |Farsi|terms|embedded|`https://dsal.uchicago.edu/cgi-bin/app/persian_query.py?qs=[LUTE]&searchhws=yes&matchtype=default`|
 |Farsi|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Persian`|
