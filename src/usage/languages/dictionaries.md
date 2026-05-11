@@ -295,6 +295,7 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Icelandic|terms|embedded|`https://is.wiktionary.org/wiki/[LUTE]#%C3%8Dslenska`|
 |Icelandic|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=1028&T1=[LUTE]`|
 |Icelandic|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=28&T1=[LUTE]`|
+|Icelandic|terms|popup|`https://malid.is/leit/[LUTE]`|
 |Icelandic|terms|popup|`https://tatoeba.org/en/sentences/search?from=isl&query=[LUTE]&to=eng`|
 |Indonesian|sentences|popup|`https://www.deepl.com/translator#id/en/[LUTE]`|
 |Indonesian|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Indonesian`|
