@@ -25,6 +25,7 @@ This link leads to a list of over 50 languages predefined in Lute, with sample s
 * Breton
 * Bulgarian
 * Catalan
+* Cebuano
 * Classical Chinese
 * Croatian
 * Czech
