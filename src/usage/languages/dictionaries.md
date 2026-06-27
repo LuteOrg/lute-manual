@@ -84,6 +84,8 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Belarusian|sentences|popup|`https://translate.yandex.com/?source_lang=be&target_lang=en&text=[LUTE]`|
 |Belarusian|terms|embedded|`https://be.wiktionary.org/wiki/[LUTE]`|
 |Belarusian|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Belarusian`|
+|Belarusian|terms|embedded|`https://slounik.org/search?dict=&search=[LUTE]`|
+|Belarusian|terms|embedded|`https://verbum.by/?q=[LUTE]`|
 |Belarusian|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=248&T1=[LUTE]`|
 |Belarusian|terms|popup|`https://en.glosbe.com/be/en/[LUTE]`|
 |Belarusian|terms|popup|`https://tatoeba.org/en/sentences/search?from=bel&query=[LUTE]&to=`|
@@ -133,6 +135,10 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Catalan|terms|popup|`https://tatoeba.org/en/sentences/search?query=[LUTE]&from=cat&to=eng`|
 |Catalan|terms|popup|`https://www.diccionari.cat/GDLC/[LUTE]`|
 |Catalan|terms|popup|`https://www.diccionaris.cat/diccionari/catala-angles/[LUTE]/0`|
+|Cebuano|sentences|popup|`https://translate.google.com/?sl=ceb&tl=en&text=[LUTE]&op=translate`|
+|Cebuano|terms|embedded|`https://cebuano.pinoydictionary.com/search?q=[LUTE]`|
+|Cebuano|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Cebuano`|
+|Cebuano|terms|popup|`https://www.binisaya.com/node/21?search=binisaya&word=[LUTE]&Search=Search`|
 |Classical Chinese|sentences|popup|`https://www.deepl.com/translator#ch/en/[LUTE]`|
 |Classical Chinese|terms|embedded|`https://www.archchinese.com/chinese_english_dictionary.html?find=[LUTE]`|
 |Croatian|sentences|popup|`https://translate.google.com/?sl=hr&tl=en&text=[LUTE]&op=translate`|
@@ -152,8 +158,8 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Dutch|sentences|popup|`https://www.deepl.com/translator#nl/en/[LUTE]`|
 |Dutch|terms|embedded|`http://www.mijnwoordenboek.nl/vertalen.php?woord=[LUTE]&src=NL&des=EN`|
 |Dutch|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Dutch`|
+|Dutch|terms|embedded|`https://nl-en.dict.cc/?s=[LUTE]`|
 |Dutch|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=24&T1=[LUTE]`|
-|Dutch|terms|popup|`https://www.vandale.nl/gratis-woordenboek/nederlands/betekenis/[LUTE]`|
 |English|sentences|popup|`https://www.deepl.com/translator#en/en/[LUTE]`|
 |English|terms|embedded|`https://simple.wiktionary.org/wiki/[LUTE]`|
 |English|terms|popup|`https://conjugator.reverso.net/conjugation-english-verb-[LUTE].html`|
@@ -205,9 +211,9 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Finnish|terms|popup|`https://tr-ex.me/translation/finnish-english/suomi?search=[LUTE]`|
 |French|sentences|popup|`https://www.deepl.com/translator#fr/en/[LUTE]`|
 |French|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#French`|
-|French|terms|embedded|`https://www.wordreference.com/fren/[LUTE]`|
 |French|terms|popup|`https://conjugator.reverso.net/conjugation-french-verb-[LUTE].html`|
 |French|terms|popup|`https://www.larousse.fr/dictionnaires/francais/[LUTE]`|
+|French|terms|popup|`https://www.wordreference.com/fren/[LUTE]`|
 |Galician|sentences|embedded|`https://www.bing.com/translator/?from=gl&to=en&text=[LUTE]`|
 |Galician|sentences|popup|`https://translate.google.com/?sl=gl&tl=en&text=[LUTE]&op=translate`|
 |Galician|sentences|popup|`https://translate.yandex.com/?source_lang=gl&target_lang=en&text=[LUTE]`|
@@ -246,7 +252,7 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Greek|terms|embedded|`https://cooljugator.com/gr/[LUTE]`|
 |Greek|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Greek`|
 |Greek|terms|embedded|`https://www.greek-language.gr/greekLang/modern_greek/tools/lexica/search.html?sin=all&lq=[LUTE]`|
-|Greek|terms|embedded|`https://www.wordreference.com/gren/[LUTE]`|
+|Greek|terms|popup|`https://www.wordreference.com/gren/[LUTE]`|
 |Hebrew|sentences|embedded|`https://www.bing.com/translator/?from=he&to=en&text=[LUTE]`|
 |Hebrew|sentences|embedded|`https://www.reverso.net/text-translation#sl=heb&tl=eng&text=[LUTE]`|
 |Hebrew|sentences|popup|`https://translate.google.com/?sl=iw&tl=en&text=[LUTE]&op=translate`|
@@ -307,7 +313,6 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Italian|sentences|popup|`https://translate.yandex.com/?source_lang=it&target_lang=en&text=[LUTE]`|
 |Italian|sentences|popup|`https://www.deepl.com/translator#it/en/[LUTE]`|
 |Italian|sentences|popup|`https://www.online-translator.com/translation/italian-english/[LUTE]`|
-|Italian|terms|embedded|`http://www.wordreference.com/iten/[LUTE]`|
 |Italian|terms|embedded|`https://context.reverso.net/translation/italian-english/[LUTE]`|
 |Italian|terms|embedded|`https://cooljugator.com/it/[LUTE]`|
 |Italian|terms|embedded|`https://dizionario.internazionale.it/parola/[LUTE]`|
@@ -318,6 +323,7 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Italian|terms|embedded|`https://www.verbix.com/webverbix/italian-adjectives/[LUTE]`|
 |Italian|terms|embedded|`https://www.verbix.com/webverbix/italian-nouns/[LUTE]`|
 |Italian|terms|embedded|`https://www.verbix.com/webverbix/italian/[LUTE]`|
+|Italian|terms|popup|`http://www.wordreference.com/iten/[LUTE]`|
 |Italian|terms|popup|`https://dictionary.cambridge.org/dictionary/italian-english/[LUTE]`|
 |Italian|terms|popup|`https://dizionario.reverso.net/italiano-inglese/[LUTE]`|
 |Italian|terms|popup|`https://en.bab.la/dictionary/italian-english/[LUTE]`|
@@ -453,7 +459,6 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Portuguese|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=1002&T1=[LUTE]`|
 |Portuguese|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=2&T1=[LUTE]`|
 |Portuguese|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=2002&T1=[LUTE]`|
-|Portuguese|terms|embedded|`https://www.wordreference.com/pten/[LUTE]`|
 |Portuguese|terms|popup|`https://dicionario.priberam.org/[LUTE]`|
 |Portuguese|terms|popup|`https://dictionary.cambridge.org/dictionary/portuguese-english/[LUTE]`|
 |Portuguese|terms|popup|`https://dictionary.reverso.net/portuguese-english/[LUTE]`|
@@ -465,6 +470,7 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Portuguese|terms|popup|`https://www.infopedia.pt/dicionarios/lingua-portuguesa/[LUTE]`|
 |Portuguese|terms|popup|`https://www.infopedia.pt/dicionarios/portugues-ingles/[LUTE]`|
 |Portuguese|terms|popup|`https://www.infopedia.pt/dicionarios/verbos-portugueses/[LUTE]?intlink=cr_verbos-pt`|
+|Portuguese|terms|popup|`https://www.wordreference.com/pten/[LUTE]`|
 |Punjabi|sentences|popup|`https://translate.google.com/?sl=pa&tl=en&text=[LUTE]&op=translate`|
 |Punjabi|terms|embedded|`https://dic.learnpunjabi.org/default.aspx`|
 |Punjabi|terms|embedded|`https://dsal.uchicago.edu/cgi-bin/app/salah-ud-din_query.py?qs=[LUTE]&searchhws=yes&matchtype=default`|
@@ -487,13 +493,13 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Romanian|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=1005&T1=[LUTE]`|
 |Romanian|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=2005&T1=[LUTE]`|
 |Romanian|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=5&T1=[LUTE]`|
-|Romanian|terms|embedded|`https://www.wordreference.com/roen/[LUTE]`|
 |Romanian|terms|popup|`https://dictionary.reverso.net/romanian-english/[LUTE]`|
 |Romanian|terms|popup|`https://en.bab.la/dictionary/romanian-english/[LUTE]`|
 |Romanian|terms|popup|`https://en.glosbe.com/ro/en/[LUTE]`|
 |Romanian|terms|popup|`https://hallo.ro/english-romanian-dictionary/[LUTE]`|
 |Romanian|terms|popup|`https://tatoeba.org/en/sentences/search?from=ron&query=[LUTE]&to=`|
 |Romanian|terms|popup|`https://tr-ex.me/translation/romanian-english/[LUTE]`|
+|Romanian|terms|popup|`https://www.wordreference.com/roen/[LUTE]`|
 |Russian|sentences|popup|`https://www.deepl.com/translator#ru/en/[LUTE]`|
 |Russian|terms|embedded|`https://en.openrussian.org/?search=[LUTE]`|
 |Russian|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Russian`|
@@ -538,6 +544,7 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Slovene|terms|popup|`https://tr-ex.me/translation/slovenian-english/[LUTE]?search=sloven%C5%A1%C4%8Dina`|
 |Spanish|sentences|popup|`https://www.deepl.com/translator#es/en/[LUTE]`|
 |Spanish|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Spanish`|
+|Spanish|terms|embedded|`https://es-en.dict.cc/?s=[LUTE]`|
 |Spanish|terms|popup|`https://conjugator.reverso.net/conjugation-spanish-verb-[LUTE].html`|
 |Spanish|terms|popup|`https://dle.rae.es/[LUTE]?m=form`|
 |Spanish|terms|popup|`https://www.spanishdict.com/translate/[LUTE]`|
@@ -564,26 +571,28 @@ Below are the dictionaries for the languages that come pre-configured with Lute:
 |Swedish|terms|embedded|`https://www.linguee.com/english-swedish/search?source=swedish&query=[LUTE]`|
 |Swedish|terms|embedded|`https://www.saob.se/artikel/?seek=[LUTE]`|
 |Swedish|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=19&T1=[LUTE]`|
-|Swedish|terms|embedded|`https://www.wordreference.com/sven/[LUTE]`|
 |Swedish|terms|popup|`https://dictionary.cambridge.org/dictionary/swedish-english/[LUTE]`|
 |Swedish|terms|popup|`https://dictionary.reverso.net/swedish-english/[LUTE]`|
 |Swedish|terms|popup|`https://en.bab.la/dictionary/swedish-english/[LUTE]`|
 |Swedish|terms|popup|`https://en.glosbe.com/sv/en/[LUTE]`|
 |Swedish|terms|popup|`https://tatoeba.org/en/sentences/search?from=swe&query=[LUTE]&to=eng`|
 |Swedish|terms|popup|`https://tr-ex.me/translation/swedish-english/svenska?search=[LUTE]`|
+|Swedish|terms|popup|`https://www.wordreference.com/sven/[LUTE]`|
 |Thai|sentences|embedded|`https://www.bing.com/translator/?from=th&to=en&text=[LUTE]`|
 |Thai|terms|embedded|`https://dict.com/thai-english/[LUTE]`|
 |Thai|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]`|
 |Thai|terms|popup|`https://glosbe.com/th/en/[LUTE]`|
 |Tibetan|sentences|popup|`https://www.bing.com/translator/?from=bo&to=en&text=[LUTE]`|
-|Tibetan|terms|embedded|`https://dictionary.christian-steinert.de/#%7B%22activeTerm%22%3A%22skad%22%2C%22lang%22%3A%22tib%22%2C%22inputLang%22%3A%22tib%22%2C%22currentListTerm%22%3A%22[LUTE]%22%2C%22forceLeftSideVisible%22%3Afalse%2C%22offset%22%3A0%7D`|
+|Tibetan|terms|embedded|`https://dictionary.christian-steinert.de/#/search/tib/?activeTerm=[LUTE]`|
 |Tibetan|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Tibetan`|
 |Tibetan|terms|embedded|`https://rywiki.tsadra.org/index.php?search=[LUTE]&title=Special%3ASearch&fulltext=1&ns0=1&ns250=1&ns252=1`|
+|Tibetan|terms|popup|`https://translate.google.co.in/?sl=bo&tl=en&text=[LUTE]&op=translate`|
 |Turkish|sentences|popup|`https://www.deepl.com/translator#tr/en/[LUTE]`|
 |Turkish|terms|embedded|`https://en.wiktionary.org/wiki/[LUTE]#Turkish`|
-|Turkish|terms|embedded|`https://sozluk.gov.tr`|
+|Turkish|terms|embedded|`https://lugatim.com/s/[LUTE]`|
+|Turkish|terms|embedded|`https://sozluk.gov.tr/?ara=[LUTE]`|
 |Turkish|terms|embedded|`https://tureng.com/tr/turkce-ingilizce/[LUTE]`|
-|Turkish|terms|embedded|`https://www.verbix.com/webverbix/go.php?&D1=31&T1=[LUTE]`|
+|Turkish|terms|embedded|`https://www.nisanyansozluk.com/kelime/[LUTE]`|
 |Ukrainian|sentences|embedded|`https://www.bing.com/translator/?from=uk&to=en&text=[LUTE]`|
 |Ukrainian|sentences|embedded|`https://www.reverso.net/text-translation#sl=ukr&tl=eng&text=[LUTE]`|
 |Ukrainian|sentences|popup|`https://translate.google.com/?sl=uk&tl=en&text=[LUTE]&op=translate`|
