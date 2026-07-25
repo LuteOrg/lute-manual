@@ -1,6 +1,6 @@
 # Introduction
 
-LUTE (Learning Using Texts) is a standalone web application that you install on your computer and read texts with.
+Lute (Learning Using Texts) is a standalone web application that you install on your computer and read texts with.
 
 Lute contains the core features you need for learning through reading:
 
