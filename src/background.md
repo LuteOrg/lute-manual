@@ -4,7 +4,7 @@ Lute -- Learning Using Texts -- is software for learning foreign languages by re
 
 In summary, you import foreign language texts into Lute, and read through them, creating saved definitions and associations for words as you read.  As you read more, you continue to build your personal dictionary.
 
-I am currently using Lute to read texts in Spanish, and it works great.  It should work very well for other left-to-right languages like French, German, English, Italian, Classical Chinese, etc.  Lute can also handle right-to-left languages like Persion, and with some extra tools installed, Japanese.
+I am currently using Lute to read texts in Spanish, and it works great.  It should work very well for other left-to-right languages like French, German, English, Italian, Classical Chinese, etc.  Lute can also handle right-to-left languages like Persian, and with some extra tools installed, Japanese.
 
 Lute has a few features which I feel are critical:
 
